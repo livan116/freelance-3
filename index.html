@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S2HealthyLife Fitness and Nutrition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      
+    </style>
+  </head>
+  <body class="relative">
+    <!-- Navigation - Fixed at the top -->
+    <!-- nav section start -->
+    <nav class="Navbar shadow-md fixed top-0 left-0 right-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a href="/" class="flex-shrink-0 mr-8">
+            <img src="images/logo.png" alt="S2 Logo" class="h-16 w-[120px]" />
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex gap-10 space-x-1 md:space-x-6">
+            <a
+              href="/index.html"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >About Us</a
+            >
+            <a
+              href="/services.html"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Services</a
+            >
+            <a
+              href="/nutrition.html"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Nutrition</a
+            >
+            <a
+              href="/fitness"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Fitness Retreat</a
+            >
+            <a
+              href="/photos"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Photos</a
+            >
+            <a
+              href="/contact"
+              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
+              >Reach Us</a
+            >
+          </div>
+
+          <!-- Enroll Button (Desktop) -->
+          <button
+            class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-4 md:px-6 py-2 rounded-full ml-4"
+          >
+            Enroll Now
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-50 overflow-y-auto"
+    >
+      <div class="flex justify-between bg-[#304E0C] items-center p-4 border-b">
+        <a href="/" class="flex-shrink-0">
+          <img src="images/logo.png" alt="S2 Logo" class="h-16 w-[120px]" />
+        </a>
+        <button class="mobile-close-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col p-4">
+        <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
+          >Home</a
+        >
+        <a href="/about" class="py-4 border-b border-gray-200 text-lg"
+          >About Us</a
+        >
+        <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
+          >Services</a
+        >
+        <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
+          >Nutrition</a
+        >
+        <a href="/fitness" class="py-4 border-b border-gray-200 text-lg"
+          >Fitness Retreat</a
+        >
+        <a href="/photos" class="py-4 border-b border-gray-200 text-lg"
+          >Photos</a
+        >
+        <a href="/contact" class="py-4 border-b border-gray-200 text-lg"
+          >Reach Us</a
+        >
+        <a href="#" class="py-4 border-b border-gray-200 text-lg">Enroll Now</a>
+      </div>
+    </div>
+    <!-- nav section end -->
+
+    <!-- Add padding to the top to account for fixed navbar -->
+    <div class="pt-16"></div>
+
+    <!-- Hero Section -->
+    <div class="relative -mt-[70px] h-[700px]">
+      <video
+        autoplay
+        loop
+        muted
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="video/home_video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+      <div
+        class="relative container mx-auto px-4 h-full flex flex-col justify-end"
+      >
+        <div
+          class="md:max-w-3xl w-full md:m-12 text-center md:text-left section1"
+        >
+          <h1 class="text-white heading font-700 font-bold mb-6">
+            Enhanced Mental Well-being
+          </h1>
+
+          <p class="text-white body-text text-justify font-600 mb-8">
+            Physical activity and a nutritious diet are key to mental
+            well-being. Exercise releases endorphins, reducing stress and
+            anxiety, while a healthy diet supports brain function and stabilizes
+            mood.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMI Button (fixed) -->
+    <button class="bmi text-white px-8 py-3 rounded-full transition-colors">
+      Calculate your BMI
+    </button>
+
+    <!-- fitness and nutrition start -->
+    <!-- Content Section -->
+    <div class="container px-12 md:px-16 py-16 h-full">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Left content -->
+        <div class="md:w-1/2">
+          <div class="w-full flex items-center gap-4 md:mb-6">
+            <div class="h-1 w-12 bg-[#9AC339]"></div>
+            <h2 class="sub-title content-Heading">S2HealthyLife <span class="span-color">Fitness and Nutrition</span></h2>
+          </div>
+          
+          <h4 class="sub-title mb-4 md:mb-6 ">Better Quality of Life</h4>
+          <div class="space-y-6 text-gray-600 ">
+            <p class="md:leading-9 leading-7 body-text">
+              Making healthy choices positively impacts your overall quality of life. By taking care of your body and mind, you can enjoy increased longevity, improved mobility, better sleep, and a reduced risk of illness. A healthy lifestyle enables you to fully participate in and enjoy life's activities.
+            </p>
+            <p class="md:leading-9 leading-7 body-text">
+              Taking care of your health and well-being boosts self-confidence. When you prioritize your physical and mental health, you feel good about yourself, which positively impacts your self-image and overall self-esteem.
+            </p>
+           
+          </div>
+        </div>
+
+        <!-- Right content with circular animation -->
+        <div class="md:w-1/2 relative">
+          <div class="satellite-container mx-auto relative">
+            <!-- Orbit paths -->
+            <div>
+              <div class="orbit-path-1"></div>
+              <div class="orbit-path-2"></div>
+            </div>
+
+            <!-- Center image -->
+            <div
+              class="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full overflow-hidden shadow-lg md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px]"
+            >
+              <img
+                src="images/home/img1.png"
+                alt="Central fitness image"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Rotating images with individual classes -->
+            <div class="satellite1">
+              <img
+                src="images/home/satellite_img1.png"
+                alt="Fitness activity"
+                class="w-full h-full rounded-full object-cover shadow-md"
+              />
+            </div>
+            <div class="satellite2">
+              <img
+                src="images/home/satellite_img2.png"
+                alt="Nutrition"
+                class="w-full h-full rounded-full object-cover shadow-md"
+              />
+            </div>
+            <div class="satellite3">
+              <img
+                src="images/home/satellite_img3.png"
+                alt="Meditation"
+                class="w-full h-full rounded-full object-cover shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fitness and nutrition end -->
+
+    <!-- polyclinic start -->
+    <section class="py-12 md:py-16 md:h-[600px]">
+      <div class="flex items-center justify-end md:mr-36 gap-4 mb-6">
+             
+        <h2 class="content-Heading">Polyclinic and <span class="span-color">Wellness Center</span></h2>
+        <div class="h-1 w-12 bg-[#9AC339]"></div>
+      </div>
+      <div class="container mx-auto h-full px-4">
+        <!-- Flexbox container for layout -->
+        <div
+          class="flex flex-col md:flex-row h-full items-center justify-center md:items-start"
+        >
+        
+          <!-- Image section -->
+          <div class="md:w-1/2 h-full mb-6 md:mb-0 relative" >
+            <div class="border-2 md:h-[300px] h-[200px] w-[250px] md:w-[400px] rounded-md border-[#304E0C] z-0 -left-5 md:-left-10 md:-top-6 absolute"></div>
+            <div class="h-full z-50">
+              <img
+                src="images/home/img2.png"
+                alt="Polyclinic and Wellness Center"
+                class="object-cover relative md:absolute mt-7 w-[90vw] md:w-full h-[55vh]"
+              />
+            </div>
+          </div>
+
+          <!-- Text content section -->
+          <div class="md:w-[40vw] md:pl-8">
+           
+            <p class="text-gray-700 body-text leading-7 md:leading-9">
+              S2HealthyLife Polyclinic and Wellness Center is dedicated to
+              providing comprehensive healthcare services aimed at promoting
+              overall well-being. Our facility combines advanced medical
+              instruments with personalized wellness programs to ensure optimal
+              health for all our patients.With a team of experienced
+              professionals and state-of-the-art equipment, we strive to create
+              a healing environment that supports both physical and mental
+              health. Visit us to experience holistic care tailored to meet your
+              individual needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- polyclinic end -->
+    <script>
+      // Navigation active state
+      const navLinks = document.querySelectorAll(".nav-line");
+      const currentPage = window.location.pathname;
+
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+          link.classList.add("text-green-500");
+        }
+      });
+
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const mobileCloseButton = document.querySelector(".mobile-close-button");
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle("active");
+      }
+
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMenu);
+      }
+
+      if (mobileCloseButton) {
+        mobileCloseButton.addEventListener("click", toggleMenu);
+      }
+
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", toggleMenu);
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Carousel with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .gallery-underline {
+            position: relative;
+        }
+        .gallery-underline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            height: 3px;
+            width: 60px;
+            background-color: white;
+        }
+        
+        /* Custom styling for slick carousel */
+        .slick-prev, .slick-next {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            z-index: 10;
+        }
+        
+        .slick-prev:before, .slick-next:before {
+            color: #3a5a1c;
+            font-size: 20px;
+        }
+        
+        .slick-slide {
+            padding: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <section class="w-full" style="background-color: #3a5a1c;">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <!-- Gallery Header -->
+            <h2 class="text-white text-3xl md:text-4xl font-bold gallery-underline mb-6">Gallery</h2>
+            
+            <!-- Gallery Description -->
+            <p class="text-white text-lg mb-10">They can turn into your instructor, your helper, your mentor.</p>
+            
+            <!-- Gallery Carousel -->
+            <div class="gallery-carousel">
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person doing push-ups" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person lifting weights" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person stretching" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person using equipment" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person doing exercise" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person on treadmill" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person in yoga pose" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person using kettlebells" class="w-full h-64 object-cover rounded">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/400/320" alt="Person doing cardio" class="w-full h-64 object-cover rounded">
+                </div>
+            </div>
+            <button type="button" class="slick-prev">&#8592;</button>
+        </div>
+    </section>
+
+    <!-- jQuery for Slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('.gallery-carousel').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '',
+                nextArrow: '<button type="button" class="slick-next">&#8594;</button>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body class="font-sans antialiased bg-white">
+  <!-- Navbar -->
+  <nav class="bg-green-900 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">Brand Name</a>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-green-300">Home</a></li>
+        <li><a href="services.html" class="text-green-300">Services</a></li> <!-- Active link -->
+        <li><a href="gallery.html" class="hover:text-green-300">Gallery</a></li>
+        <li><a href="testimonials.html" class="hover:text-green-300">Testimonials</a></li>
+        <li><a href="contact.html" class="hover:text-green-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page-specific content for Services -->
+  <section class="py-10 px-4 md:px-16 lg:px-24">
+    <h2 class="text-[28px] font-semibold text-green-700 mb-2 flex items-center">
+      <span class="w-10 h-1 bg-green-700 mr-2"></span> Our Services
+    </h2>
+    <p class=" text-[--para-color] leading-9 text-[20px] mb-10 max-w-full">
+      We offer a comprehensive fitness program that includes individual and group workout sessions, sessions for children, and personalized nutrition guidance. This variety allows clients to choose the type of training that suits their preferences and goals while promoting a holistic approach to fitness and well-being.
+    </p>
+
+    <div class="bg-[--service-bg] rounded-lg p-6">
+      <h3 class="text-[28px] font-semibold text-green-700 mb-2 flex items-center">
+        <span class="w-10 h-1 bg-green-700 mr-2"></span> Onsite Services
+      </h3>
+      <p class="text-[#131313] mb-8">In-person pediatric care for illness treatment, health check-ups, and vaccination schedules.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Card 1 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw] " style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);" >
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Management of General Pediatric Illness (Newborn -18 years)</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(255,225,217,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);">
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Well Visits and Vaccines</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);" >
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(138,185,255,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);
+" >
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Nebulization</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Our clinic offers professional nebulization services to effectively manage respiratory conditions.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);" >
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="bg-green-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Your Brand Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

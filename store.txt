@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pediatric Services</title>
+  <style>
+    :root {
+      --para-color: #555;
+      --service-bg: #f0f7e6;
+      --cardfont-weight: 600;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    
+    /* Original styles from the provided code */
+    .py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .md\:px-16 {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:px-24 {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+    }
+    
+    .text-\[28px\] {
+      font-size: 28px;
+    }
+    
+    .font-semibold {
+      font-weight: 600;
+    }
+    
+    .text-green-700 {
+      color: #15803d;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .w-10 {
+      width: 2.5rem;
+    }
+    
+    .h-1 {
+      height: 0.25rem;
+    }
+    
+    .bg-green-700 {
+      background-color: #15803d;
+    }
+    
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+    
+    .text-\[\--para-color\] {
+      color: var(--para-color);
+    }
+    
+    .leading-9 {
+      line-height: 2.25rem;
+    }
+    
+    .text-\[20px\] {
+      font-size: 20px;
+    }
+    
+    .mb-10 {
+      margin-bottom: 2.5rem;
+    }
+    
+    .max-w-full {
+      max-width: 100%;
+    }
+    
+    .bg-\[\--service-bg\] {
+      background-color: var(--service-bg);
+    }
+    
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    
+    .p-6 {
+      padding: 1.5rem;
+    }
+    
+    .text-\[\#131313\] {
+      color: #131313;
+    }
+    
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    @media (min-width: 640px) {
+      .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    
+    .gap-10 {
+      gap: 2.5rem;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .bg-white {
+      background-color: white;
+    }
+    
+    .rounded-\[30px\] {
+      border-radius: 30px;
+    }
+    
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .max-w-sm {
+      max-width: 24rem;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    .pt-20 {
+      padding-top: 5rem;
+    }
+    
+    .pb-8 {
+      padding-bottom: 2rem;
+    }
+    
+    .mx-4 {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    
+    .mt-\[10vw\] {
+      margin-top: 10vw;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .-top-40 {
+      top: -10rem;
+    }
+    
+    .left-1\/2 {
+      left: 50%;
+    }
+    
+    .transform {
+      transform: translateX(-50%);
+    }
+    
+    .-translate-x-1\/2 {
+      transform: translateX(-50%);
+    }
+    
+    .w-52 {
+      width: 13rem;
+    }
+    
+    .h-52 {
+      height: 13rem;
+    }
+    
+    .object-cover {
+      object-fit: cover;
+    }
+    
+    .font-\[\--cardfont-weight\] {
+      font-weight: var(--cardfont-weight);
+    }
+    
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+    
+    .text-\[18px\] {
+      font-size: 18px;
+    }
+    
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+    
+    .font-normal {
+      font-weight: 400;
+    }
+    
+    /* Additional mobile carousel styles */
+    @media (max-width: 480px) {
+      .cards-container {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 20px;
+        margin-top: 10rem;
+      }
+      
+      .cards-carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+      
+      .card-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+      }
+      
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+      }
+      
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      
+      .indicator.active {
+        background-color: #15803d;
+      }
+      
+      /* Hide grid layout on mobile */
+      .grid {
+        display: none;
+      }
+    }
+    
+    /* Show grid on larger screens */
+    @media (min-width: 481px) {
+      .cards-container {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="py-10 px-4 md:px-16 lg:px-24">
+    <h2 class="text-[28px] font-semibold text-green-700 mb-2 flex items-center">
+      <span class="w-10 h-1 bg-green-700 mr-2"></span> Our Services
+    </h2>
+    <p class="text-[--para-color] leading-9 text-[20px] mb-10 max-w-full">
+      We offer a comprehensive fitness program that includes individual and group workout sessions, sessions for children, and personalized nutrition guidance. This variety allows clients to choose the type of training that suits their preferences and goals while promoting a holistic approach to fitness and well-being.
+    </p>
+
+    <div class="bg-[--service-bg] rounded-lg p-6">
+      <h3 class="text-[28px] font-semibold text-green-700 mb-2 flex items-center">
+        <span class="w-10 h-1 bg-green-700 mr-2"></span> Onsite Services
+      </h3>
+      <p class="text-[#131313] mb-8">In-person pediatric care for illness treatment, health check-ups, and vaccination schedules.</p>
+
+      <!-- Mobile Carousel (displays only on mobile) -->
+      <div class="cards-container">
+        <div class="cards-carousel">
+          <!-- Card 1 -->
+          <div class="card-slide">
+            <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);">
+              <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+                <img 
+                  src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+                  alt="Pediatric Care" 
+                  class="w-52 h-52 object-cover"
+                />
+              </div>
+              <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Management of General Pediatric Illness (Newborn -18 years)</h4>
+              <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+                The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-slide">
+            <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4" style="background: linear-gradient(180deg, rgba(255,225,217,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);">
+              <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+                <img 
+                  src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+                  alt="Pediatric Care" 
+                  class="w-52 h-52 object-cover"
+                />
+              </div>
+              <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Well Visits and Vaccines</h4>
+              <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+                Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-slide">
+            <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);">
+              <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+                <img 
+                  src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+                  alt="Pediatric Care" 
+                  class="w-52 h-52 object-cover"
+                />
+              </div>
+              <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h4>
+              <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+                Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card-slide">
+            <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4" style="background: linear-gradient(180deg, rgba(138,185,255,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);">
+              <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+                <img 
+                  src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+                  alt="Pediatric Care" 
+                  class="w-52 h-52 object-cover"
+                />
+              </div>
+              <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Nebulization</h4>
+              <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+                Our clinic offers professional nebulization services to effectively manage respiratory conditions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card-slide">
+            <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);">
+              <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+                <img 
+                  src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+                  alt="Pediatric Care" 
+                  class="w-52 h-52 object-cover"
+                />
+              </div>
+              <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h4>
+              <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+                Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators"></div>
+      </div>
+
+      <!-- Original Grid (displays only on larger screens) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Card 1 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);">
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Management of General Pediatric Illness (Newborn -18 years)</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(255,225,217,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);">
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Well Visits and Vaccines</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(199,173,55,1) 0%, rgba(255,255,255,1) 35%);">
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdtBRprV9-~A2zcC9kSfZIGBBb1IzjTiaboNzfGsMsg27XDd~J8bamNVSvfP9u3Q3hi5njH~h61cg~PuPaiPb1ob6Rg0oqLApMot6vx7Vjm856xiTCrqBboeT3OZaysuzKaQ~NLfnlLINSfZFEIZaeiNg169IAXg__" 
+              alt="Pediatric Care" 
+              class="w-52 h-52 object-cover"
+            />
+          </div>
+          <h4 class="font-[--cardfont-weight] text-[20px] mb-3">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h4>
+          <p class="text-[18px] text-[--para-color] leading-relaxed font-normal">
+            Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]" style="background: linear-gradient(180deg, rgba(138,185,255,1) 0%, rgba(255,255,255,0.9809173669467787) 37%);">
+          <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+            <img 
+              src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdt
