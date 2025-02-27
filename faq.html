@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ's</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            /* Adjust based on your content */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-arrow.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-white font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-1 bg-green-500"></div>
+            <h2 class="text-2xl font-bold ml-2 text-green-900">FAQ's</h2>
+        </div>
+
+        <p class="text-gray-700 mb-8">
+            If you have further questions or need additional information, please contact us.
+        </p>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>How does an online fitness center work?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        An online fitness center provides virtual workout sessions, training programs, and fitness
+                        resources that you can access from anywhere. Members can join live classes, follow pre-recorded
+                        workouts, and track their progress through our platform. Our trainers provide guidance and
+                        support remotely.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Do I need any special equipment to participate in the online workouts?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Most of our workouts can be done with minimal or no equipment. We offer a variety of programs
+                        designed for different setups. Basic equipment like a yoga mat, resistance bands, and light
+                        weights can enhance your experience, but we also provide equipment-free alternatives for all
+                        exercises.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Can beginners join the online fitness programs?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Absolutely! We welcome members of all fitness levels. We have specifically designed
+                        beginner-friendly programs that introduce fundamental movements and gradually increase in
+                        intensity. Our trainers provide modifications for all exercises to ensure everyone can
+                        participate safely and effectively.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>How do I access the online workout sessions?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        After signing up, you'll receive login credentials to our member portal. From there, you can
+                        access live classes through our schedule, browse our library of pre-recorded workouts, and view
+                        your personalized training program. Our platform works on any device with internet access
+                        including smartphones, tablets, and computers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>What is the duration of each workout session?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Our workout sessions vary in length to accommodate different schedules and fitness goals. We
+                        offer quick 15-minute workouts, standard 30-45 minute sessions, and more comprehensive 60-minute
+                        classes. You can filter workouts by duration to find ones that fit your available time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Are the workout sessions live or pre-recorded?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        We offer both live and pre-recorded sessions. Our schedule includes multiple live classes each
+                        day where you can work out with instructors and other members in real-time. Additionally, we
+                        have an extensive library of pre-recorded workouts that you can access anytime, allowing for
+                        complete flexibility in your fitness routine.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Can I cancel my membership if I am not satisfied?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Yes, we offer a 14-day satisfaction guarantee. If you're not completely satisfied with our
+                        services within the first two weeks, you can cancel your membership and receive a full refund.
+                        After this period, you can still cancel at any time with no cancellation fees, though refunds
+                        will be prorated based on usage.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Can I interact with the fitness instructors or trainers during the sessions?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Absolutely! During live sessions, you can ask questions via chat, and our instructors will
+                        address them in real-time. We also offer virtual one-on-one coaching sessions where you can get
+                        personalized feedback. Additionally, our community forum allows you to connect with trainers and
+                        other members outside of workout times.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 9 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>Are there any dietary guidelines or nutrition plans included?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Yes, our premium memberships include access to basic nutrition guides, healthy recipes, and meal
+                        planning tools. For more personalized nutrition support, we offer additional consultations with
+                        our certified nutritionists for an extra fee. Our approach focuses on sustainable eating habits
+                        rather than restrictive diets.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 10 -->
+            <div class="">
+                <button
+                    class="faq-toggle w-full flex justify-between items-center py-4 text-left font-medium focus:outline-none">
+                    <span>What if I have specific health concerns or injuries?</span>
+                    <svg class="faq-arrow w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-answer px-0">
+                    <p class="text-gray-600">
+                        Safety is our top priority. We recommend consulting with your healthcare provider before
+                        starting any new fitness program. Upon joining, you can fill out a health questionnaire to
+                        inform our trainers about any limitations. Our coaches are trained to provide modifications for
+                        most common injuries and conditions. For specific concerns, we offer private consultations with
+                        trainers who specialize in rehabilitation exercises.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-4 mt-4">
+            <div class="font-bold">Didn’t find your answers? Reach us</div>
+            <div class="bg-green-500 w-[10vw]  px-8 py-3 text-center rounded-2xl">
+                <button>Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const arrow = this.querySelector('.faq-arrow');
+
+                    // Toggle active class for the current answer
+                    answer.classList.toggle('active');
+                    arrow.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

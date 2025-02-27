@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .carousel-slide.fade-out {
+            opacity: 0;
+        }
+
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        .fitness-carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fitness-carousel-slide {
+            display: flex;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .fitness-carousel-slide.fade-out {
+            opacity: 0;
+        }
+
+        .tab-indicator {
+            transition: transform 0.3s ease;
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background-color: #1b5e20;
+            border-radius: 9999px;
+            z-index: 0;
+        }
+
+        .tab-button {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .tab-container {
+            position: relative;
+        }
+
+        .carousel-image {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+
+        /* Gallery sections container for fade effect */
+        .gallery-sections {
+            transition: opacity 0.5s ease;
+        }
+
+        /* Make all sections same width */
+        .section-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <div class="container mx-auto px-4 py-8 max-w-7xl ">
+
+        <!-- Photos Section - Place this before the Tab Navigation -->
+        <div class="section-container mb-10">
+            <div class="max-w-7xl mx-auto">
+                <!-- Green Line and Photos Header -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-24 h-1 bg-green-500"></div>
+                    <h2 class="text-3xl font-bold">Photos</h2>
+                </div>
+        
+                <!-- Photos Description -->
+                <p class="text-gray-700 mb-8">
+                    Every picture tells a story of dedication, perseverance, and transformation. Our photo gallery showcases
+                    real journey of
+                    individuals who took the leap toward a healthier lifestyle. Let these inspiring before-and-after moments
+                    motivate you to start
+                    your own path to success!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <div class="tab-container flex rounded-full md:max-w-xl bg-gray-100 mb-8 relative ">
+            <div class="tab-indicator"></div>
+            <button id="gallery-tab"
+                class="tab-button w-1/2 py-3 px-6 rounded-full text-white focus:outline-none">Gallery</button>
+            <button id="transformation-tab"
+                class="tab-button w-1/2 py-3 px-6 rounded-full text-green-800 focus:outline-none">Transformation</button>
+        </div>
+
+        <!-- Content container - both sections -->
+        <div class="content-wrapper relative">
+            <!-- Wrapper for gallery sections -->
+            <div class="gallery-sections section-container">
+                <!-- Gallery Content -->
+                <div id="gallery-content" class="tab-content active">
+                    <h2 class="text-3xl font-semibold text-center mb-10">Gym workouts</h2>
+
+                    <!-- Carousel Container -->
+                    <div class="carousel-container max-w-6xl mx-auto">
+                        <div id="carousel-wrapper">
+                            <!-- Image slides - desktop view shows 3, mobile view shows 1 -->
+                            <div class="carousel-slide md:justify-between" id="slide-1">
+                                <div class="w-full md:w-[32%] flex-shrink-0">
+                                    <img src="images/page_7/lift.png" alt="Person doing pushup with weights"
+                                        class="carousel-image rounded-lg">
+                                </div>
+
+                                <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                    <img src="images/page_7/ex3.png" alt="Person lifting barbell"
+                                        class="carousel-image rounded-lg">
+                                </div>
+
+                                <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                    <img src="images/page_7/push upp.png" alt="Person doing another pushup variation"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+
+                            <!-- Mobile-only slides (for individual navigation) -->
+                            <div class="carousel-slide hidden" id="mobile-slide-1">
+                                <div class="w-full flex-shrink-0">
+                                    <img src="images/page_7/ex3.png" alt="Person lifting barbell"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide hidden" id="mobile-slide-2">
+                                <div class="w-full flex-shrink-0">
+                                    <img src="images/page_7/push upp.png" alt="Person doing another pushup variation"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+
+                            <!-- Set 2 -->
+                            <div class="carousel-slide md:justify-between hidden" id="slide-2">
+                                <div class="w-full md:w-[32%] flex-shrink-0">
+                                    <img src="images/page_7/lift.png" alt="Additional workout image 1"
+                                        class="carousel-image rounded-lg">
+                                </div>
+
+                                <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                    <img src="images/page_7/lift.png" alt="Additional workout image 2"
+                                        class="carousel-image rounded-lg">
+                                </div>
+
+                                <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                    <img src="images/page_7/lift.png" alt="Additional workout image 3"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+
+                            <!-- Mobile-only additional slides -->
+                            <div class="carousel-slide hidden" id="mobile-slide-3">
+                                <div class="w-full flex-shrink-0">
+                                    <img src="images/page_7/lift.png" alt="Additional workout image 2"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide hidden" id="mobile-slide-4">
+                                <div class="w-full flex-shrink-0">
+                                    <img src="images/page_7/lift.png" alt="Additional workout image 3"
+                                        class="carousel-image rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-center mt-8 space-x-4 gap-[30vw] md:gap-[20vw]">
+                            <button id="prev-btn"
+                                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            <button id="next-btn"
+                                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Content 2 (Fitness) -->
+                <section class="bg-white font-sans tab-content active" id="gallery-content-2">
+                    <div class="mx-auto max-w-6xl">
+                        <!-- Fitness Section Header -->
+                        <h2 class="text-3xl font-semibold text-center mb-10">Fitness</h2>
+
+                        <!-- Fitness Carousel Container -->
+                        <div class="fitness-carousel-container">
+                            <div id="fitness-carousel-wrapper">
+                                <!-- Set 1 -->
+                                <div class="fitness-carousel-slide md:justify-between" id="fitness-slide-1">
+                                    <div class="w-full md:w-[32%] flex-shrink-0">
+                                        <img src="images/page_7/dumbels.png" alt="Person lifting barbell"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+
+                                    <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                        <img src="images/page_7/lady_ex3.png" alt="Person with dumbbells"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+
+                                    <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                        <img src="images/page_7/streches.png" alt="People doing squats"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+
+                                <!-- Mobile-only slides (for individual navigation) -->
+                                <div class="fitness-carousel-slide hidden" id="fitness-mobile-slide-1">
+                                    <div class="w-full flex-shrink-0">
+                                        <img src="images/page_7/lady_ex3.png" alt="Person with dumbbells"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+
+                                <div class="fitness-carousel-slide hidden" id="fitness-mobile-slide-2">
+                                    <div class="w-full flex-shrink-0">
+                                        <img src="images/page_7/streches.png" alt="People doing squats"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+
+                                <!-- Set 2 -->
+                                <div class="fitness-carousel-slide md:justify-between hidden" id="fitness-slide-2">
+                                    <div class="w-full md:w-[32%] flex-shrink-0">
+                                        <img src="images/page_7/squats.png" alt="Person doing yoga"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+
+                                    <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                        <img src="images/page_7/Component 5.png" alt="Person doing push-ups"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+
+                                    <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
+                                        <img src="images/page_7/ex4.png" alt="Person doing pull-ups"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+
+                                <!-- Mobile-only additional slides -->
+                                <div class="fitness-carousel-slide hidden" id="fitness-mobile-slide-3">
+                                    <div class="w-full flex-shrink-0">
+                                        <img src="images/page_7/Component 5.png" alt="Person doing push-ups"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+
+                                <div class="fitness-carousel-slide hidden" id="fitness-mobile-slide-4">
+                                    <div class="w-full flex-shrink-0">
+                                        <img src="images/page_7/ex4.png" alt="Person doing pull-ups"
+                                            class="carousel-image rounded-lg">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <div class="flex justify-center mt-8 space-x-4 gap-[30vw] md:gap-[20vw]">
+                                <button id="fitness-prev-btn"
+                                    class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+
+                                <button id="fitness-next-btn"
+                                    class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Happy Clients Section -->
+                <section class="max-w-6xl mx-auto py-12 " id="gallery-content-3">
+                    <div class="flex flex-col justify-center items-center">
+                        <h2 class="text-4xl font-bold text-center mb-8">Happy Clients</h2>
+                        <div class="w-full flex flex-col md:flex-row gap-6 md:justify-between">
+                            <div class="w-full md:w-[32%] mb-6 md:mb-0 h-64 md:h-80">
+                                <img src="images/page_7/dumbels.png" alt="Group of happy clients outdoors"
+                                    class="w-full h-full rounded-2xl object-cover">
+                            </div>
+
+                            <div class="w-full md:w-[32%] mb-6 md:mb-0 h-64 md:h-80">
+                                <img src="images/page_7/lady_ex3.png" alt="Woman in outdoor setting"
+                                    class="w-full h-full rounded-2xl object-cover">
+                            </div>
+
+                            <div class="w-full md:w-[32%] h-64 md:h-80">
+                                <img src="images/page_7/streches.png" alt="Group of friends with arms around each other"
+                                    class="w-full h-full rounded-2xl object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Transformation Content -->
+            <div id="transformation-content" class="tab-content absolute top-0 left-0 w-full">
+                <div class="flex flex-col items-center justify-center gap-10 md:gap-[8vw] ">
+                    <!-- part 1 -->
+                    <div class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto">
+                        <!-- Before Image -->
+                        <div class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]">
+                            <img src="images/page_7/before1.png" alt="Before transformation" class="w-full rounded-lg">
+                            <div class="text-2xl md:text-4xl text-[#000] font-semibold">Before</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-800" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+
+                        <!-- After Image -->
+                        <div class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]">
+                            <img src="images/page_7/after1.png" alt="After transformation" class="w-full rounded-lg">
+                            <div class="text-2xl md:text-4xl text-black font-semibold">After</div>
+                        </div>
+                    </div>
+
+                    <!-- part 2 -->
+                    <div class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto">
+                        <!-- Before Image -->
+                        <div class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]">
+                            <img src="images/page_7/before1.png" alt="Before transformation" class="w-full rounded-lg">
+                            <div class="text-2xl md:text-4xl text-[#000] font-semibold">Before</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-800" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+
+                        <!-- After Image -->
+                        <div class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]">
+                            <img src="images/page_7/after1.png" alt="After transformation" class="w-full rounded-lg">
+                            <div class="text-2xl md:text-4xl text-black font-semibold">After</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize tab indicator position
+        const tabIndicator = document.querySelector('.tab-indicator');
+        const galleryTab = document.getElementById('gallery-tab');
+        const transformationTab = document.getElementById('transformation-tab');
+        const galleryContent = document.getElementById('gallery-content');
+        const galleryContent2 = document.getElementById('gallery-content-2');
+        const galleryContent3 = document.getElementById('gallery-content-3');
+        const transformationContent = document.getElementById('transformation-content');
+        const gallerySections = document.querySelector('.gallery-sections');
+
+        // Set initial position of tab indicator
+        function setInitialIndicatorPosition() {
+            tabIndicator.style.transform = 'translateX(0)';
+        }
+        setInitialIndicatorPosition();
+
+        // Tab functionality with transition
+        function switchToGalleryTab() {
+            // Move indicator
+            tabIndicator.style.transform = 'translateX(0)';
+
+            // Change text colors
+            galleryTab.classList.add('text-white');
+            galleryTab.classList.remove('text-green-800');
+            transformationTab.classList.add('text-green-800');
+            transformationTab.classList.remove('text-white');
+
+            // First fade out transformation content if it's visible
+            if (transformationContent.classList.contains('active')) {
+                transformationContent.style.opacity = '0';
+
+                setTimeout(() => {
+                    transformationContent.classList.remove('active');
+
+                    // Then fade in gallery sections
+                    gallerySections.style.opacity = '1';
+                    galleryContent.classList.add('active');
+                    galleryContent2.classList.add('active');
+                    galleryContent3.classList.add('active');
+
+                    // Reset transformation opacity for next time
+                    transformationContent.style.opacity = '';
+                }, 300);
+            }
+        }
+
+        function switchToTransformationTab() {
+            // Move indicator
+            tabIndicator.style.transform = 'translateX(100%)';
+
+            // Change text colors
+            transformationTab.classList.add('text-white');
+            transformationTab.classList.remove('text-green-800');
+            galleryTab.classList.add('text-green-800');
+            galleryTab.classList.remove('text-white');
+
+            // Fade out the entire gallery sections container
+            gallerySections.style.opacity = '0';
+
+            // After short transition, hide gallery and show transformation
+            setTimeout(() => {
+                transformationContent.classList.add('active');
+                galleryContent.classList.remove('active');
+                galleryContent2.classList.remove('active');
+                galleryContent3.classList.remove('active');
+            }, 300);
+        }
+
+        galleryTab.addEventListener('click', switchToGalleryTab);
+        transformationTab.addEventListener('click', switchToTransformationTab);
+
+        // Get all slides
+        const allDesktopSlides = [
+            document.getElementById('slide-1'),
+            document.getElementById('slide-2')
+        ];
+
+        // Get all mobile individual slides
+        const allMobileSlides = [
+            document.getElementById('slide-1'),
+            document.getElementById('mobile-slide-1'),
+            document.getElementById('mobile-slide-2'),
+            document.getElementById('slide-2'),
+            document.getElementById('mobile-slide-3'),
+            document.getElementById('mobile-slide-4')
+        ];
+
+        // Variables for tracking current slide
+        let currentSlide = 0;
+        let isMobile = window.innerWidth < 768;
+        let slides = isMobile ? allMobileSlides : allDesktopSlides;
+        let totalSlides = slides.length;
+
+        // Initialize: show first slide
+        slides[currentSlide].classList.remove('hidden');
+
+        function goToSlide(index) {
+            // Add fade-out class to current slide
+            slides[currentSlide].classList.add('fade-out');
+
+            setTimeout(() => {
+                // Hide current slide
+                slides[currentSlide].classList.add('hidden');
+                slides[currentSlide].classList.remove('fade-out');
+
+                // Update current slide index
+                currentSlide = index;
+
+                // Show new slide
+                slides[currentSlide].classList.remove('hidden');
+
+                // Force a reflow to ensure the opacity transition works
+                slides[currentSlide].offsetHeight;
+            }, 500); // Match with CSS transition time
+        }
+
+        // Navigation buttons for first carousel
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        prevBtn.addEventListener('click', () => {
+            const newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(newIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const newIndex = (currentSlide + 1) % totalSlides;
+            goToSlide(newIndex);
+        });
+
+        // Fitness carousel slides
+        const allFitnessDesktopSlides = [
+            document.getElementById('fitness-slide-1'),
+            document.getElementById('fitness-slide-2')
+        ];
+
+        // Get all fitness mobile individual slides
+        const allFitnessMobileSlides = [
+            document.getElementById('fitness-slide-1'),
+            document.getElementById('fitness-mobile-slide-1'),
+            document.getElementById('fitness-mobile-slide-2'),
+            document.getElementById('fitness-slide-2'),
+            document.getElementById('fitness-mobile-slide-3'),
+            document.getElementById('fitness-mobile-slide-4')
+        ];
+
+        // Variables for tracking current fitness slide
+        let fitnessCurrentSlide = 0;
+        let fitnessSlides = isMobile ? allFitnessMobileSlides : allFitnessDesktopSlides;
+        let fitnessTotalSlides = fitnessSlides.length;
+
+        // Initialize: show first fitness slide
+        fitnessSlides[fitnessCurrentSlide].classList.remove('hidden');
+
+        function goToFitnessSlide(index) {
+            // Add fade-out class to current slide
+            fitnessSlides[fitnessCurrentSlide].classList.add('fade-out');
+
+            setTimeout(() => {
+                // Hide current slide
+                fitnessSlides[fitnessCurrentSlide].classList.add('hidden');
+                fitnessSlides[fitnessCurrentSlide].classList.remove('fade-out');
+
+                // Update current slide index
+                fitnessCurrentSlide = index;
+
+                // Show new slide
+                fitnessSlides[fitnessCurrentSlide].classList.remove('hidden');
+
+                // Force a reflow to ensure the opacity transition works
+                fitnessSlides[fitnessCurrentSlide].offsetHeight;
+            }, 500); // Match with CSS transition time
+        }
+
+        // Navigation buttons for fitness carousel
+        const fitnessPrevBtn = document.getElementById('fitness-prev-btn');
+        const fitnessNextBtn = document.getElementById('fitness-next-btn');
+
+        fitnessPrevBtn.addEventListener('click', () => {
+            const newIndex = (fitnessCurrentSlide - 1 + fitnessTotalSlides) % fitnessTotalSlides;
+            goToFitnessSlide(newIndex);
+        });
+
+        fitnessNextBtn.addEventListener('click', () => {
+            const newIndex = (fitnessCurrentSlide + 1) % fitnessTotalSlides;
+            goToFitnessSlide(newIndex);
+        });
+
+        // Function to adjust slides for viewport size
+        function adjustForViewport() {
+            isMobile = window.innerWidth < 768;
+
+            // Reset current slides and update arrays based on screen size
+            if (isMobile) {
+                // Set appropriate slide arrays for mobile
+                slides = allMobileSlides;
+                fitnessSlides = allFitnessMobileSlides;
+
+                // Hide all slides first
+                allDesktopSlides.forEach(slide => slide.classList.add('hidden'));
+                allMobileSlides.forEach(slide => slide.classList.add('hidden'));
+                allFitnessDesktopSlides.forEach(slide => slide.classList.add('hidden'));
+                allFitnessMobileSlides.forEach(slide => slide.classList.add('hidden'));
+
+                // Show only the current mobile slides
+                slides[0].classList.remove('hidden');
+                fitnessSlides[0].classList.remove('hidden');
+
+                // Reset current slide indexes
+                currentSlide = 0;
+                fitnessCurrentSlide = 0;
+            } else {
+                // Set appropriate slide arrays for desktop
+                slides = allDesktopSlides;
+                fitnessSlides = allFitnessDesktopSlides;
+
+                // Hide all slides first
+                allDesktopSlides.forEach(slide => slide.classList.add('hidden'));
+                allMobileSlides.forEach(slide => slide.classList.add('hidden'));
+                allFitnessDesktopSlides.forEach(slide => slide.classList.add('hidden'));
+                allFitnessMobileSlides.forEach(slide => slide.classList.add('hidden'));
+
+                // Show only the current desktop slides
+                slides[0].classList.remove('hidden');
+                fitnessSlides[0].classList.remove('hidden');
+
+                // Reset current slide indexes
+                currentSlide = 0;
+                fitnessCurrentSlide = 0;
+
+                // Show the secondary and tertiary images in desktop view
+                const desktopImages = document.querySelectorAll('.md\\:block');
+                desktopImages.forEach(image => {
+                    image.classList.remove('hidden');
+                });
+            }
+
+            // Update total slides count
+            totalSlides = slides.length;
+            fitnessTotalSlides = fitnessSlides.length;
+        }
+
+        // Run on load and resize
+        adjustForViewport();
+        window.addEventListener('resize', adjustForViewport);
+    </script>
+</body>
+
+</html>

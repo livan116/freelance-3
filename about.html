@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health and Wellness Coaches</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/fonts.css" />
     <style>
       @media (max-width: 768px) {
         .content-container {
@@ -77,8 +81,8 @@
     </style>
   </head>
 
-  <body class="relative">
-     <!-- Navigation - Fixed at the top -->
+  <body class="relative font1">
+    <!-- Navigation - Fixed at the top -->
     <!-- nav section start -->
     <nav class="Navbar shadow-md fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto px-4">
@@ -207,18 +211,20 @@
     </div>
     <!-- nav section end -->
     <div class="font-sans bg-white">
-      <div class="container mx-auto px-4 py-8 max-w-6xl">
+      <div class="container mx-auto px-4 py-8 max-w-7xl">
         <!-- Story Section -->
-        <div class="mb-8 mt-16">
-          <h2 class="flex items-center text-2xl font-bold mb-6">
-            <span class="w-6 h-px bg-green-500 mr-3"></span>
-            <span>Our Story</span>
-          </h2>
+        <div class="mb-8 mt-20">
+          <div class="flex items-center md:mr-36 gap-4 mb-6">
+            <h2 class="content-Heading">
+              Our <span class="span-color">Story</span>
+            </h2>
+            <div class="h-1 w-12 bg-[#9AC339]"></div>
+          </div>
 
           <div class="flex content-container gap-8">
             <!-- Text Content -->
             <div class="flex-1">
-              <p class="text-gray-700 mb-6 leading-relaxed">
+              <p class="text-gray-700 mb-6 leading-relaxed body-text font1">
                 Our story is one of personal transformation and the desire to
                 help others achieve their health and wellness goals. As
                 physicians, we understand the importance of leading a healthy
@@ -226,8 +232,8 @@
                 life brings that can take a toll on our well-being.
               </p>
 
-              <ul class="space-y-4">
-                <li class="flex text-gray-700 leading-relaxed">
+              <ul class="space-y-4 font1">
+                <li class="flex text-gray-700 leading-relaxed body-text">
                   <span class="text-green-500 mr-2">•</span>
                   <span
                     >Individually, some of us faced excess weight gain during
@@ -235,7 +241,7 @@
                     work.</span
                   >
                 </li>
-                <li class="flex text-gray-700 leading-relaxed">
+                <li class="flex text-gray-700 leading-relaxed body-text">
                   <span class="text-green-500 mr-2">•</span>
                   <span
                     >Recognizing the impact these factors were having on our
@@ -243,7 +249,7 @@
                     into researching healthy nutrition.</span
                   >
                 </li>
-                <li class="flex text-gray-700 leading-relaxed">
+                <li class="flex text-gray-700 leading-relaxed body-text">
                   <span class="text-green-500 mr-2">•</span>
                   <span
                     >Through dedication and hard work, we were able to regain
@@ -251,7 +257,7 @@
                     happiness and well-being.</span
                   >
                 </li>
-                <li class="flex text-gray-700 leading-relaxed">
+                <li class="flex text-gray-700 leading-relaxed body-text">
                   <span class="text-green-500 mr-2">•</span>
                   <span
                     >Motivated by our own transformative experiences, we made
@@ -264,14 +270,14 @@
 
             <!-- Image Container -->
             <div class="flex-1 flex justify-center items-center">
-              <div class="relative w-full max-w-md">
-                <div
-                  class="rounded-full overflow-hidden border-8 border-green-500 border-opacity-30"
-                >
+              <div
+                class="relative h-[60vh] md:h-[78vh] md:w-[70vw] lg:w-[34vw] lg:h-[72vh]"
+              >
+                <div class="h-full">
                   <img
-                    src="images/about_images/ourStory.png"
+                    src="images/about_images/image.png"
                     alt="Group of wellness coaches with healthy food"
-                    class="w-full h-auto"
+                    class="w-full h-full border-r-[1.8vw] md:border-r-[1.3vw] rounded-full border-[#9AC339]"
                   />
                 </div>
               </div>
@@ -281,470 +287,605 @@
       </div>
     </div>
 
-    <div class="bg-white">
-      <div class="container mx-auto px-4 py-12 max-w-6xl">
-        <!-- Page Title Section -->
-        <div class="text-center mb-16">
-          <h2 class="inline-flex items-center text-2xl font-bold">
-            <span class="w-10 h-px bg-green-500 mr-3"></span>
-            Meet Our <span class="text-green-600 ml-2">Team</span>
-          </h2>
+    <!-- team start -->
+    <div class="bg-white p-4 flex justify-center">
+      <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <div class="flex justify-center items-center mb-8">
+          <h1 class="text-2xl md:text-3xl font-medium">
+            <span class="text-gray-700">Meet Our</span>
+            <span class="text-[#9AC339]">Team</span>
+          </h1>
         </div>
 
-        <!-- Team Grid -->
-        <div class="grid team-grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          <!-- Bala Reddy -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Bala Reddy"
-                class="mx-auto relative z-10"
-              />
-            </div>
-            <h3 class="font-bold text-lg">Bala Reddy</h3>
-            <p class="text-green-500 font-medium mb-4">Managing Director</p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Bala Reddy serves as the Managing Director, bringing a wealth of
-              experience and leadership to the role. With a keen strategic
-              vision and a deep understanding of the industry, Bala has been
-              instrumental in driving growth and innovation. Under his guidance,
-              the organization has achieved significant milestones, fostering a
-              culture of excellence and collaboration.
-            </p>
-          </div>
+        <!-- First Row of Team Members -->
+        <div class="relative mb-16">
+          <!-- Full width green background -->
+          <div
+            class="md:absolute md:bg-[#9AC339] md:w-full md:h-32 bottom-45 top-20"
+          ></div>
 
-          <!-- Dr. Saritha Kommareddy -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Dr. Saritha Kommareddy"
-                class="mx-auto relative z-10"
-              />
+          <!-- Grid container -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <!-- Bala Reddy -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team1.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Bala Reddy</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">Managing Director</h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Bala Reddy serves as the Managing Director, bringing a wealth
+                  of experience and leadership to the role. With a keen
+                  strategic vision and a deep understanding of the industry,
+                  Bala has been instrumental in driving growth and innovation.
+                  Under his guidance, the organization has achieved significant
+                  milestones, fostering a culture of excellence and
+                  collaboration.
+                </p>
+              </div>
             </div>
-            <h3 class="font-bold text-lg">Dr. Saritha Kommareddy</h3>
-            <p class="text-green-500 font-medium mb-4">
-              MBBS, MD, Certified Fitness Coach, Nutritionist, and Founder:
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Dr. Saritha is a medical professional with expertise in fitness
-              coaching and nutrition. With her personal journey of
-              transformation, she has become a certified fitness coach and
-              nutritionist. As the Founder, Saritha leads the team with her
-              passion for helping others achieve their health and wellness
-              goals.
-            </p>
-          </div>
 
-          <!-- Dr. Sireesha Reddy -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Dr. Sireesha Reddy"
-                class="mx-auto relative z-10"
-              />
+            <!-- Dr. Saritha Kommareddy -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team2.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Dr. Saritha Kommareddy</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  MBBS, MD, Certified Fitness Coach, Nutritionist, and Founder
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Dr. Saritha is a medical professional with expertise in
+                  fitness coaching and nutrition. With her personal journey of
+                  transformation, she has become a certified fitness coach and
+                  nutritionist. As the Founder, Saritha leads the team with her
+                  passion for helping others achieve their health and wellness
+                  goals.
+                </p>
+              </div>
             </div>
-            <h3 class="font-bold text-lg">Dr. Sireesha Reddy</h3>
-            <p class="text-green-500 font-medium mb-4">
-              MBBS, Certified Fitness Coach, and Co-Founder:
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Dr. Sireesha Reddy, MBBS, is a dedicated medical professional and
-              a certified fitness coach. She holds two MBBS degrees, showcasing
-              her extensive knowledge and expertise in the medical field. In
-              addition to her medical qualifications, Dr. Reddy has co-founded a
-              venture, demonstrating her entrepreneurial spirit and commitment
-              to promoting health and wellness. Her diverse background allows
-              her to provide holistic care, integrating medical and fitness
-              principles to enhance her patients' overall well-being.
-            </p>
-          </div>
 
-          <!-- Dr. Rajani Uppala -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Dr. Rajani Uppala"
-                class="mx-auto relative z-10"
-              />
+            <!-- Dr. Sireesha Reddy -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team3.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Dr. Sireesha Reddy</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  MBBS, Certified Fitness Coach, and Co-Founder
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Dr. Sireesha Reddy, MBBS, is a dedicated medical professional
+                  and a certified fitness coach. She holds two MBBS degrees.
+                  Showcasing her extensive knowledge and expertise in the
+                  medical field. In addition to her medical qualifications, Dr.
+                  Reddy has co-founded a venture, demonstrating her
+                  entrepreneurial spirit and commitment to promoting health and
+                  wellness. Her diverse background allows her to provide
+                  holistic care, integrating medical and fitness principles to
+                  enhance her patients' overall well-being.
+                </p>
+              </div>
             </div>
-            <h3 class="font-bold text-lg">Dr. Rajani Uppala</h3>
-            <p class="text-green-500 font-medium mb-4">
-              MBBS, DCH, and MD USA:
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
-              Surgery (MBBS) degree, along with a Diploma in Child Health (DCH).
-              Additionally, she has completed her Doctor of Medicine (MD)
-              training in the USA, showcasing her extensive expertise in the
-              medical field. She also has over five years of work experience in
-              the USA, further enhancing her clinical proficiency as a
-              pediatrician.
-            </p>
           </div>
+        </div>
 
-          <!-- Maithili Patibandla -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Maithili Patibandla"
-                class="mx-auto relative z-10"
-              />
+        <!-- Second Row of Team Members -->
+        <div class="relative">
+          <!-- Full width green background -->
+          <div
+            class="md:absolute md:bg-[#9AC339] md:w-full md:h-32 bottom-45 top-20"
+          ></div>
+
+          <!-- Grid container -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <!-- Dr. Rajani Uppala -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team3.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Dr. Rajani Uppala</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  MBBS, DCH, and MD USA
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
+                  Surgery (MBBS) degree along with a Diploma in Child Health
+                  (DCH). Additionally, she has completed her Doctor of Medicine
+                  (MD) training in the USA, showcasing her extensive expertise
+                  in the medical field. She also has over five years of work
+                  experience in the USA, further enhancing her clinical
+                  proficiency as a pediatrician.
+                </p>
+              </div>
             </div>
-            <h3 class="font-bold text-lg">Maithili Patibandla</h3>
-            <p class="text-green-500 font-medium mb-4">
-              Physiotherapist & Certified Elderly Wellness Trainer
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Maithili Patibandla is a dedicated and skilled physiotherapist
-              with expertise in fitness. She brings her passion for promoting
-              overall health and wellness through exercise and rehabilitation.
-              Her commitment to personalized fitness programs makes her an
-              exceptional addition to our team.
-            </p>
+
+            <!-- Maithili Patibandla -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team4.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Maithili Patibandla</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  Physiotherapist & Certified Healthy Wellness Trainer
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Maithili Patibandla is a dedicated and skilled physiotherapist
+                  with expertise in fitness. She brings her passion for
+                  promoting overall health and wellness through exercise and
+                  rehabilitation. Her commitment to personalized fitness
+                  programs makes her an exceptional addition to our team.
+                </p>
+              </div>
+            </div>
+
+            <!-- Dr. Rohini Reddy -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team3.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Dr. Rohini Reddy</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  MBBS, MD, Nutritionist and Certified Fitness Coach
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Rohini specializes in addressing digestive issues. Her medical
+                  expertise in this area allows her to provide guidance and
+                  support to individuals who may be dealing with digestive
+                  challenges. Her goal is to help clients improve their
+                  digestive health and overall well-being.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- Dr. Rohini Reddy -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team1.png"
-                alt="Dr. Rohini Reddy"
-                class="mx-auto relative z-10"
-              />
-            </div>
-            <h3 class="font-bold text-lg">Dr. Rohini Reddy</h3>
-            <p class="text-green-500 font-medium mb-4">
-              MBBS, MD, Nutritionist and Certified Fitness Trainer
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Rohini specializes in addressing digestive issues. Her medical
-              expertise in this area allows her to provide guidance and support
-              to individuals who may be dealing with digestive challenges. Her
-              goal is to help clients improve their digestive health and overall
-              well-being.
-            </p>
-          </div>
+        <!-- 3rd row of team members -->
 
-          <!-- Vijay Bhaskar Boyapati -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team2.png"
-                alt="Vijay Bhaskar Boyapati"
-                class="mx-auto relative z-10"
-              />
-            </div>
-            <h3 class="font-bold text-lg">Vijay Bhaskar Boyapati</h3>
-            <p class="text-green-500 font-medium mb-4">
-              CEO and Public Relations
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Vijay is responsible for handling human resources and public
-              relations. With his knowledge and experience, he ensures that the
-              team operates cohesively and maintains a positive relationship
-              with clients and the public. He plays a key role in ensuring a
-              supportive and welcoming environment for everyone involved.
-            </p>
-          </div>
+        <div class="relative mt-8 md:mt-12">
+          <!-- Full width green background -->
+          <div
+            class="md:absolute md:bg-[#9AC339] md:w-full md:h-32 bottom-45 top-20"
+          ></div>
 
-          <!-- Jayanthi -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="absolute left-0 top-1/4 w-8 h-20 bg-green-500"></div>
-              <div
-                class="absolute right-0 top-1/4 w-8 h-20 bg-green-500 md:hidden"
-              ></div>
-              <img
-                src="images/about_images/team2.png"
-                alt="Jayanthi"
-                class="mx-auto relative z-10"
-              />
+          <!-- Grid container -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <!-- Dr. Rajani Uppala -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team5.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Dr. Rajani Uppala</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  MBBS, DCH, and MD USA
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
+                  Surgery (MBBS) degree along with a Diploma in Child Health
+                  (DCH). Additionally, she has completed her Doctor of Medicine
+                  (MD) training in the USA, showcasing her extensive expertise
+                  in the medical field. She also has over five years of work
+                  experience in the USA, further enhancing her clinical
+                  proficiency as a pediatrician.
+                </p>
+              </div>
             </div>
-            <h3 class="font-bold text-lg">Jayanthi</h3>
-            <p class="text-green-500 font-medium mb-4">
-              Certified Fitness Trainer
-            </p>
-            <p class="text-gray-600 text-sm leading-relaxed px-4">
-              Jayanthi is a certified fitness trainer and yoga instructor with a
-              passion for helping others lead healthy, balanced lives. With
-              years of experience, she brings a deep understanding of both
-              fitness and yoga to her work. Her dedication and enthusiasm for
-              her craft make her a trusted guide for those seeking to improve
-              their physical and mental well-being.
-            </p>
-          </div>
 
-          <!-- Empty space with green block -->
-          <div class="team-member-card text-center">
-            <div class="relative mb-4 mx-auto max-w-xs">
-              <div class="w-full h-32 bg-green-500 mt-8"></div>
+            <!-- Maithili Patibandla -->
+            <div class="flex flex-col items-center">
+              <div class="flex justify-center items-center gap-4 md:none">
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+                <div class="z-10">
+                  <img
+                    src="images/about_images/team6.png"
+                    alt="Dr. Saritha Kommareddy"
+                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                  />
+                </div>
+                <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-gray-700 sub-title">Maithili Patibandla</h3>
+                <h4 class="text-[#9AC339] my-1 sub-title">
+                  Physiotherapist & Certified Healthy Wellness Trainer
+                </h4>
+                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                  Maithili Patibandla is a dedicated and skilled physiotherapist
+                  with expertise in fitness. She brings her passion for
+                  promoting overall health and wellness through exercise and
+                  rehabilitation. Her commitment to personalized fitness
+                  programs makes her an exceptional addition to our team.
+                </p>
+              </div>
             </div>
+
+            <!-- Dr. Rohini Reddy -->
           </div>
         </div>
       </div>
     </div>
+    <!-- team end -->
 
-    <div class="bg-white">
-      <div class="max-w-screen-xl mx-auto">
-        <!-- Main Container with dark green background -->
-        <div class="bg-green-900 p-8 md:p-12">
-          <!-- Title Section -->
-          <div class="flex items-center mb-8 md:mb-12">
-            <h2 class="text-white text-2xl md:text-3xl font-bold">
-              Our Clinic
-            </h2>
-            <div class="ml-4 h-1 w-8 bg-green-500"></div>
-          </div>
+    <!-- gallery start -->
+    <div class="bg-[#304E0C] p-6 md:p-10">
+      <!-- Gallery Heading Section -->
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center md:mr-36 gap-4 mb-6">
+          <h2 class="content-Heading text-white">Our Clinic</h2>
+          <div class="h-1 w-12 bg-[#9AC339]"></div>
+        </div>
+        <p class="text-white body-text mb-8">
+          They can turn into your instructor, your helper, your mentor.
+        </p>
 
-          <!-- Carousel Container -->
-          <div class="carousel-container">
-            <!-- Navigation Buttons -->
-            <div
-              class="nav-button nav-button-prev bg-green-600 hover:bg-green-500 w-8 h-8 md:w-12 md:h-12"
+        <!-- Carousel Container -->
+        <div class="relative">
+          <!-- Left Arrow -->
+          <button
+            id="prev-btn"
+            class="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
 
+          <!-- Carousel -->
+          <div class="overflow-hidden relative">
             <div
-              class="nav-button nav-button-next bg-green-600 hover:bg-green-500 w-8 h-8 md:w-12 md:h-12"
+              id="carousel"
+              class="carousel-container flex transition-transform duration-300 ease-in-out"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-
-            <!-- Carousel -->
-            <div class="carousel">
-              <!-- Image 1: Push-up with weights -->
-              <div class="carousel-item">
+              <!-- Image 1 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic1.png"
+                  src="images/gallery/img1.png"
                   alt="Person doing push-up with weights"
-                  class="w-full h-auto rounded-lg"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
 
-              <!-- Image 2: Deadlift -->
-              <div class="carousel-item">
+              <!-- Image 2 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic2.png"
-                  alt="Person doing deadlift"
-                  class="w-full h-auto rounded-lg"
+                  src="images/gallery/img2.png"
+                  alt="Person lifting weights"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
 
-              <!-- Image 3: Overhead press -->
-              <div class="carousel-item">
+              <!-- Image 3 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic3.png"
-                  alt="Person doing overhead press"
-                  class="w-full h-auto rounded-lg"
+                  src="images/gallery/img3.png"
+                  alt="Person with arms raised"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
-              <!-- Image 4: Overhead press -->
-              <div class="carousel-item">
+
+              <!-- Image 4 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic3.png"
-                  alt="Person doing overhead press"
-                  class="w-full h-auto rounded-lg"
+                  src="images/gallery/img4.png"
+                  alt="Person performing squat"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
-              <!-- Image 5: Overhead press -->
-              <div class="carousel-item">
+
+              <!-- Image 5 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic3.png"
-                  alt="Person doing overhead press"
-                  class="w-full h-auto rounded-lg"
+                  src="images/gallery/img5.png"
+                  alt="Person doing cardio"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
-              <!-- Image 6: Overhead press -->
-              <div class="carousel-item">
+
+              <!-- Image 6 -->
+              <div class="carousel-item p-2">
                 <img
-                  src="images/about_images/clinic3.png"
-                  alt="Person doing overhead press"
-                  class="w-full h-auto rounded-lg"
+                  src="images/gallery/img6.png"
+                  alt="Person stretching"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
                 />
               </div>
+
+              <!-- Image 7 -->
+              <div class="carousel-item p-2">
+                <img
+                  src="images/gallery/img7.png"
+                  alt="Group fitness class"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
+                />
+              </div>
+
+              <!-- Image 8 -->
+              <div class="carousel-item p-2">
+                <img
+                  src="images/gallery/img8.png"
+                  alt="Person on exercise machine"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
+                />
+              </div>
+
+              <!-- Image 9 -->
+              <div class="carousel-item p-2">
+                <img
+                  src="images/gallery/img9.png"
+                  alt="Person with exercise ball"
+                  class="w-full h-64 md:h-80 object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <button
+            id="next-btn"
+            class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <!-- Indicator Dots -->
+          <div class="flex justify-center mt-4">
+            <div class="flex space-x-2">
+              <button
+                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot active"
+                data-index="0"
+              ></button>
+              <button
+                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
+                data-index="1"
+              ></button>
+              <button
+                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
+                data-index="2"
+              ></button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- gallery end -->
+
+    <!-- footer start -->
+    <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20 mt-16">
+      <div class="container mx-auto">
+        <div class="lg:flex justify-between items-start">
+          <!-- Left Section (Logo and Description) -->
+          <div class="footer-left lg:w-1/4 mb-8 lg:mb-0">
+            <img src="images/logo.png" alt="Logo" class="mb-4" />
+            <p class="body-text mb-4">
+              We aim to empower our clients, helping them make sustainable
+              lifestyle changes, find joy in exercise, and develop healthy
+              eating habits that work for their individual preferences and
+              needs.
+            </p>
+          </div>
+
+          <!-- Middle Section (Pediatric Enquiries and FAQ) -->
+          <div class="footer-middle md:ml-8 lg:w-1/4 mb-8 lg:mb-0">
+            <div class="contact-info">
+              <!-- Dynamic Email with Gmail Link -->
+              <p class="flex items-center mb-2">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                  alt="Email"
+                  class="w-6 mr-2"
+                />
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fitness@s2healthylife.com"
+                  class="hover:underline"
+                  target="_blank"
+                  >fitness@s2healthylife.com</a
+                >
+              </p>
+              <!-- Dynamic Phone Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                  alt="Phone"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
+                  <a href="tel:+919949379073" class="hover:underline"
+                    >+91 9949379073</a
+                  >
+                  <a href="tel:+15128100136" class="hover:underline"
+                    >+1 (512) 810-0136</a
+                  >
+                </div>
+              </div>
+              <!-- Dynamic WhatsApp Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  alt="WhatsApp"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
+                  <a
+                    href="https://wa.me/919949379073"
+                    class="hover:underline"
+                    target="_blank"
+                    >+91 9949379073</a
+                  >
+                  <a
+                    href="https://wa.me/15128100136"
+                    class="hover:underline"
+                    target="_blank"
+                    >+1 (512) 810-0136</a
+                  >
+                </div>
+              </div>
+            </div>
+            <h4 class="text-xl mb-4 font-bold">
+              For Pediatric-Related Enquiries
+            </h4>
+            <p class="flex items-center mb-2">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                alt="Phone"
+                class="w-6 mr-2"
+              />
+              <a href="tel:+918125507159" class="hover:underline"
+                >+91 8125507159</a
+              >
+            </p>
+          </div>
+          <!-- FAQ start -->
+          <div class="footer-middle lg:w-1/4 md:ml-8">
+            <div class="flex flex-col gap-3">
+              <p>Quick Link</p>
+              <a href="#" class="text-white hover:underline mb-4 block"
+                >FAQ's</a
+              >
+            </div>
+          </div>
+          <!-- FAQ end -->
+          <!-- Right Section (Address and Social Links) -->
+          <div class="footer-right lg:w-1/4">
+            <h4 class="text-xl mb-4 font-bold">Hyderabad</h4>
+            <!-- Dynamic Location Link -->
+            <p class="flex items-center mb-2">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                alt="Location"
+                class="w-6 mr-2"
+              />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
+                target="_blank"
+                class="hover:underline"
+              >
+                S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,
+                100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,
+                Madhapur, Hyderabad, Telangana 500081
+              </a>
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons flex space-x-4 mt-4">
+              <a href="#" class="block">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                  alt="YouTube"
+                  class="w-6"
+                />
+              </a>
+              <a href="#" class="block">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                  alt="Instagram"
+                  class="w-6"
+                />
+              </a>
+              <a href="#" class="block">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  alt="Facebook"
+                  class="w-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright Section -->
+        <div class="text-center border-t border-gray-600 mt-8 pt-4">
+          <p class="text-sm">&copy; S2HealthyLife 2023. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
     <script src="js/script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.querySelector(".carousel");
-        const carouselItems = document.querySelectorAll(".carousel-item");
-        const prevBtn = document.querySelector(".nav-button-prev");
-        const nextBtn = document.querySelector(".nav-button-next");
-
-        let currentIndex = 0;
-        let startX, moveX, initialPosition;
-        let isDragging = false;
-
-        // Determine if we're in mobile view
-        function isMobileView() {
-          return window.innerWidth < 768;
-        }
-
-        // Update carousel position
-        function updateCarouselPosition() {
-          let slideWidth = carouselItems[0].offsetWidth;
-          let translateValue;
-
-          if (isMobileView()) {
-            // Mobile: show one slide at a time
-            translateValue = -currentIndex * slideWidth;
-          } else {
-            // Desktop: show all slides
-            translateValue = 0;
-          }
-
-          carousel.style.transform = `translateX(${translateValue}px)`;
-        }
-
-        // Navigate to next slide
-        function nextSlide() {
-          if (isMobileView()) {
-            if (currentIndex < carouselItems.length - 1) {
-              currentIndex++;
-              updateCarouselPosition();
-            }
-          }
-        }
-
-        // Navigate to previous slide
-        function prevSlide() {
-          if (isMobileView()) {
-            if (currentIndex > 0) {
-              currentIndex--;
-              updateCarouselPosition();
-            }
-          }
-        }
-
-        // Add click event listeners to navigation buttons
-        nextBtn.addEventListener("click", nextSlide);
-        prevBtn.addEventListener("click", prevSlide);
-
-        // Handle touch/mouse events for dragging
-        carousel.addEventListener("mousedown", dragStart);
-        carousel.addEventListener("touchstart", dragStart);
-
-        window.addEventListener("mouseup", dragEnd);
-        window.addEventListener("touchend", dragEnd);
-
-        window.addEventListener("mousemove", dragging);
-        window.addEventListener("touchmove", dragging);
-
-        // Recalculate on resize
-        window.addEventListener("resize", updateCarouselPosition);
-
-        // Initialize position
-        updateCarouselPosition();
-
-        // Drag start handler
-        function dragStart(e) {
-          isDragging = true;
-          startX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
-          initialPosition = carousel.getBoundingClientRect().left;
-
-          carousel.style.transition = "none";
-        }
-
-        // Dragging handler
-        function dragging(e) {
-          if (!isDragging) return;
-
-          e.preventDefault();
-          moveX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
-          const diff = moveX - startX;
-
-          if (isMobileView()) {
-            carousel.style.transform = `translateX(${
-              diff + -currentIndex * carouselItems[0].offsetWidth
-            }px)`;
-          }
-        }
-
-        // Drag end handler
-        function dragEnd() {
-          if (!isDragging) return;
-          isDragging = false;
-
-          carousel.style.transition = "transform 0.5s ease";
-
-          if (isMobileView()) {
-            const threshold = carouselItems[0].offsetWidth * 0.2;
-            const diff = moveX - startX;
-
-            if (diff < -threshold && currentIndex < carouselItems.length - 1) {
-              nextSlide();
-            } else if (diff > threshold && currentIndex > 0) {
-              prevSlide();
-            } else {
-              updateCarouselPosition();
-            }
-          }
-        }
-      });
-    </script>
   </body>
 </html>
