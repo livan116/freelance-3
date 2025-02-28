@@ -3,152 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services Page</title>
+    <title>Pediatric Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/fonts.css" />
     <style>
       :root {
-        --service-bg: #F5F9EA;
-        --para-color: #333333;
+        --service-bg: #f1f9e7;
+        --primary-color: #9ac339;
+        --secondary-color: #f1f9e7;
+        --para-color: #666;
       }
-      
-      /* Hide carousel elements by default */
+
+      body {
+        background-color: var(--service-bg);
+      }
+
+      /* Mobile Carousel Styles */
       .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+
+      .carousel-slide {
+        width: 100%;
         display: none;
       }
-      
-      .carousel-item {
-        display: none;
-      }
-      
-      .carousel-item.active {
+
+      .carousel-slide.active {
         display: block;
       }
-      
+
       .carousel-indicators {
         display: flex;
         justify-content: center;
-        margin-top: 1rem;
+        margin: 20px 0 10px;
+        gap: 10px;
       }
-      
-      .carousel-indicator {
-        height: 8px;
-        width: 8px;
+
+      .indicator {
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
-        background-color: #D1D5DB;
-        margin: 0 4px;
+        background-color: #ccc;
+        cursor: pointer;
       }
-      
-      .carousel-indicator.active {
-        background-color: #9AC339;
+
+      .indicator.active {
+        background-color: var(--primary-color);
       }
-      
-      /* Mobile styles */
-      @media (max-width: 768px) {
-        .services-grid {
-          display: none;
-        }
-        
-        .carousel-container {
-          display: block;
-        }
+
+      .carousel-nav {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        margin-top: 10px;
+        z-index: 10;
       }
-      
-      .sub-title {
-        font-weight: 600;
+
+      .nav-button {
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
         font-size: 24px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
-      
-      .content-Heading {
+
+      /* Service card styles for mobile */
+      .service-card {
+        position: relative;
+        background: white;
+        border-radius: 30px;
+        padding: 20px 16px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .gold-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 239, 181, 1) 0%,
+          rgba(255, 255, 255, 1) 75%
+        );
+      }
+
+      .peach-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 225, 217, 1) 0%,
+          rgba(255, 255, 255, 0.98) 75%
+        );
+      }
+
+      .blue-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(183, 214, 255, 1) 0%,
+          rgba(255, 255, 255, 0.98) 75%
+        );
+      }
+
+      .service-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin: 0 auto 20px;
+      }
+
+      .service-title {
+        font-size: 18px;
         font-weight: 600;
-        font-size: 28px;
+        margin-bottom: 12px;
+        color: #333;
       }
-      
-      .span-color {
-        color: #9AC339;
-      }
-      
-      .body-text {
+
+      .service-description {
+        font-size: 16px;
+        color: var(--para-color, #666);
         line-height: 1.6;
       }
-    </style>
-  </head>
-  <body class="font1 bg-white">
-    <!-- Page-specific content for Services -->
-    <section class="py-10 px-4 md:px-16 lg:px-24 mt-16">
-      <div class="w-full flex items-center gap-4">
-        <div class="h-1 w-12 bg-[#9AC339]"></div>
-        <h2 class="sub-title content-Heading">
-          Our <span class="span-color">Services</span>
-        </h2>
-      </div>
-      <p class="text-[--para-color] leading-9 body-text font1 mb-10 max-w-full">
-        We offer a comprehensive fitness program that includes individual and
-        group workout sessions, sessions for children, and personalized
-        nutrition guidance. This variety allows clients to choose the type of
-        training that suits their preferences and goals while promoting a
-        holistic approach to fitness and well-being.
-      </p>
 
-      <!-- onsite services start -->
-      <div class="bg-[--service-bg] rounded-lg p-6">
-        <div class="w-full flex items-center gap-4">
+      /* Services section container */
+      .services-section {
+        padding: 2rem;
+        background-color: var(--service-bg);
+        border-radius: 16px;
+      }
+
+      /* Service cards web view */
+      .service-web-card {
+        background: white;
+        border-radius: 30px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      /* Updated gradient styles for web view */
+      .gold-gradient-web {
+        background: linear-gradient(
+          180deg,
+          #c7ad37 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      .peach-gradient-web {
+        background: linear-gradient(
+          180deg,
+          #FFE1D9 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      .blue-gradient-web {
+        background: linear-gradient(
+          180deg,
+          #8AB9FF 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      .orange {
+        background: linear-gradient(
+          180deg,
+          #f9b01f 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      .sky-blue {
+        background: linear-gradient(
+          180deg,
+          #91e9ff 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      .violite {
+        background: linear-gradient(
+          180deg,
+          #9797fdff 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+
+      /* Image styling */
+      .card-image-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .card-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    </style>
+    <link rel="stylesheet" href="styles/services.css" />
+  </head>
+
+  <body class="font1">
+    <div id="services-container">
+      <!-- Content will be loaded here dynamically -->
+    </div>
+
+    <script>
+      // Store web view code in a variable
+      const webViewCode = `
+    <div class="services-section">
+        <div class="w-full flex items-center gap-4 mb-6 md:max-w-7xl ">
           <div class="h-1 w-12 bg-[#9AC339]"></div>
           <h2 class="content-Heading">
-            <span class="span-color">On</span>site Services
+            <span class="span-color">Onsite </span>Services
           </h2>
         </div>
-        <p class="text-[#131313] mb-8 mt-4 font-semibold">
+        <p class="text-[#131313] mb-6 mt-2 font-semibold">
           In-person pediatric care for illness treatment, health check-ups, and
           vaccination schedules.
         </p>
 
-        <!-- Desktop Grid View -->
-        <div class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class=" flex justify-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-14 md:gap-4 max-w-7xl mt-[20vh]">
           <!-- Card 1 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #c7ad37 0%, rgba(255, 255, 255, 1) 35%);"
-            data-title="Management of General Pediatric Illness (Newborn -18 years)"
-            data-description="The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns."
-            data-image="images/services/service1.png"
-          >
-            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card gold-gradient-web lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
                 src="images/services/service1.png"
                 alt="Pediatric Care"
-                class="w-52 h-52 object-cover"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">
+            <h4 class="sub-title mb-2">
               Management of General Pediatric Illness (Newborn -18 years)
             </h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
               The management of general pediatric care focuses on ensuring the
-              health and well-being of children from newborns to 18 years, with
-              attention to growth, development, and prevention of health
+              health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health
               concerns.
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, rgba(255, 225, 217, 1) 0%, rgba(255, 255, 255, 0.9809173669467787) 37%);"
-            data-title="Well Visits and Vaccines"
-            data-description="Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages."
-            data-image="images/services/service2.png"
-          >
-            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card peach-gradient-web lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
                 src="images/services/service2.png"
                 alt="Well Visits and Vaccines"
-                class="w-52 h-52 object-cover"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Well Visits and Vaccines</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+            <h4 class="sub-title mb-2">Well Visits and Vaccines</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
               Ensure your family's health with our comprehensive Well Visits and
               Vaccines, offering preventive care and essential immunizations for
               all ages.
@@ -156,24 +280,18 @@
           </div>
 
           <!-- Card 3 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, rgba(199, 173, 55, 1) 0%, rgba(255, 255, 255, 1) 35%);"
-            data-title="Medication & Counseling for ADHD, Autism, Anxiety and Depression"
-            data-description="Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey."
-            data-image="images/services/service3.png"
-          >
-            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card gold-gradient-web lg:h-[40vh] md:mt-[20vh] lg:mt-0">
+            <div class="card-image-container relative mb-8">
               <img
                 src="images/services/service3.png"
                 alt="Medication & Counseling"
-                class="w-52 h-52 object-cover"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">
+            <h4 class="sub-title mb-2">
               Medication & Counseling for ADHD, Autism, Anxiety and Depression
             </h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
               Our clinic offers comprehensive services for managing ADHD,
               Autism, Anxiety, and Depression, including personalized medication
               management and counseling to support your mental health journey.
@@ -181,397 +299,381 @@
           </div>
 
           <!-- Card 4 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, rgba(138, 185, 255, 1) 0%, rgba(255, 255, 255, 0.9809173669467787) 37%);"
-            data-title="Nebulization"
-            data-description="Our clinic offers professional nebulization services to effectively manage respiratory conditions."
-            data-image="images/services/service5.png"
-          >
-            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card blue-gradient-web mt-[20vh] lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
                 src="images/services/service5.png"
                 alt="Nebulization"
-                class="w-52 h-52 object-cover"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Nebulization</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+            <h4 class="sub-title mb-2">Nebulization</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
               Our clinic offers professional nebulization services to
               effectively manage respiratory conditions.
             </p>
           </div>
-        </div>
-
-        <!-- Mobile Carousel for Onsite Services -->
-        <div class="carousel-container relative">
-          <div class="onsite-carousel relative overflow-hidden">
-            <!-- Carousel content will be dynamically generated -->
-          </div>
-          
-          <!-- Carousel Controls -->
-          <button class="onsite-prev absolute left-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button class="onsite-next absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-          <!-- Carousel Indicators -->
-          <div class="onsite-indicators carousel-indicators mt-4"></div>
-        </div>
+        </div></div>
       </div>
-      <!-- onsite services end -->
 
-      <!-- online services start  -->
-      <div class="bg-[--service-bg] rounded-lg p-6 mt-8">
-        <div class="w-full flex items-center gap-4">
+      <!-- Online Services -->
+
+      <div class="services-section">
+        <div class="w-full flex items-center gap-4 mb-6 md:max-w-7xl ">
           <div class="h-1 w-12 bg-[#9AC339]"></div>
           <h2 class="content-Heading">
             <span class="span-color">Online </span>Services
           </h2>
         </div>
-        <p class="text-[#131313] mb-8 mt-4 font-semibold">
-          Empower your wellness with personalized nutrition counseling, tailored fitness programs, and specialized yoga sessions for all ages.
+        <p class="text-[#131313] mb-6 mt-2 font-semibold">
+          In-person pediatric care for illness treatment, health check-ups, and
+          vaccination schedules.
         </p>
 
-        <!-- Desktop Grid View -->
-        <div class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class=" flex justify-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-14 md:gap-4 max-w-7xl mt-[20vh]">
           <!-- Card 1 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #ffe1d9 0%, #ffffff 35%);"
-            data-title="Nutrition Sessions"
-            data-description="In addition to the workout sessions, we provide 1:1 nutrition sessions for personalized guidance on nutrition and healthy eating habits."
-            data-image="images/services/service12.png"
-          >
-            <div class="absolute -top-[25vh] left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card peach-gradient-web lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service12.png"
-                alt="Nutrition Sessions"
-                class="w-[25vw] h-[34vh] object-cover"
+                src="images/services/service1.png"
+                alt="Pediatric Care"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Nutrition Sessions</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              In addition to the workout sessions, we provide 1:1 nutrition
-              sessions for personalized guidance on nutrition and healthy eating
-              habits.
+            <h4 class="sub-title mb-2">
+              Nutrition Sessions
+            </h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              The management of general pediatric care focuses on ensuring the
+              health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health
+              concerns.
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #f9b01f 0%, #ffffff 37%);"
-            data-title="Workout Sessions"
-            data-description="We offer personalized 1:1 live workout sessions with a coach, tailored to your goals. Get at least two sessions per week, plus a custom workout plan for the rest of the week."
-            data-image="images/services/service6.png"
-          >
-            <div class="absolute -top-[26vh] left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card gold-gradient-web lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service6.png"
-                alt="Workout Sessions"
-                class="w-[40vw] h-[34vh]"
+                src="images/services/service2.png"
+                alt="Well Visits and Vaccines"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Workout Sessions</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              We offer personalized 1:1 live workout sessions with a coach,
-              tailored to your goals. Get at least two sessions per week, plus a
-              custom workout plan for the rest of the week.
+            <h4 class="sub-title mb-2">Well Visits and Vaccines</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Ensure your family's health with our comprehensive Well Visits and
+              Vaccines, offering preventive care and essential immunizations for
+              all ages.
             </p>
           </div>
 
+          
+          
+
           <!-- Card 3 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #8ab9ff 0%, #ffffff 35%);"
-            data-title="Group Workout Sessions"
-            data-description="We offer group workout sessions, which involve training with a small group of individuals. These sessions provide a supportive and motivating environment for participants."
-            data-image="images/services/service7.png"
-          >
-            <div class="absolute -top-[27vh] left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card gold-gradient-web lg:h-[40vh] md:mt-[20vh] lg:mt-0">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service7.png"
-                alt="Group Workout Sessions"
-                class="w-[45vw] h-[35vh]"
+                src="images/services/service3.png"
+                alt="Medication & Counseling"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Group Workout Sessions</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              We offer group workout sessions, which involve training with a
-              small group of individuals. These sessions provide a supportive
-              and motivating environment for participants. Three sessions per
-              week are available for individuals who prefer a group setting.
+            <h4 class="sub-title mb-2">
+              Medication & Counseling for ADHD, Autism, Anxiety and Depression
+            </h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Our clinic offers comprehensive services for managing ADHD,
+              Autism, Anxiety, and Depression, including personalized medication
+              management and counseling to support your mental health journey.
             </p>
           </div>
 
           <!-- Card 4 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #91e9ff 0%, #ffffff 37%);"
-            data-title="Workout Sessions for Children"
-            data-description="We offer tailored workout sessions for children of 8+ years, focusing on age-appropriate exercises and healthy habits. Three sessions per week are provided."
-            data-image="images/services/service8.png"
-          >
-            <div class="absolute -top-[26vh] left-1/2 transform -translate-x-1/2">
+          <div class="service-web-card blue-gradient-web mt-[20vh] lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service8.png"
-                alt="Workout Sessions for Children"
-                class="w-[45vw] h-[35vh]"
+                src="images/services/service5.png"
+                alt="Nebulization"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Workout Sessions for Children</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              We offer tailored workout sessions for children of 8+ years,
-              focusing on age-appropriate exercises and healthy habits. Three
-              sessions per week are provided.
+            <h4 class="sub-title mb-2">Nebulization</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Our clinic offers professional nebulization services to
+              effectively manage respiratory conditions.
             </p>
           </div>
 
-          <!-- Card 5 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #9797fd 0%, #ffffff 35%);"
-            data-title="Wellness Counselling"
-            data-description="Through personalized counseling sessions, our wellness counselor provides guidance on healthy eating, mindful exercise, and lifestyle habits."
-            data-image="images/services/service9.png"
-          >
-            <div class="absolute -top-[27vh] left-1/2 transform -translate-x-1/2">
+
+          <!--card -->
+          <div class="service-web-card blue-gradient-web mt-[20vh] lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service9.png"
-                alt="Wellness Counselling"
-                class="w-[45vw] h-[35vh]"
+                src="images/services/service5.png"
+                alt="Nebulization"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">Wellness Counselling</h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              Wellness sessions 1:1 & group sessions :Through personalized
-              counseling sessions , our wellness counselor provides guidance on
-              healthy eating, mindful exercise, and lifestyle habits. We help
-              identify emotional eating patterns, exercise barriers, and support
-              a sustainable wellness journey.
+            <h4 class="sub-title mb-2">Nebulization</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Our clinic offers professional nebulization services to
+              effectively manage respiratory conditions.
+            </p>
+          </div>
+
+          <!--card -->
+          <div class="service-web-card blue-gradient-web mt-[20vh] lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
+              <img
+                src="images/services/service5.png"
+                alt="Nebulization"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
+              />
+            </div>
+            <h4 class="sub-title mb-2">Nebulization</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Our clinic offers professional nebulization services to
+              effectively manage respiratory conditions.
             </p>
           </div>
           
-          <!-- Card 6 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #c7ad37 0%, #ffffff 35%);"
-            data-title="One-week Complementary Workouts"
-            data-description="We provide one-week complementary workouts to be completed within one week."
-            data-image="images/services/service10.png"
-          >
-            <div class="absolute -top-[24vh] left-1/2 transform -translate-x-1/2">
+          
+          <!--card -->
+          <div class="service-web-card blue-gradient-web mt-[20vh] lg:h-[40vh]">
+            <div class="card-image-container relative mb-8">
               <img
-                src="images/services/service10.png"
-                alt="Complementary Workouts"
-                class="w-52 h-52 object-cover"
+                src="images/services/service5.png"
+                alt="Nebulization"
+                class="card-image absolute h-[200px] w-[180px] -top-[27vh] lg:-top-[24vh]"
               />
             </div>
-            <h4 class="sub-title mb-3">
-              One-week Complementary Workouts
-            </h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              We provide one-week complementary workouts to be completed within one week.
+            <h4 class="sub-title mb-2">Nebulization</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              Our clinic offers professional nebulization services to
+              effectively manage respiratory conditions.
             </p>
           </div>
-          
-          <!-- Card 7 -->
-          <div
-            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
-            style="background: linear-gradient(180deg, #c7ad37 0%, #ffffff 35%);"
-            data-title="Specialized Programs"
-            data-description="Our specialized programs are designed to address specific fitness goals and health concerns with targeted exercises and nutrition plans."
-            data-image="images/services/service11.png"
-          >
-            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
-              <img
-                src="images/services/service11.png"
-                alt="Specialized Programs"
-                class="w-52 h-52 object-cover"
-              />
-            </div>
-            <h4 class="sub-title mb-3">
-              Specialized Programs
-            </h4>
-            <p class="text-[18px] text-[--para-color] leading-8 body-text">
-              Our specialized programs are designed to address specific fitness goals and health concerns with targeted exercises and nutrition plans.
+
+          <!--card -->
+        </div></div>
+      </div>
+    `;
+
+      // Store mobile view code in a variable
+      const mobileViewCode = `
+    <!-- Onsite Services Section -->
+    <div class="bg-[--service-bg] rounded-lg p-4 mb-8">
+      <div class="w-full flex items-center gap-4 mb-4">
+        <div class="h-1 w-12 bg-[#9AC339]"></div>
+        <h2 class="content-Heading">
+          <span class="span-color">Onsite </span>Services
+        </h2>
+      </div>
+      <p class="text-[#131313] mb-6 font-semibold text-center">
+        In-person pediatric care for illness treatment, health check-ups, and
+        vaccination schedules.
+      </p>
+
+      <div class="carousel-container onsite-carousel">
+        <div class="carousel-slide active">
+          <div class="service-card gold-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service1.png" alt="Management of General Pediatric Illness" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Management of General Pediatric Illness (Newborn -18 years)</h3>
+            <p class="service-description">
+              The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns.
             </p>
           </div>
         </div>
-
-        <!-- Mobile Carousel for Online Services -->
-        <div class="carousel-container relative">
-          <div class="online-carousel relative overflow-hidden">
-            <!-- Carousel content will be dynamically generated -->
+        
+        <div class="carousel-slide">
+          <div class="service-card peach-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service2.png" alt="Well Visits and Vaccines" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Well Visits and Vaccines</h3>
+            <p class="service-description">
+              Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages.
+            </p>
           </div>
-          
-          <!-- Carousel Controls -->
-          <button class="online-prev absolute left-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button class="online-next absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-          <!-- Carousel Indicators -->
-          <div class="online-indicators carousel-indicators mt-4"></div>
+        </div>
+        
+        <div class="carousel-slide">
+          <div class="service-card gold-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service3.png" alt="Medication & Counseling" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Medication & Counseling for ADHD, Autism, Anxiety and Depression</h3>
+            <p class="service-description">
+              Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-slide">
+          <div class="service-card blue-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service5.png" alt="Nebulization" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Nebulization</h3>
+            <p class="service-description">
+              Our clinic offers professional nebulization services to effectively manage respiratory conditions.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators">
+          <span class="indicator active" data-index="0"></span>
+          <span class="indicator" data-index="1"></span>
+          <span class="indicator" data-index="2"></span>
+          <span class="indicator" data-index="3"></span>
+        </div>
+        
+        <div class="carousel-nav">
+          <button class="nav-button prev-button">&#10094;</button>
+          <button class="nav-button next-button">&#10095;</button>
         </div>
       </div>
-      <!-- online services end -->
-    </section>
+    </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Create carousels from the service cards
-        createCarouselFromCards('onsite');
-        createCarouselFromCards('online');
-      });
-      
-      function createCarouselFromCards(type) {
-        // Select the appropriate section and cards
-        const section = type === 'onsite' ? 
-          document.querySelector('.onsite-carousel').parentNode.parentNode : 
-          document.querySelector('.online-carousel').parentNode.parentNode;
+    <!-- Online Services Section -->
+    <div class="bg-[--service-bg] rounded-lg p-4">
+      <div class="w-full flex items-center gap-4 mb-4">
+        <div class="h-1 w-12 bg-[#9AC339]"></div>
+        <h2 class="content-Heading">
+          <span class="span-color">Online </span>Services
+        </h2>
+      </div>
+      <p class="text-[#131313] mb-6 font-semibold text-center">
+        Virtual pediatric care options for consultations, follow-ups, and specialized services.
+      </p>
+
+      <div class="carousel-container online-carousel">
+        <div class="carousel-slide active">
+          <div class="service-card peach-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service1.png" alt="Nutrition Sessions" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Nutrition Sessions</h3>
+            <p class="service-description">
+              Expert nutrition guidance for children of all ages, addressing dietary needs, allergies, and promoting healthy eating habits for optimal growth and development.
+            </p>
+          </div>
+        </div>
         
-        const cards = Array.from(section.querySelectorAll('.service-card'));
-        const carouselContainer = section.querySelector(`.${type}-carousel`);
-        const indicatorsContainer = section.querySelector(`.${type}-indicators`);
+        <div class="carousel-slide">
+          <div class="service-card gold-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service2.png" alt="Virtual Consultations" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Virtual Consultations</h3>
+            <p class="service-description">
+              Convenient online consultations with our pediatric specialists for minor illnesses, follow-up appointments, and medical advice from the comfort of your home.
+            </p>
+          </div>
+        </div>
         
-        // Create carousel items
-        cards.forEach((card, index) => {
-          // Extract data from the card
-          const title = card.getAttribute('data-title');
-          const description = card.getAttribute('data-description');
-          const imageSrc = card.getAttribute('data-image');
-          
-          // Create carousel item
-          const carouselItem = document.createElement('div');
-          carouselItem.classList.add('carousel-item');
-          if (index === 0) carouselItem.classList.add('active');
-          
-          carouselItem.innerHTML = `
-            <div class="relative bg-[#FFFBEB] rounded-3xl p-6 pb-10">
-              <div class="flex">
-                <img src="${imageSrc}" alt="${title}" class="w-1/2 max-h-32 object-contain">
-                <div class="w-1/2 pl-4">
-                  <h3 class="text-black font-semibold text-lg mb-1">${title}</h3>
-                  <p class="text-sm text-gray-700">${description}</p>
-                </div>
-              </div>
-            </div>
-          `;
-          
-          carouselContainer.appendChild(carouselItem);
-          
-          // Create indicator
-          const indicator = document.createElement('div');
-          indicator.classList.add('carousel-indicator');
-          if (index === 0) indicator.classList.add('active');
-          indicatorsContainer.appendChild(indicator);
-        });
+        <div class="carousel-slide">
+          <div class="service-card gold-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service3.png" alt="Behavioral Health Counseling" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Behavioral Health Counseling</h3>
+            <p class="service-description">
+              Online counseling and therapy sessions for children and adolescents dealing with behavioral issues, anxiety, depression, and other mental health concerns.
+            </p>
+          </div>
+        </div>
         
-        // Initialize carousel
-        initializeCarousel(type);
+        <div class="carousel-slide">
+          <div class="service-card blue-gradient relative mt-[20vh] h-[50vh]">
+            <img src="images/services/service5.png" alt="Parent Education" class="service-image relative -top-[20vh] h-[30vh] w-[40vw]">
+            <h3 class="service-title -mt-[20vh]">Parent Education</h3>
+            <p class="service-description">
+              Interactive online sessions providing parents with guidance on child development, health management, and effective parenting techniques.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators">
+          <span class="indicator active" data-index="0"></span>
+          <span class="indicator" data-index="1"></span>
+          <span class="indicator" data-index="2"></span>
+          <span class="indicator" data-index="3"></span>
+        </div>
+        
+        <div class="carousel-nav">
+          <button class="nav-button prev-button">&#10094;</button>
+          <button class="nav-button next-button">&#10095;</button>
+        </div>
+      </div>
+    </div>
+    `;
+
+      // Function to determine which view to show
+      function loadAppropriateView() {
+        const servicesContainer = document.getElementById("services-container");
+        const isMobile = window.innerWidth < 768; // Define your breakpoint here
+
+        if (isMobile) {
+          servicesContainer.innerHTML = mobileViewCode;
+          
+          // Initialize both onsite and online carousels
+          initializeCarousel('onsite-carousel');
+          initializeCarousel('online-carousel');
+        } else {
+          servicesContainer.innerHTML = webViewCode;
+        }
       }
       
-      function initializeCarousel(type) {
-        const carousel = document.querySelector(`.${type}-carousel`).parentNode;
-        const items = carousel.querySelectorAll('.carousel-item');
-        const prevBtn = carousel.querySelector(`.${type}-prev`);
-        const nextBtn = carousel.querySelector(`.${type}-next`);
-        const indicators = carousel.querySelectorAll('.carousel-indicator');
-        let currentIndex = 0;
+      // Function to initialize a carousel
+      function initializeCarousel(carouselClass) {
+        const container = document.querySelector(`.${carouselClass}`);
+        if (!container) return;
         
-        // Set up indicators
-        indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', () => {
-            goToSlide(index);
+        const slides = container.querySelectorAll(".carousel-slide");
+        const indicators = container.querySelectorAll(".indicator");
+        const prevButton = container.querySelector(".prev-button");
+        const nextButton = container.querySelector(".next-button");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+          // Hide all slides
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+
+          // Deactivate all indicators
+          indicators.forEach((indicator) => {
+            indicator.classList.remove("active");
+          });
+
+          // Show current slide and activate indicator
+          slides[index].classList.add("active");
+          indicators[index].classList.add("active");
+        }
+
+        // Add click event to indicators
+        indicators.forEach((indicator) => {
+          indicator.addEventListener("click", function () {
+            currentIndex = parseInt(this.dataset.index);
+            showSlide(currentIndex);
           });
         });
-        
-        // Previous button click
-        prevBtn.addEventListener('click', () => {
-          goToSlide(currentIndex - 1);
+
+        // Add click event to previous button
+        prevButton.addEventListener("click", function () {
+          currentIndex =
+            currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+          showSlide(currentIndex);
         });
-        
-        // Next button click
-        nextBtn.addEventListener('click', () => {
-          goToSlide(currentIndex + 1);
-        });
-        
-        // Go to specific slide
-        function goToSlide(index) {
-          // Handle circular navigation
-          if (index < 0) {
-            index = items.length - 1;
-          } else if (index >= items.length) {
-            index = 0;
-          }
-          
-          // Remove active class from current
-          items[currentIndex].classList.remove('active');
-          indicators[currentIndex].classList.remove('active');
-          
-          // Add active class to new current
-          currentIndex = index;
-          items[currentIndex].classList.add('active');
-          indicators[currentIndex].classList.add('active');
-        }
-        
-        // Add touch swipe functionality for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        const carouselEl = carousel.querySelector(`.${type}-carousel`);
-        
-        carouselEl.addEventListener('touchstart', e => {
-          touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        carouselEl.addEventListener('touchend', e => {
-          touchEndX = e.changedTouches[0].screenX;
-          handleSwipe();
-        });
-        
-        function handleSwipe() {
-          if (touchEndX < touchStartX - 50) {
-            // Swipe left
-            goToSlide(currentIndex + 1);
-          } else if (touchEndX > touchStartX + 50) {
-            // Swipe right
-            goToSlide(currentIndex - 1);
-          }
-        }
-        
-        // Auto-cycle slides
-        let slideInterval = setInterval(() => {
-          goToSlide(currentIndex + 1);
-        }, 5000);
-        
-        // Pause on hover
-        carousel.addEventListener('mouseenter', () => {
-          clearInterval(slideInterval);
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-          slideInterval = setInterval(() => {
-            goToSlide(currentIndex + 1);
-          }, 5000);
+
+        // Add click event to next button
+        nextButton.addEventListener("click", function () {
+          currentIndex =
+            currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+          showSlide(currentIndex);
         });
       }
+
+      // Load the appropriate view when DOM is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        loadAppropriateView();
+
+        // Re-evaluate on window resize
+        window.addEventListener("resize", function () {
+          loadAppropriateView();
+        });
+      });
     </script>
   </body>
 </html>
