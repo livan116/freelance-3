@@ -3,303 +3,575 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Section</title>
+    <title>Services Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <style>
+      :root {
+        --service-bg: #F5F9EA;
+        --para-color: #333333;
+      }
+      
+      /* Hide carousel elements by default */
+      .carousel-container {
+        display: none;
+      }
+      
+      .carousel-item {
+        display: none;
+      }
+      
+      .carousel-item.active {
+        display: block;
+      }
+      
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      
+      .carousel-indicator {
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: #D1D5DB;
+        margin: 0 4px;
+      }
+      
+      .carousel-indicator.active {
+        background-color: #9AC339;
+      }
+      
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .services-grid {
+          display: none;
+        }
+        
+        .carousel-container {
+          display: block;
+        }
+      }
+      
+      .sub-title {
+        font-weight: 600;
+        font-size: 24px;
+      }
+      
+      .content-Heading {
+        font-weight: 600;
+        font-size: 28px;
+      }
+      
+      .span-color {
+        color: #9AC339;
+      }
+      
+      .body-text {
+        line-height: 1.6;
+      }
+    </style>
   </head>
-  <div class="bg-white p-4  flex justify-center">
-    <div class="container mx-auto px-4 py-8 max-w-7xl">
-      <!-- Header -->
-      <div class="flex justify-center items-center mb-8">
-        <h1 class="text-2xl md:text-3xl font-medium">
-          <span class="text-gray-700">Meet Our</span>
-          <span class="text-green-600">Team</span>
-        </h1>
+  <body class="font1 bg-white">
+    <!-- Page-specific content for Services -->
+    <section class="py-10 px-4 md:px-16 lg:px-24 mt-16">
+      <div class="w-full flex items-center gap-4">
+        <div class="h-1 w-12 bg-[#9AC339]"></div>
+        <h2 class="sub-title content-Heading">
+          Our <span class="span-color">Services</span>
+        </h2>
       </div>
+      <p class="text-[--para-color] leading-9 body-text font1 mb-10 max-w-full">
+        We offer a comprehensive fitness program that includes individual and
+        group workout sessions, sessions for children, and personalized
+        nutrition guidance. This variety allows clients to choose the type of
+        training that suits their preferences and goals while promoting a
+        holistic approach to fitness and well-being.
+      </p>
 
-      <!-- First Row of Team Members -->
-      <div class="relative mb-16">
-        <!-- Full width green background -->
-        <div
-          class="md:absolute md:bg-lime-500 md:w-full md:h-32 bottom-45 top-20"
-        ></div>
+      <!-- onsite services start -->
+      <div class="bg-[--service-bg] rounded-lg p-6">
+        <div class="w-full flex items-center gap-4">
+          <div class="h-1 w-12 bg-[#9AC339]"></div>
+          <h2 class="content-Heading">
+            <span class="span-color">On</span>site Services
+          </h2>
+        </div>
+        <p class="text-[#131313] mb-8 mt-4 font-semibold">
+          In-person pediatric care for illness treatment, health check-ups, and
+          vaccination schedules.
+        </p>
 
-        <!-- Grid container -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <!-- Bala Reddy -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="images/about_images/team1.png"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden md:hidden"></div>
+        <!-- Desktop Grid View -->
+        <div class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Card 1 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #c7ad37 0%, rgba(255, 255, 255, 1) 35%);"
+            data-title="Management of General Pediatric Illness (Newborn -18 years)"
+            data-description="The management of general pediatric care focuses on ensuring the health and well-being of children from newborns to 18 years, with attention to growth, development, and prevention of health concerns."
+            data-image="images/services/service1.png"
+          >
+            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service1.png"
+                alt="Pediatric Care"
+                class="w-52 h-52 object-cover"
+              />
             </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">Bala Reddy</h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                Managing Director
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Bala Reddy serves as the Managing Director, bringing a wealth of
-                experience and leadership to the role. With a keen strategic
-                vision and a deep understanding of the industry, Bala has been
-                instrumental in driving growth and innovation. Under his
-                guidance, the organization has achieved significant milestones,
-                fostering a culture of excellence and collaboration.
-              </p>
-            </div>
+            <h4 class="sub-title mb-3">
+              Management of General Pediatric Illness (Newborn -18 years)
+            </h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              The management of general pediatric care focuses on ensuring the
+              health and well-being of children from newborns to 18 years, with
+              attention to growth, development, and prevention of health
+              concerns.
+            </p>
           </div>
 
-          <!-- Dr. Saritha Kommareddy -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="images/about_images/team2.png"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
+          <!-- Card 2 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, rgba(255, 225, 217, 1) 0%, rgba(255, 255, 255, 0.9809173669467787) 37%);"
+            data-title="Well Visits and Vaccines"
+            data-description="Ensure your family's health with our comprehensive Well Visits and Vaccines, offering preventive care and essential immunizations for all ages."
+            data-image="images/services/service2.png"
+          >
+            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service2.png"
+                alt="Well Visits and Vaccines"
+                class="w-52 h-52 object-cover"
+              />
             </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Dr. Saritha Kommareddy
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                MBBS, MD, Certified Fitness Coach, Nutritionist, and Founder
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Dr. Saritha is a medical professional with expertise in fitness
-                coaching and nutrition. With her personal journey of
-                transformation, she has become a certified fitness coach and
-                nutritionist. As the Founder, Saritha leads the team with her
-                passion for helping others achieve their health and wellness
-                goals.
-              </p>
-            </div>
+            <h4 class="sub-title mb-3">Well Visits and Vaccines</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              Ensure your family's health with our comprehensive Well Visits and
+              Vaccines, offering preventive care and essential immunizations for
+              all ages.
+            </p>
           </div>
 
-          <!-- Dr. Sireesha Reddy -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
+          <!-- Card 3 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, rgba(199, 173, 55, 1) 0%, rgba(255, 255, 255, 1) 35%);"
+            data-title="Medication & Counseling for ADHD, Autism, Anxiety and Depression"
+            data-description="Our clinic offers comprehensive services for managing ADHD, Autism, Anxiety, and Depression, including personalized medication management and counseling to support your mental health journey."
+            data-image="images/services/service3.png"
+          >
+            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service3.png"
+                alt="Medication & Counseling"
+                class="w-52 h-52 object-cover"
+              />
             </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Dr. Sireesha Reddy
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                MBBS, Certified Fitness Coach, and Co-Founder
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Dr. Sireesha Reddy, MBBS, is a dedicated medical professional
-                and a certified fitness coach. She holds two MBBS degrees.
-                Showcasing her extensive knowledge and expertise in the medical
-                field. In addition to her medical qualifications, Dr. Reddy has
-                co-founded a venture, demonstrating her entrepreneurial spirit
-                and commitment to promoting health and wellness. Her diverse
-                background allows her to provide holistic care, integrating
-                medical and fitness principles to enhance her patients' overall
-                well-being.
-              </p>
+            <h4 class="sub-title mb-3">
+              Medication & Counseling for ADHD, Autism, Anxiety and Depression
+            </h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              Our clinic offers comprehensive services for managing ADHD,
+              Autism, Anxiety, and Depression, including personalized medication
+              management and counseling to support your mental health journey.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, rgba(138, 185, 255, 1) 0%, rgba(255, 255, 255, 0.9809173669467787) 37%);"
+            data-title="Nebulization"
+            data-description="Our clinic offers professional nebulization services to effectively manage respiratory conditions."
+            data-image="images/services/service5.png"
+          >
+            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service5.png"
+                alt="Nebulization"
+                class="w-52 h-52 object-cover"
+              />
             </div>
+            <h4 class="sub-title mb-3">Nebulization</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              Our clinic offers professional nebulization services to
+              effectively manage respiratory conditions.
+            </p>
           </div>
         </div>
-      </div>
 
-      <!-- Second Row of Team Members -->
-      <div class="relative">
-        <!-- Full width green background -->
-        <div
-          class="md:absolute md:bg-lime-500 md:w-full md:h-32 bottom-45 top-20"
-        ></div>
-
-        <!-- Grid container -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <!-- Dr. Rajani Uppala -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Dr. Rajani Uppala
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                MBBS, DCH, and MD USA
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
-                Surgery (MBBS) degree along with a Diploma in Child Health
-                (DCH). Additionally, she has completed her Doctor of Medicine
-                (MD) training in the USA, showcasing her extensive expertise in
-                the medical field. She also has over five years of work
-                experience in the USA, further enhancing her clinical
-                proficiency as a pediatrician.
-              </p>
-            </div>
+        <!-- Mobile Carousel for Onsite Services -->
+        <div class="carousel-container relative">
+          <div class="onsite-carousel relative overflow-hidden">
+            <!-- Carousel content will be dynamically generated -->
           </div>
-
-          <!-- Maithili Patibandla -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Maithili Patibandla
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                Physiotherapist & Certified Healthy Wellness Trainer
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Maithili Patibandla is a dedicated and skilled physiotherapist
-                with expertise in fitness. She brings her passion for promoting
-                overall health and wellness through exercise and rehabilitation.
-                Her commitment to personalized fitness programs makes her an
-                exceptional addition to our team.
-              </p>
-            </div>
-          </div>
-
-          <!-- Dr. Rohini Reddy -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Dr. Rohini Reddy
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                MBBS, MD, Nutritionist and Certified Fitness Coach
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Rohini specializes in addressing digestive issues. Her medical
-                expertise in this area allows her to provide guidance and
-                support to individuals who may be dealing with digestive
-                challenges. Her goal is to help clients improve their digestive
-                health and overall well-being.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3rd row of team members -->
-
-      <div class="relative">
-        <!-- Full width green background -->
-        <div
-          class="md:absolute md:bg-lime-500 md:w-full md:h-32 bottom-45 top-20"
-        ></div>
-
-        <!-- Grid container -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <!-- Dr. Rajani Uppala -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Dr. Rajani Uppala
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                MBBS, DCH, and MD USA
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
-                Surgery (MBBS) degree along with a Diploma in Child Health
-                (DCH). Additionally, she has completed her Doctor of Medicine
-                (MD) training in the USA, showcasing her extensive expertise in
-                the medical field. She also has over five years of work
-                experience in the USA, further enhancing her clinical
-                proficiency as a pediatrician.
-              </p>
-            </div>
-          </div>
-
-          <!-- Maithili Patibandla -->
-          <div class="flex flex-col items-center">
-            <div class="flex justify-center items-center gap-4 md:none">
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-              <div class="z-10">
-                <img
-                  src="https://i.ibb.co/DgvB7yd/saritha.jpg"
-                  alt="Dr. Saritha Kommareddy"
-                  class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                />
-              </div>
-              <div class="h-32 bg-lime-500 w-2 md:hidden"></div>
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-gray-700 font-medium text-lg">
-                Maithili Patibandla
-              </h3>
-              <h4 class="text-green-600 text-sm font-medium my-1">
-                Physiotherapist & Certified Healthy Wellness Trainer
-              </h4>
-              <p class="text-gray-600 text-xs leading-tight mt-2 px-4">
-                Maithili Patibandla is a dedicated and skilled physiotherapist
-                with expertise in fitness. She brings her passion for promoting
-                overall health and wellness through exercise and rehabilitation.
-                Her commitment to personalized fitness programs makes her an
-                exceptional addition to our team.
-              </p>
-            </div>
-          </div>
-
-          <!-- Dr. Rohini Reddy -->
           
+          <!-- Carousel Controls -->
+          <button class="onsite-prev absolute left-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button class="onsite-next absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          <!-- Carousel Indicators -->
+          <div class="onsite-indicators carousel-indicators mt-4"></div>
         </div>
       </div>
-    </div>
-  </div>
+      <!-- onsite services end -->
+
+      <!-- online services start  -->
+      <div class="bg-[--service-bg] rounded-lg p-6 mt-8">
+        <div class="w-full flex items-center gap-4">
+          <div class="h-1 w-12 bg-[#9AC339]"></div>
+          <h2 class="content-Heading">
+            <span class="span-color">Online </span>Services
+          </h2>
+        </div>
+        <p class="text-[#131313] mb-8 mt-4 font-semibold">
+          Empower your wellness with personalized nutrition counseling, tailored fitness programs, and specialized yoga sessions for all ages.
+        </p>
+
+        <!-- Desktop Grid View -->
+        <div class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Card 1 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #ffe1d9 0%, #ffffff 35%);"
+            data-title="Nutrition Sessions"
+            data-description="In addition to the workout sessions, we provide 1:1 nutrition sessions for personalized guidance on nutrition and healthy eating habits."
+            data-image="images/services/service12.png"
+          >
+            <div class="absolute -top-[25vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service12.png"
+                alt="Nutrition Sessions"
+                class="w-[25vw] h-[34vh] object-cover"
+              />
+            </div>
+            <h4 class="sub-title mb-3">Nutrition Sessions</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              In addition to the workout sessions, we provide 1:1 nutrition
+              sessions for personalized guidance on nutrition and healthy eating
+              habits.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #f9b01f 0%, #ffffff 37%);"
+            data-title="Workout Sessions"
+            data-description="We offer personalized 1:1 live workout sessions with a coach, tailored to your goals. Get at least two sessions per week, plus a custom workout plan for the rest of the week."
+            data-image="images/services/service6.png"
+          >
+            <div class="absolute -top-[26vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service6.png"
+                alt="Workout Sessions"
+                class="w-[40vw] h-[34vh]"
+              />
+            </div>
+            <h4 class="sub-title mb-3">Workout Sessions</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              We offer personalized 1:1 live workout sessions with a coach,
+              tailored to your goals. Get at least two sessions per week, plus a
+              custom workout plan for the rest of the week.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #8ab9ff 0%, #ffffff 35%);"
+            data-title="Group Workout Sessions"
+            data-description="We offer group workout sessions, which involve training with a small group of individuals. These sessions provide a supportive and motivating environment for participants."
+            data-image="images/services/service7.png"
+          >
+            <div class="absolute -top-[27vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service7.png"
+                alt="Group Workout Sessions"
+                class="w-[45vw] h-[35vh]"
+              />
+            </div>
+            <h4 class="sub-title mb-3">Group Workout Sessions</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              We offer group workout sessions, which involve training with a
+              small group of individuals. These sessions provide a supportive
+              and motivating environment for participants. Three sessions per
+              week are available for individuals who prefer a group setting.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #91e9ff 0%, #ffffff 37%);"
+            data-title="Workout Sessions for Children"
+            data-description="We offer tailored workout sessions for children of 8+ years, focusing on age-appropriate exercises and healthy habits. Three sessions per week are provided."
+            data-image="images/services/service8.png"
+          >
+            <div class="absolute -top-[26vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service8.png"
+                alt="Workout Sessions for Children"
+                class="w-[45vw] h-[35vh]"
+              />
+            </div>
+            <h4 class="sub-title mb-3">Workout Sessions for Children</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              We offer tailored workout sessions for children of 8+ years,
+              focusing on age-appropriate exercises and healthy habits. Three
+              sessions per week are provided.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #9797fd 0%, #ffffff 35%);"
+            data-title="Wellness Counselling"
+            data-description="Through personalized counseling sessions, our wellness counselor provides guidance on healthy eating, mindful exercise, and lifestyle habits."
+            data-image="images/services/service9.png"
+          >
+            <div class="absolute -top-[27vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service9.png"
+                alt="Wellness Counselling"
+                class="w-[45vw] h-[35vh]"
+              />
+            </div>
+            <h4 class="sub-title mb-3">Wellness Counselling</h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              Wellness sessions 1:1 & group sessions :Through personalized
+              counseling sessions , our wellness counselor provides guidance on
+              healthy eating, mindful exercise, and lifestyle habits. We help
+              identify emotional eating patterns, exercise barriers, and support
+              a sustainable wellness journey.
+            </p>
+          </div>
+          
+          <!-- Card 6 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #c7ad37 0%, #ffffff 35%);"
+            data-title="One-week Complementary Workouts"
+            data-description="We provide one-week complementary workouts to be completed within one week."
+            data-image="images/services/service10.png"
+          >
+            <div class="absolute -top-[24vh] left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service10.png"
+                alt="Complementary Workouts"
+                class="w-52 h-52 object-cover"
+              />
+            </div>
+            <h4 class="sub-title mb-3">
+              One-week Complementary Workouts
+            </h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              We provide one-week complementary workouts to be completed within one week.
+            </p>
+          </div>
+          
+          <!-- Card 7 -->
+          <div
+            class="service-card relative bg-white rounded-[30px] shadow-lg max-w-sm text-center px-6 pt-20 pb-8 mx-4 mt-[10vw]"
+            style="background: linear-gradient(180deg, #c7ad37 0%, #ffffff 35%);"
+            data-title="Specialized Programs"
+            data-description="Our specialized programs are designed to address specific fitness goals and health concerns with targeted exercises and nutrition plans."
+            data-image="images/services/service11.png"
+          >
+            <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
+              <img
+                src="images/services/service11.png"
+                alt="Specialized Programs"
+                class="w-52 h-52 object-cover"
+              />
+            </div>
+            <h4 class="sub-title mb-3">
+              Specialized Programs
+            </h4>
+            <p class="text-[18px] text-[--para-color] leading-8 body-text">
+              Our specialized programs are designed to address specific fitness goals and health concerns with targeted exercises and nutrition plans.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel for Online Services -->
+        <div class="carousel-container relative">
+          <div class="online-carousel relative overflow-hidden">
+            <!-- Carousel content will be dynamically generated -->
+          </div>
+          
+          <!-- Carousel Controls -->
+          <button class="online-prev absolute left-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button class="online-next absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#9AC339] rounded-full w-8 h-8 flex items-center justify-center z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          <!-- Carousel Indicators -->
+          <div class="online-indicators carousel-indicators mt-4"></div>
+        </div>
+      </div>
+      <!-- online services end -->
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Create carousels from the service cards
+        createCarouselFromCards('onsite');
+        createCarouselFromCards('online');
+      });
+      
+      function createCarouselFromCards(type) {
+        // Select the appropriate section and cards
+        const section = type === 'onsite' ? 
+          document.querySelector('.onsite-carousel').parentNode.parentNode : 
+          document.querySelector('.online-carousel').parentNode.parentNode;
+        
+        const cards = Array.from(section.querySelectorAll('.service-card'));
+        const carouselContainer = section.querySelector(`.${type}-carousel`);
+        const indicatorsContainer = section.querySelector(`.${type}-indicators`);
+        
+        // Create carousel items
+        cards.forEach((card, index) => {
+          // Extract data from the card
+          const title = card.getAttribute('data-title');
+          const description = card.getAttribute('data-description');
+          const imageSrc = card.getAttribute('data-image');
+          
+          // Create carousel item
+          const carouselItem = document.createElement('div');
+          carouselItem.classList.add('carousel-item');
+          if (index === 0) carouselItem.classList.add('active');
+          
+          carouselItem.innerHTML = `
+            <div class="relative bg-[#FFFBEB] rounded-3xl p-6 pb-10">
+              <div class="flex">
+                <img src="${imageSrc}" alt="${title}" class="w-1/2 max-h-32 object-contain">
+                <div class="w-1/2 pl-4">
+                  <h3 class="text-black font-semibold text-lg mb-1">${title}</h3>
+                  <p class="text-sm text-gray-700">${description}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          carouselContainer.appendChild(carouselItem);
+          
+          // Create indicator
+          const indicator = document.createElement('div');
+          indicator.classList.add('carousel-indicator');
+          if (index === 0) indicator.classList.add('active');
+          indicatorsContainer.appendChild(indicator);
+        });
+        
+        // Initialize carousel
+        initializeCarousel(type);
+      }
+      
+      function initializeCarousel(type) {
+        const carousel = document.querySelector(`.${type}-carousel`).parentNode;
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = carousel.querySelector(`.${type}-prev`);
+        const nextBtn = carousel.querySelector(`.${type}-next`);
+        const indicators = carousel.querySelectorAll('.carousel-indicator');
+        let currentIndex = 0;
+        
+        // Set up indicators
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            goToSlide(index);
+          });
+        });
+        
+        // Previous button click
+        prevBtn.addEventListener('click', () => {
+          goToSlide(currentIndex - 1);
+        });
+        
+        // Next button click
+        nextBtn.addEventListener('click', () => {
+          goToSlide(currentIndex + 1);
+        });
+        
+        // Go to specific slide
+        function goToSlide(index) {
+          // Handle circular navigation
+          if (index < 0) {
+            index = items.length - 1;
+          } else if (index >= items.length) {
+            index = 0;
+          }
+          
+          // Remove active class from current
+          items[currentIndex].classList.remove('active');
+          indicators[currentIndex].classList.remove('active');
+          
+          // Add active class to new current
+          currentIndex = index;
+          items[currentIndex].classList.add('active');
+          indicators[currentIndex].classList.add('active');
+        }
+        
+        // Add touch swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const carouselEl = carousel.querySelector(`.${type}-carousel`);
+        
+        carouselEl.addEventListener('touchstart', e => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carouselEl.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+        
+        function handleSwipe() {
+          if (touchEndX < touchStartX - 50) {
+            // Swipe left
+            goToSlide(currentIndex + 1);
+          } else if (touchEndX > touchStartX + 50) {
+            // Swipe right
+            goToSlide(currentIndex - 1);
+          }
+        }
+        
+        // Auto-cycle slides
+        let slideInterval = setInterval(() => {
+          goToSlide(currentIndex + 1);
+        }, 5000);
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(slideInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+          slideInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+          }, 5000);
+        });
+      }
+    </script>
+  </body>
 </html>
