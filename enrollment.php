@@ -125,9 +125,10 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     <link rel="stylesheet" href="styles/fonts.css">
+    
 </head>
 
-<body class="bg-white text-gray-800 p-4 md:p-8 max-w-5xl mx-auto">
+<body class="bg-white font1 text-gray-800 p-4 md:p-8 max-w-7xl mx-auto">
     <!-- Header -->
     <div class="pb-2 mb-6">
         <h1 class="heading font-semibold flex items-center">
@@ -200,7 +201,7 @@ if (isset($_POST['submit'])) {
                 <div class="md:col-span-2">
                     <label for="address" class="block body-text mb-1">Address <span class="text-red-500">*</span></label>
                     <textarea id="address" name="address" placeholder="Enter Full Address" rows="1"
-                        class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none"><?php echo $address ?? ''; ?></textarea>
+                        class="w-full p-2 border h-28 rounded focus:ring-2 focus:ring-green-300 focus:outline-none"><?php echo $address ?? ''; ?></textarea>
                 </div>
             </div>
 
@@ -344,93 +345,93 @@ if (isset($_POST['submit'])) {
                     class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none"><?php echo $limitationDetails ?? ''; ?></textarea>
             </div>
 
-            <p class="mt-4 text-sm">By completing this section, you acknowledge that the provided information is accurate and that you have disclosed any relevant health conditions or concerns that may affect your participation in the exercise program.</p>
+            <p class="mt-4 ">By completing this section, you acknowledge that the provided information is accurate and that you have disclosed any relevant health conditions or concerns that may affect your participation in the exercise program.</p>
         </div>
 
         <!-- 3. Release and Waiver of Liability -->
         <div>
             <h2 class="sub-title font-semibold mb-2">3. Release and Waiver of Liability:</h2>
-            <p class="text-sm mb-4">I, the undersigned participant, hereby release S2Healthylife management, staff, and trainers conducting the exercise program from any liability or responsibility for injuries, accidents, or damages that may occur during or as a result of participation in the exercise activities.</p>
+            <p class=" mb-4">I, the undersigned participant, hereby release S2Healthylife management, staff, and trainers conducting the exercise program from any liability or responsibility for injuries, accidents, or damages that may occur during or as a result of participation in the exercise activities.</p>
         </div>
 
         <!-- 4. Indemnification -->
         <div>
             <h2 class="sub-title font-semibold mb-2">4. Indemnification:</h2>
-            <p class="text-sm mb-4">The participants agrees indemnify and hold harmless S2Healthylife management, staff and trainers conducting the exercise program from any claims, damages or losses arising from their participation.</p>
+            <p class="mb-4">The participants agrees indemnify and hold harmless S2Healthylife management, staff and trainers conducting the exercise program from any claims, damages or losses arising from their participation.</p>
         </div>
 
         <!-- 5. Consent to Emergency Medical Treatment -->
         <div>
             <h2 class="sub-title font-semibold mb-2">5. Consent to Emergency Medical Treatment:</h2>
-            <p class="text-sm mb-4">I give my consent to receive emergency medical treatment if required during the exercise program.</p>
+            <p class=" mb-4">I give my consent to receive emergency medical treatment if required during the exercise program.</p>
         </div>
 
         <!-- 6. Consent for Social Media -->
         <div>
             <h2 class="sub-title font-semibold mb-2">6. Consent for Social Media:</h2>
-            <p class="text-sm mb-4">By participating in the S2Healthylife program, I consent to the following:</p>
+            <p class=" mb-4">By participating in the S2Healthylife program, I consent to the following:</p>
 
             <div class="ml-4 space-y-3">
                 <div>
-                    <p class="text-sm font-medium mb-2">• Authorization for Name Usage:</p>
+                    <p class=" font-medium mb-2">• Authorization for Name Usage:</p>
                     <div class="space-y-1">
                         <div class="flex items-center">
                             <input type="checkbox" id="fullName" class="mr-2">
-                            <label for="fullName" class="text-sm">Full Name</label>
+                            <label for="fullName" class="">Full Name</label>
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" id="firstNameOnly" class="mr-2">
-                            <label for="firstNameOnly" class="text-sm">First Name Only</label>
+                            <label for="firstNameOnly" class="">First Name Only</label>
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" id="nickname" class="mr-2">
-                            <label for="nickname" class="text-sm">Use a Nickname</label>
+                            <label for="nickname" class="">Use a Nickname</label>
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" id="noName" class="mr-2">
-                            <label for="noName" class="text-sm">Do Not Use Any Name</label>
+                            <label for="noName" class="">Do Not Use Any Name</label>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <p class="text-sm font-medium mb-2">• Can Use Picture in Group Photos or Videos:</p>
+                    <p class=" font-medium mb-2">• Can Use Picture in Group Photos or Videos:</p>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center">
                             <input type="radio" name="groupPhoto" id="groupPhotoYes" class="mr-1">
-                            <label for="groupPhotoYes" class="text-sm">Yes</label>
+                            <label for="groupPhotoYes" class="">Yes</label>
                         </div>
                         <div class="flex items-center">
                             <input type="radio" name="groupPhoto" id="groupPhotoNo" class="mr-1">
-                            <label for="groupPhotoNo" class="text-sm">No</label>
+                            <label for="groupPhotoNo" class="">No</label>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <p class="text-sm font-medium mb-2">• Permission to Use Individual Photos or Videos:</p>
+                    <p class=" font-medium mb-2">• Permission to Use Individual Photos or Videos:</p>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center">
                             <input type="radio" name="individualPhoto" id="individualPhotoYes" class="mr-1">
-                            <label for="individualPhotoYes" class="text-sm">Yes</label>
+                            <label for="individualPhotoYes" class="">Yes</label>
                         </div>
                         <div class="flex items-center">
                             <input type="radio" name="individualPhoto" id="individualPhotoNo" class="mr-1">
-                            <label for="individualPhotoNo" class="text-sm">No</label>
+                            <label for="individualPhotoNo" class="">No</label>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <p class="text-sm font-medium mb-2">• I understand that I will not receive any monetary compensation for the use of photos or videos:</p>
+                    <p class=" font-medium mb-2">• I understand that I will not receive any monetary compensation for the use of photos or videos:</p>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center">
                             <input type="radio" name="compensation" id="compensationYes" class="mr-1">
-                            <label for="compensationYes" class="text-sm">Yes</label>
+                            <label for="compensationYes" class="">Yes</label>
                         </div>
                         <div class="flex items-center">
                             <input type="radio" name="compensation" id="compensationNo" class="mr-1">
-                            <label for="compensationNo" class="text-sm">No</label>
+                            <label for="compensationNo" class="">No</label>
                         </div>
                     </div>
                 </div>
@@ -498,7 +499,7 @@ if (isset($_POST['submit'])) {
                     <div class="flex items-end justify-start">
                         <input id="adultSignatureCanvas" name="signature" class="border rounded p-1 h-32 w-1/2 cursor-crosshair"></input>
                         <button type="button" id="clearAdultSignature"
-                            class="ml-2 px-4 py-1 text-sm border border-green-500 text-green-500 rounded hover:bg-green-50 focus:outline-none">Clear</button>
+                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] rounded-lg hover:bg-[#9AC339] focus:outline-none">Clear</button>
                     </div>
                 </div>
             </div>
@@ -507,9 +508,9 @@ if (isset($_POST['submit'])) {
         <!-- Submit and Cancel Buttons -->
         <div class="flex space-x-4">
             <button type="submit" name="submit" value="submit"
-                class="px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">Submit</button>
+                class="px-6 py-2 bg-[#9AC339] text-white rounded-lg hover:bg-[#9AC354] focus:outline-none focus:ring-2 focus:#9AC339">Submit</button>
             <button type="button" id="resetForm"
-                class="px-6 py-2 border border-green-500 text-green-500 rounded hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-300">Cancel</button>
+                class="px-6 py-2 border border-[#9AC339] text-[#9AC339] rounded-lg hover:bg-[#9AC339] focus:outline-none focus:ring-2 focus:#9AC339">Cancel</button>
         </div>
     </form>
 
