@@ -1,36 +1,66 @@
-// Navigation active state
-const navLinks = document.querySelectorAll(".nav-line");
-const currentPage = window.location.pathname;
-
-navLinks.forEach((link) => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add("active");
-    link.classList.add("text-[#9AC339]");
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.getElementById('navbar');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileCloseButton = document.querySelector('.mobile-close-button');
+  
+  // Store the original height of navbar to maintain consistency
+  const originalHeight = navbar.offsetHeight;
+  
+  // Set initial navbar position with space at top
+  navbar.style.position = 'relative';
+  navbar.style.top = '40px'; // Initial space at the top
+  
+  // Handle scroll behavior
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) {
+      // When scrolled, fix the navbar to top
+      navbar.style.position = 'fixed';
+      navbar.style.top = '0';
+      navbar.style.left = '0';
+      navbar.style.right = '0';
+      navbar.classList.add('scrolled'); // Add class for styling when scrolled
+    } else {
+      // Return to initial position when at top
+      navbar.style.position = 'relative';
+      navbar.style.top = (40 - window.scrollY) + 'px';
+      navbar.classList.remove('scrolled'); // Remove scrolled class
+    }
+    
+    // Ensure height remains consistent
+    navbar.style.height = originalHeight + 'px';
+  });
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    mobileMenu.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  });
+  
+  mobileCloseButton.addEventListener('click', function() {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = ''; // Re-enable scrolling
+  });
+  
+  // Close mobile menu on window resize (if screen becomes large enough for desktop menu)
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // md breakpoint in Tailwind
+      mobileMenu.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Navigation active state
+  const navLinks = document.querySelectorAll(".nav-line");
+  const currentPage = window.location.pathname;
+  
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+      link.classList.add("text-[#9AC339]");
+    }
+  });
 });
-
-// Mobile menu functionality
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobileCloseButton = document.querySelector(".mobile-close-button");
-
-function toggleMenu() {
-  mobileMenu.classList.toggle("active");
-}
-
-if (mobileMenuButton) {
-  mobileMenuButton.addEventListener("click", toggleMenu);
-}
-
-if (mobileCloseButton) {
-  mobileCloseButton.addEventListener("click", toggleMenu);
-}
-
-const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-mobileMenuLinks.forEach((link) => {
-  link.addEventListener("click", toggleMenu);
-});
-
 // gallery start
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -301,3 +331,48 @@ $(document).ready(function(){
   });
 });
 // testimonial carousel end
+
+// modal start
+document.addEventListener('DOMContentLoaded', function() {
+  const bmiButton = document.querySelector('.bmi');
+  const modal = document.getElementById('bmiModal');
+  const closeModal = document.getElementById('closeModal');
+  const calculateBtn = document.getElementById('calculateBtn');
+  const bmiResult = document.getElementById('bmiResult');
+  const ageInput = document.getElementById('age');
+  const heightInput = document.getElementById('height');
+  const weightInput = document.getElementById('weight');
+  
+  // Open modal when BMI button is clicked
+  bmiButton.addEventListener('click', function() {
+    modal.classList.remove('hidden');
+  });
+  
+  // Close modal when X button is clicked
+  closeModal.addEventListener('click', function() {
+    modal.classList.add('hidden');
+  });
+  
+  // Close modal when clicking outside the modal content
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal || e.target.classList.contains('bg-opacity-50')) {
+      modal.classList.add('hidden');
+    }
+  });
+  
+  // Calculate BMI when the Calculate button is clicked
+  calculateBtn.addEventListener('click', function() {
+    const height = parseFloat(heightInput.value);
+    const weight = parseFloat(weightInput.value);
+    
+    if (height && weight) {
+      // BMI formula: weight (kg) / (height (m))^2
+      const heightInMeters = height / 100;
+      const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+      bmiResult.textContent = bmi;
+    } else {
+      bmiResult.textContent = "Please enter valid height and weight";
+    }
+  });
+});
+// modal end

@@ -65,27 +65,28 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-white font-sans">
+<body class="bg-white font1">
     <div class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Left Section -->
             <div class="w-full lg:w-1/2">
                 <div class="flex items-center mb-2">
-                    <div class="w-12 h-1 bg-green-500"></div>
-                    <h2 class="text-2xl font-bold ml-2">Contact Us</h2>
+                    <div class="w-12 h-1 bg-[#9AC339]"></div>
+                    <h2 class="content-Heading ml-2">Contact Us</h2>
                 </div>
-                <p class="text-gray-700 mb-6">Get in Touch – We'd Love to Hear from You!</p>
+                <p class="text-gray-700 body-text mb-6">Get in Touch – We'd Love to Hear from You!</p>
                 
-                <h3 class="text-xl font-bold mb-4 flex items-center">
+                <h3 class=" mb-4 content-Heading flex items-center">
                     Visit Us 
                     <i class="fas fa-map-marker-alt text-red-500 ml-2"></i>
                 </h3>
                 
                 <div class="w-full h-96 bg-gray-200 mb-6 rounded-md overflow-hidden">
-                    <img src="images/page_8/map.png" alt="Map location" class="w-full h-full object-cover">
-                </div>
+                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=650&amp;hl=en&amp;q=S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,                 100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,                 Madhapur, Hyderabad, Telangana 500081&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://sprunkin.com/">Sprunki Game</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:650px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:650px;}.gmap_iframe {height:650px!important;}</style></div> </div>
             </div>
             
             <!-- Right Section - Form -->
@@ -109,7 +110,7 @@ if (isset($_POST['submit'])) {
                 <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-4">
                     <div class="flex flex-col md:flex-row gap-4">
                         <div class="w-full">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label class="block body-text text-gray-700 mb-1">
                                 First Name <span class="text-red-500">*</span>
                             </label>
                             <input type="text" name="firstName" placeholder="First Name" value="<?php echo $firstName ?? ''; ?>"
@@ -117,7 +118,7 @@ if (isset($_POST['submit'])) {
                         </div>
                         
                         <div class="w-full">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label class="block body-text text-gray-700 mb-1">
                                 Last Name <span class="text-red-500">*</span>
                             </label>
                             <input type="text" name="lastName" placeholder="Last Name" value="<?php echo $lastName ?? ''; ?>"
@@ -126,7 +127,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                        <label class="block body-text text-gray-700 mb-1">
                             Email Id
                         </label>
                         <input type="email" name="email" placeholder="Email Id" value="<?php echo $email ?? ''; ?>"
@@ -134,7 +135,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                        <label class="block body-text text-gray-700 mb-1">
                             Phone Number <span class="text-red-500">*</span>
                         </label>
                         <div class="flex">
@@ -150,7 +151,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                        <label class="block body-text text-gray-700 mb-1">
                             Message <span class="text-red-500">*</span>
                         </label>
                         <textarea name="message" rows="5" placeholder="" 
@@ -159,7 +160,7 @@ if (isset($_POST['submit'])) {
                     
                     <div class="pt-4">
                         <button type="submit" name="submit" value="submit"
-                            class="w-full md:w-auto px-8 py-3 bg-green-500 text-white font-medium rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                            class="w-full md:w-auto px-8 py-3 bg-[#9AC339] text-white body-text rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                             Submit
                         </button>
                     </div>
