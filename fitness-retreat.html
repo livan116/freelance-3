@@ -7,7 +7,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/styles.css">
-  
+    <style>
+        .green-title {
+            color: #4d7c0f;
+            border-left: 3px solid #65a30d;
+            padding-left: 10px;
+        }
+        .numbered-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .number-circle {
+            width: 32px;
+            height: 32px;
+            background-color: #9AC339;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .highlight-section {
+            background-color: #ECF6DF;
+        }
+    </style>
+
 </head>
 <body class="bg-white font1">
        <!-- nav section start -->
@@ -46,7 +73,7 @@
         </button>
 
         <!-- Desktop Navigation Links -->
-        <div class="hidden md:flex space-x-8 text-sm lg:text-base">
+        <div class="hidden md:flex md:space-x-2 lg:space-x-8 text-sm lg:text-base">
           <a
             href="/index.html"
             class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
@@ -159,7 +186,7 @@
       </a>
     </div>
   </div>
-    <div class="container mx-auto px-4 py-8 max-w-7xl">
+    <div class="container mx-auto mt-4 px-4 py-8 max-w-7xl">
         <!-- Header Section -->
         <div class="mb-8">
             <div class="flex md:mr-36 items-center gap-4 mb-6">

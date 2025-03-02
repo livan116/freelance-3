@@ -246,6 +246,11 @@ border-radius: 0px;
     0% { transform: translate(-190px, 0) rotate(0deg); }
     100% { transform: translate(-190px, 0) rotate(360deg); }
   }
+
+  .Navbar{
+    margin: 0px 10px;
+    border-radius: 50px;
+  }
 }
 
 /* Even smaller screens */
@@ -494,3 +499,17 @@ border-radius: 0px;
 }
 
 /* onsite and online services end */
+
+/* firness retereat start */
+/* .number-circle{
+  background-color: #8CC63F;
+  height: 50px;
+  width: 80px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.numbered-item{
+  display: flex;
+} */
+/* firness retereat end */

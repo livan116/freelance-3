@@ -122,14 +122,17 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S2Healthylife Enrollment Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/styles.css">
     
 </head>
 
 <body class="bg-white font1 text-gray-800">
        <!-- nav section start -->
+   <!-- Navigation - Fixed at the top -->
    <!-- Navigation - Fixed at the top -->
    <nav class="Navbar shadow-md z-50 transition-all duration-300" id="navbar">
       <div class="container mx-auto px-2">
@@ -165,7 +168,7 @@ if (isset($_POST['submit'])) {
           </button>
 
           <!-- Desktop Navigation Links -->
-          <div class="hidden md:flex space-x-8 text-sm lg:text-base">
+          <div class="hidden md:flex md:space-x-2 lg:space-x-8 text-sm lg:text-base">
             <a
               href="/index.html"
               class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
@@ -278,9 +281,8 @@ if (isset($_POST['submit'])) {
         </a>
       </div>
     </div>
-   
     <!-- Header -->
-    <div class="pb-2 mb-6">
+    <div class="pb-2 mb-6 p-2">
         <h1 class="heading font-semibold flex items-center">
             <span class="inline-block w-6 h-0.5 bg-[#9AC339] mr-2"></span>
             <span>Enrollment Form</span>
@@ -289,10 +291,10 @@ if (isset($_POST['submit'])) {
     </div>
 
     <!-- Form -->
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8">
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8 p-2">
         <!-- Error and Success Messages -->
         <?php if (!empty($errors)): ?>
-            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
+            <div class="bg-red-100  border-l-4 border-red-500 text-red-700 p-4 mb-4">
                 <ul class="list-disc pl-4">
                     <?php foreach ($errors as $error): ?>
                         <li><?php echo $error; ?></li>
@@ -664,6 +666,170 @@ if (isset($_POST['submit'])) {
         </div>
     </form>
 
+     <!-- footer start -->
+     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20 mt-10">
+      <div class="container mx-auto">
+        <div class="lg:flex justify-between items-start">
+          <!-- Left Section (Logo and Description) -->
+          <div class="footer-left lg:w-1/4 mb-8 lg:mb-0">
+            <a href="/"
+              ><img src="images/logo.png" alt="Logo" class="mb-4"
+            /></a>
+            <p class="body-text mb-4">
+              We aim to empower our clients, helping them make sustainable
+              lifestyle changes, find joy in exercise, and develop healthy
+              eating habits that work for their individual preferences and
+              needs.
+            </p>
+          </div>
+
+          <!-- Middle Section (Pediatric Enquiries and FAQ) -->
+          <div class="footer-middle md:ml-8 lg:w-1/4 mb-8 lg:mb-0">
+            <div class="contact-info">
+              <!-- Dynamic Email with Gmail Link -->
+              <p class="flex items-center mb-2">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                  alt="Email"
+                  class="w-6 mr-2"
+                />
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fitness@s2healthylife.com"
+                  class="hover:underline"
+                  target="_blank"
+                  >fitness@s2healthylife.com</a
+                >
+              </p>
+              <!-- Dynamic Phone Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                  alt="Phone"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
+                  <a href="tel:+919949379073" class="hover:underline"
+                    >+91 9949379073</a
+                  >
+                  <a href="tel:+15128100136" class="hover:underline"
+                    >+1 (512) 810-0136</a
+                  >
+                </div>
+              </div>
+              <!-- Dynamic WhatsApp Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  alt="WhatsApp"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
+                  <a
+                    href="https://wa.me/919949379073"
+                    class="hover:underline"
+                    target="_blank"
+                    >+91 9949379073</a
+                  >
+                  <a
+                    href="https://wa.me/15128100136"
+                    class="hover:underline"
+                    target="_blank"
+                    >+1 (512) 810-0136</a
+                  >
+                </div>
+              </div>
+            </div>
+            <h4 class="text-xl mb-4 font-bold">
+              For Pediatric-Related Enquiries
+            </h4>
+            <p class="flex items-center mb-2">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                alt="Phone"
+                class="w-6 mr-2"
+              />
+              <a href="tel:+918125507159" class="hover:underline"
+                >+91 8125507159</a
+              >
+            </p>
+          </div>
+          <!-- FAQ start -->
+          <div class="footer-middle lg:w-1/4 md:ml-8">
+            <div class="flex flex-col gap-3">
+              <p>Quick Link</p>
+              <a href="faq.html" class="text-white hover:underline mb-4 block"
+                >FAQ's</a
+              >
+            </div>
+          </div>
+          <!-- FAQ end -->
+          <!-- Right Section (Address and Social Links) -->
+          <div class="footer-right lg:w-1/4">
+            <h4 class="text-xl mb-4 font-bold">Hyderabad</h4>
+            <!-- Dynamic Location Link -->
+            <p class="flex items-center mb-2">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                alt="Location"
+                class="w-6 mr-2"
+              />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
+                target="_blank"
+                class="hover:underline"
+              >
+                S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,
+                100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,
+                Madhapur, Hyderabad, Telangana 500081
+              </a>
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons flex space-x-4 mt-4">
+              <a
+                href="https://www.youtube.com/@s2HealthylifeFitness/community"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                  alt="YouTube"
+                  class="w-6"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/s2healthylifeco/"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                  alt="Instagram"
+                  class="w-6"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  alt="Facebook"
+                  class="w-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright Section -->
+        <div class="text-center border-t border-gray-600 mt-8 pt-4">
+          <p class="text-sm">&copy; S2HealthyLife 2023. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+     <script src='js/script'></script>
     <script>
         // Initialize date pickers
         document.addEventListener('DOMContentLoaded', function () {
