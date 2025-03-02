@@ -312,6 +312,12 @@ border-radius: 0px;
     min-width: 33.333333%;
   }
 }
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+}
 /* gallery end */
 
 /* font styles start*/

@@ -46,90 +46,25 @@
   <body class="relative font1">
     <!-- Navigation - Fixed at the top -->
     <!-- nav section start -->
-    <nav class="Navbar shadow-md fixed top-0 left-0 right-0 z-50">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <a href="/" class="flex-shrink-0 mr-8">
-            <img src="images/logo.png" alt="S2 Logo" class="h-16 w-[120px]" />
-          </a>
-
-          <!-- Mobile Menu Button -->
-          <button id="mobile-menu-button" class="md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-
-          <!-- Desktop Navigation Links -->
-          <div class="hidden md:flex gap-10 space-x-1 md:space-x-6">
-            <a
-              href="/index.html"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Home</a
-            >
-            <a
-              href="/about"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >About Us</a
-            >
-            <a
-              href="/services.html"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Services</a
-            >
-            <a
-              href="/nutrition"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Nutrition</a
-            >
-            <a
-              href="/fitness"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Fitness Retreat</a
-            >
-            <a
-              href="/photos"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Photos</a
-            >
-            <a
-              href="/contact"
-              class="nav-line nav-link hover:text-green-500 whitespace-nowrap"
-              >Reach Us</a
-            >
-          </div>
-
-          <!-- Enroll Button (Desktop) -->
-          <button
-            class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-4 md:px-6 py-2 rounded-full ml-4"
-          >
-            Enroll Now
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div
-      class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-50 overflow-y-auto"
-    >
-      <div class="flex justify-between bg-[#304E0C] items-center p-4 border-b">
-        <a href="/" class="flex-shrink-0">
-          <img src="images/logo.png" alt="S2 Logo" class="h-16 w-[120px]" />
+       <!-- nav section start -->
+  <!-- Navigation - Fixed at the top -->
+  <nav class="Navbar shadow-md z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-2">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0 mr-4">
+          <img
+            src="images/logo.png"
+            alt="S2 Logo"
+            class="h-12 md:h-16 w-auto max-w-[120px]"
+          />
         </a>
-        <button class="mobile-close-button">
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-white focus:outline-none"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"
@@ -141,39 +76,129 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
+              d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
         </button>
-      </div>
-      <div class="flex flex-col p-4">
-        <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
-          >Home</a
-        >
-        <a href="/about" class="py-4 border-b border-gray-200 text-lg"
-          >About Us</a
-        >
-        <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
-          >Services</a
-        >
-        <a href="/nutrition" class="py-4 border-b border-gray-200 text-lg"
-          >Nutrition</a
-        >
-        <a href="/fitness" class="py-4 border-b border-gray-200 text-lg"
-          >Fitness Retreat</a
-        >
-        <a href="/photos" class="py-4 border-b border-gray-200 text-lg"
-          >Photos</a
-        >
-        <a href="/contact" class="py-4 border-b border-gray-200 text-lg"
-          >Reach Us</a
-        >
-        <a href="#" class="py-4 border-b border-gray-200 text-lg">Enroll Now</a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex space-x-8 text-sm lg:text-base">
+          <a
+            href="/index.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Home</a
+          >
+          <a
+            href="/about.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >About Us</a
+          >
+          <a
+            href="/services.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Services</a
+          >
+          <a
+            href="/nutrition.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Nutrition</a
+          >
+          <a
+            href="/fitness-retreat.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Fitness Retreat</a
+          >
+          <a
+            href="/photos.html"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Photos</a
+          >
+          <a
+            href="/contact.php"
+            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+            >Reach Us</a
+          >
+        </div>
+
+        <!-- Enroll Button (Desktop) -->
+ 
+        <a href="/enrollment.php"
+        class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
+      >
+        Enroll Now
+      </a>
+      
+
       </div>
     </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-[60] overflow-y-auto transform translate-x-full transition-transform duration-300"
+    id="mobile-menu"
+  >
+    <div class="flex justify-between bg-[#304E0C] items-center border-b">
+      <a href="/" class="flex-shrink-0">
+        <img
+          src="images/logo.png"
+          alt="S2 Logo"
+          class="h-12 md:h-16 w-auto max-w-[120px]"
+        />
+      </a>
+      <button class="mobile-close-button focus:outline-none text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col p-4">
+      <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
+        >Home</a
+      >
+      <a href="/about.html" class="py-4 border-b border-gray-200 text-lg"
+        >About Us</a
+      >
+      <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
+        >Services</a
+      >
+      <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
+        >Nutrition</a
+      >
+      <a
+        href="/fitness-retreat.html"
+        class="py-4 border-b border-gray-200 text-lg"
+        >Fitness Retreat</a
+      >
+      <a href="/photos.html" class="py-4 border-b border-gray-200 text-lg"
+        >Photos</a
+      >
+      <a href="/contact.php" class="py-4 border-b border-gray-200 text-lg"
+        >Reach Us</a
+      >
+      <a
+        href="/enrollment.php"
+        class="py-4 border-b border-gray-200 text-lg bg-[#9AC339] text-center text-white mt-4 rounded-md"
+      >
+        Enroll Now
+      </a>
+    </div>
+  </div>
+
     <!-- nav section end -->
     <!-- Hero Section -->
-    <section class="relative h-[500px] md:h-[600px] overflow-hidden">
+    <section class="relative -mt-16 h-[500px] md:h-[600px] overflow-hidden">
       <div class="absolute inset-0 bg-black/30"></div>
       <img
         src="images/page_5/baby 1.png"
@@ -443,6 +468,101 @@
       </div>
     </section>
 
+
+        <!-- footer start -->
+        <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
+          <div class="container mx-auto">
+            <div class="lg:flex justify-between items-start">
+              <!-- Left Section (Logo and Description) -->
+              <div class="footer-left lg:w-1/4 mb-8 lg:mb-0">
+                <a href="/"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
+                <p class="body-text mb-4">
+                  We aim to empower our clients, helping them make sustainable
+                  lifestyle changes, find joy in exercise, and develop healthy
+                  eating habits that work for their individual preferences and
+                  needs.
+                </p>
+              </div>
+        
+              <!-- Middle Section (Pediatric Enquiries and FAQ) -->
+              <div class="footer-middle md:ml-8 lg:w-1/4 mb-8 lg:mb-0">
+                <div class="contact-info">
+                  <!-- Dynamic Email with Gmail Link -->
+                  <p class="flex items-center mb-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-6 mr-2" />
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fitness@s2healthylife.com" class="hover:underline"
+                      target="_blank">fitness@s2healthylife.com</a>
+                  </p>
+                  <!-- Dynamic Phone Numbers -->
+                  <div class="flex items-center mb-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" class="w-6 mr-2" />
+                    <div class="flex flex-col gap-2">
+                      <a href="tel:+919949379073" class="hover:underline">+91 9949379073</a>
+                      <a href="tel:+15128100136" class="hover:underline">+1 (512) 810-0136</a>
+                    </div>
+                  </div>
+                  <!-- Dynamic WhatsApp Numbers -->
+                  <div class="flex items-center mb-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 mr-2" />
+                    <div class="flex flex-col gap-2">
+                      <a href="https://wa.me/919949379073" class="hover:underline" target="_blank">+91 9949379073</a>
+                      <a href="https://wa.me/15128100136" class="hover:underline" target="_blank">+1 (512) 810-0136</a>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="text-xl mb-4 font-bold">
+                  For Pediatric-Related Enquiries
+                </h4>
+                <p class="flex items-center mb-2">
+                  <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" class="w-6 mr-2" />
+                  <a href="tel:+918125507159" class="hover:underline">+91 8125507159</a>
+                </p>
+              </div>
+              <!-- FAQ start -->
+              <div class="footer-middle lg:w-1/4 md:ml-8">
+                <div class="flex flex-col gap-3">
+                  <p>Quick Link</p>
+                  <a href="faq.html" class="text-white hover:underline mb-4 block">FAQ's</a>
+                </div>
+              </div>
+              <!-- FAQ end -->
+              <!-- Right Section (Address and Social Links) -->
+              <div class="footer-right lg:w-1/4">
+                <h4 class="text-xl mb-4 font-bold">Hyderabad</h4>
+                <!-- Dynamic Location Link -->
+                <p class="flex items-center mb-2">
+                  <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" class="w-6 mr-2" />
+                  <a href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
+                    target="_blank" class="hover:underline">
+                    S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,
+                    100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,
+                    Madhapur, Hyderabad, Telangana 500081
+                  </a>
+                </p>
+                <!-- Social Media Links -->
+                <div class="social-icons flex space-x-4 mt-4">
+                  <a href="https://www.youtube.com/@s2HealthylifeFitness/community" target="_blank" class="block">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="w-6" />
+                  </a>
+                  <a href="https://www.instagram.com/s2healthylifeco/" target="_blank" class="block">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="w-6" />
+                  </a>
+                  <a href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab" target="_blank"
+                    class="block">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6" />
+                  </a>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Bottom Copyright Section -->
+            <div class="text-center border-t border-gray-600 mt-8 pt-4">
+              <p class="text-sm">&copy; S2HealthyLife 2023. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+        <!-- footer end -->
+   
     <script>
       let slideIndex = 1;
       showSlide(slideIndex);
