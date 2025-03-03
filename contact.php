@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
             }
 
             // Email Content
-            $mail->isHTML(false);
+            $mail->isHTML(true);
             $mail->Subject = 'New Contact Form Submission';
             $mail->Body = "You have received a new message:\n\n"
                 . "First Name: $firstName\n"
@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
       <div class="container mx-auto px-2">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
-          <a href="/" class="flex-shrink-0 mr-4">
+          <a href="/index.html" class="flex-shrink-0 mr-4">
             <img
               src="images/logo.png"
               alt="S2 Logo"
@@ -162,7 +162,7 @@ if (isset($_POST['submit'])) {
       id="mobile-menu"
     >
       <div class="flex justify-between bg-[#304E0C] items-center border-b">
-        <a href="/" class="flex-shrink-0">
+        <a href="/index.html" class="flex-shrink-0">
           <img
             src="images/logo.png"
             alt="S2 Logo"
@@ -221,7 +221,7 @@ if (isset($_POST['submit'])) {
 
     <!-- nav section end -->
    
-        <div class="flex flex-col p-4 mt-4 md:px-16 lg:flex-row gap-8">
+        <div class="flex flex-col p-4 mt-12 md:px-16 lg:flex-row gap-8">
             <!-- Left Section -->
             <div class="w-full lg:w-1/2">
                 <div class="flex items-center mb-2">
@@ -292,10 +292,21 @@ if (isset($_POST['submit'])) {
                             <div class="flex items-center bg-white border border-gray-300 rounded-l-md px-3">
                                 <select class="bg-transparent pr-1 py-2 focus:outline-none text-gray-700">
                                     <option>+91</option>
+                                    <option>+61</option>
+                                <option>+81</option>
+                                <option>+86</option>
+                                <option>+49</option>
+                                <option>+44</option>
+                                <option>+94</option>
+                                <option>+41</option>
+                                <option>+1</option>
+                                <option>+20</option>
+                                <option>+20</option>
+                                <option>+33</option>
                                 </select>
-                                <i class="fas fa-chevron-down text-xs text-gray-500 ml-1"></i>
+                               
                             </div>
-                            <input type="tel" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
+                            <input type="number" maxlength="10" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-2 focus:ring-green-500 -ml-px">
                         </div>
                     </div>
@@ -319,14 +330,12 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
      <!-- footer start -->
-     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20 mt-10">
+     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
       <div class="container mx-auto">
         <div class="lg:flex justify-between items-start">
           <!-- Left Section (Logo and Description) -->
-          <div class="footer-left lg:w-1/4 mb-8 lg:mb-0">
-            <a href="/"
-              ><img src="images/logo.png" alt="Logo" class="mb-4"
-            /></a>
+          <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
+            <a href="/index.html"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
               lifestyle changes, find joy in exercise, and develop healthy
@@ -336,12 +345,12 @@ if (isset($_POST['submit'])) {
           </div>
 
           <!-- Middle Section (Pediatric Enquiries and FAQ) -->
-          <div class="footer-middle md:ml-8 lg:w-1/4 mb-8 lg:mb-0">
+          <div class="footer-middle md:ml-[8vw] lg:w-1/4 mb-8 lg:mb-0">
             <div class="contact-info">
               <!-- Dynamic Email with Gmail Link -->
               <p class="flex items-center mb-2">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                  src="images/logos/email.png"
                   alt="Email"
                   class="w-6 mr-2"
                 />
@@ -355,7 +364,7 @@ if (isset($_POST['submit'])) {
               <!-- Dynamic Phone Numbers -->
               <div class="flex items-center mb-4">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                  src="images/logos/icons.png"
                   alt="Phone"
                   class="w-6 mr-2"
                 />
@@ -371,7 +380,7 @@ if (isset($_POST['submit'])) {
               <!-- Dynamic WhatsApp Numbers -->
               <div class="flex items-center mb-4">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  src="images/logos/whatsapp.png"
                   alt="WhatsApp"
                   class="w-6 mr-2"
                 />
@@ -391,12 +400,12 @@ if (isset($_POST['submit'])) {
                 </div>
               </div>
             </div>
-            <h4 class="text-xl mb-4 font-bold">
+            <h4 class="t mb-4 body-text">
               For Pediatric-Related Enquiries
             </h4>
             <p class="flex items-center mb-2">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                src="images/logos/icons.png"
                 alt="Phone"
                 class="w-6 mr-2"
               />
@@ -406,7 +415,7 @@ if (isset($_POST['submit'])) {
             </p>
           </div>
           <!-- FAQ start -->
-          <div class="footer-middle lg:w-1/4 md:ml-8">
+          <div class="footer-middle lg:w-1/4 md:ml-[8vw]">
             <div class="flex flex-col gap-3">
               <p>Quick Link</p>
               <a href="faq.html" class="text-white hover:underline mb-4 block"
@@ -416,15 +425,18 @@ if (isset($_POST['submit'])) {
           </div>
           <!-- FAQ end -->
           <!-- Right Section (Address and Social Links) -->
-          <div class="footer-right lg:w-1/4">
-            <h4 class="text-xl mb-4 font-bold">Hyderabad</h4>
-            <!-- Dynamic Location Link -->
-            <p class="flex items-center mb-2">
+          <div class="footer-right lg:w-1/3">
+            <div class="flex items-start">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                src="images/logos/location.png"
                 alt="Location"
                 class="w-6 mr-2"
               />
+            <h4 class=" mb-4 body-text">Hyderabad</h4>
+            </div>
+            <!-- Dynamic Location Link -->
+            <p class="flex items-center mb-2">
+              
               <a
                 href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
                 target="_blank"
@@ -437,33 +449,21 @@ if (isset($_POST['submit'])) {
             </p>
             <!-- Social Media Links -->
             <div class="social-icons flex space-x-4 mt-4">
-              <a
-                href="https://www.youtube.com/@s2HealthylifeFitness/community"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.youtube.com/@s2HealthylifeFitness/community" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
                   alt="YouTube"
                   class="w-6"
                 />
               </a>
-              <a
-                href="https://www.instagram.com/s2healthylifeco/"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.instagram.com/s2healthylifeco/" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
                   alt="Instagram"
                   class="w-6"
                 />
               </a>
-              <a
-                href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                   alt="Facebook"
@@ -481,6 +481,6 @@ if (isset($_POST['submit'])) {
       </div>
     </footer>
     <!-- footer end -->
-    <scipt src='js/script.js'></scipt>
+    <script src="js/script.js"></script>
 </body>
 </html>

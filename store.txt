@@ -458,3 +458,22 @@
           <div class="absolute -top-40 left-1/2 transform -translate-x-1/2">
             <img 
               src="https://s3-alpha-sig.figma.com/img/7b90/7740/10959df1e312f48965acaf55bb0404dc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Kmign3A5DsOLWgXPcpYKIajc5UrIfcxQ2PSVNJTar~T0HP6TRLj3~VTAXdME33voBuA1iEKGalHUtCd~QaaVh4AbEUIixk~yAyHV-leg1yTcuBLYo-6QLco7Z3fk~ztypplmZGmWqMmBWUJ4j1SiOqlWSCX~F3gA7SMTMXzd3dXcY~eR3bkSvOVdt
+
+
+
+
+//card-----------------
+
+                <div class="service-web-card sky-blue md:mt-[20vh] min-h-[40vh]">
+            <div class="card-image-container relative mb-8">
+              <img
+                src="images/services/service8.png"
+                alt="Nebulization"
+                class="card-image absolute h-[200px] w-[204px] -top-44"
+              />
+            </div>
+            <h4 class="sub-title mb-2">Workout Sessions for Children</h4>
+            <p class="text-[14px] text-[--para-color] leading-5 body-text">
+              We offer tailored workout sessions for children of 8+ years, focusing on age-appropriate exercises and healthy habits. Three sessions per week are provided.
+            </p>
+          </div>

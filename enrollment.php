@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
       <div class="container mx-auto px-2">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
-          <a href="/" class="flex-shrink-0 mr-4">
+          <a href="/index.html" class="flex-shrink-0 mr-4">
             <img
               src="images/logo.png"
               alt="S2 Logo"
@@ -225,7 +225,7 @@ if (isset($_POST['submit'])) {
       id="mobile-menu"
     >
       <div class="flex justify-between bg-[#304E0C] items-center border-b">
-        <a href="/" class="flex-shrink-0">
+        <a href="/index.html" class="flex-shrink-0">
           <img
             src="images/logo.png"
             alt="S2 Logo"
@@ -282,7 +282,7 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
     <!-- Header -->
-    <div class="pb-2 mb-6 p-2">
+    <div class="pb-2 mb-6 p-2 px-16">
         <h1 class="heading font-semibold flex items-center">
             <span class="inline-block w-6 h-0.5 bg-[#9AC339] mr-2"></span>
             <span>Enrollment Form</span>
@@ -291,7 +291,8 @@ if (isset($_POST['submit'])) {
     </div>
 
     <!-- Form -->
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8 p-2">
+     <div class="px-16">
+     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8  p-2">
         <!-- Error and Success Messages -->
         <?php if (!empty($errors)): ?>
             <div class="bg-red-100  border-l-4 border-red-500 text-red-700 p-4 mb-4">
@@ -328,10 +329,21 @@ if (isset($_POST['submit'])) {
                     <div class="flex">
                         <div class="w-16 mr-1">
                             <select class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
-                                <option>+91</option>
+                            <option>+91</option>
+                                <option>+61</option>
+                                <option>+81</option>
+                                <option>+86</option>
+                                <option>+49</option>
+                                <option>+44</option>
+                                <option>+94</option>
+                                <option>+41</option>
+                                <option>+1</option>
+                                <option>+20</option>
+                                <option>+20</option>
+                                <option>+33</option>
                             </select>
                         </div>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
+                        <input type="number" maxlength="10" id="phone" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
                             class="flex-1 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                     </div>
                 </div>
@@ -375,9 +387,20 @@ if (isset($_POST['submit'])) {
                         <div class="w-16 mr-1">
                             <select class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                                 <option>+91</option>
+                                <option>+61</option>
+                                <option>+81</option>
+                                <option>+86</option>
+                                <option>+49</option>
+                                <option>+44</option>
+                                <option>+94</option>
+                                <option>+41</option>
+                                <option>+1</option>
+                                <option>+20</option>
+                                <option>+20</option>
+                                <option>+33</option>
                             </select>
                         </div>
-                        <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="Phone Number" value="<?php echo $emergencyPhone ?? ''; ?>"
+                        <input type="number" maxlength="10" id="emergencyPhone" name="emergencyPhone" placeholder="Phone Number" value="<?php echo $emergencyPhone ?? ''; ?>"
                             class="flex-1 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                     </div>
                 </div>
@@ -392,7 +415,7 @@ if (isset($_POST['submit'])) {
                     <label class="block body-text mb-1">a) Current fitness level <span class="text-red-500">*</span></label>
                     <div class="relative w-full">
                         <select id="fitnessLevel" name="fitnessLevel" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                            <option value="">Fitness Level</option>
+                        <option value="none" selected disabled hidden>Fitness Level</option>
                             <option value="Beginner" <?php echo ($fitnessLevel === 'Beginner') ? 'selected' : ''; ?>>Beginner</option>
                             <option value="Intermediate" <?php echo ($fitnessLevel === 'Intermediate') ? 'selected' : ''; ?>>Intermediate</option>
                             <option value="Advanced" <?php echo ($fitnessLevel === 'Advanced') ? 'selected' : ''; ?>>Advanced</option>
@@ -408,7 +431,7 @@ if (isset($_POST['submit'])) {
                     <label class="block body-text mb-1">b) Are you currently under the care of healthcare professional? <span class="text-red-500">*</span> (Yes/No)</label>
                     <div class="relative w-1/3">
                         <select id="healthcareProfessional" name="healthcareProfessional" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                            <option value=""></option>
+                        <option value="none" selected disabled hidden>Select</option>
                             <option value="Yes" <?php echo ($healthcareProfessional === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                             <option value="No" <?php echo ($healthcareProfessional === 'No') ? 'selected' : ''; ?>>No</option>
                         </select>
@@ -432,7 +455,7 @@ if (isset($_POST['submit'])) {
                 <label class="block body-text mb-1">c) Do you have any known medical conditions or injuries that may affect your ability to exercise? <span class="text-red-500">*</span> (Yes/No)</label>
                 <div class="relative w-32">
                     <select id="medicalConditions" name="medicalConditions" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                        <option value=""></option>
+                    <option value="none" selected disabled hidden>Select</option>
                         <option value="Yes" <?php echo ($medicalConditions === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                         <option value="No" <?php echo ($medicalConditions === 'No') ? 'selected' : ''; ?>>No</option>
                     </select>
@@ -455,7 +478,7 @@ if (isset($_POST['submit'])) {
                 <label class="block body-text mb-1">d) Have you recently undergone any surgeries or medical procedures? <span class="text-red-500">*</span> (Yes/No)</label>
                 <div class="relative w-32">
                     <select id="surgeries" name="surgeries" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                        <option value=""></option>
+                    <option value="none" selected disabled hidden>Select</option>
                         <option value="Yes" <?php echo ($surgeries === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                         <option value="No" <?php echo ($surgeries === 'No') ? 'selected' : ''; ?>>No</option>
                     </select>
@@ -478,7 +501,7 @@ if (isset($_POST['submit'])) {
                 <label class="block body-text mb-1">e) Are you aware of any physical limitations or restrictions that may impact your participation in exercise activities? <span class="text-red-500">*</span> (Yes/No)</label>
                 <div class="relative w-32">
                     <select id="physicalLimitations" name="physicalLimitations" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                        <option value=""></option>
+                    <option value="none" selected disabled hidden>Selec</option>
                         <option value="Yes" <?php echo ($physicalLimitations === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                         <option value="No" <?php echo ($physicalLimitations === 'No') ? 'selected' : ''; ?>>No</option>
                     </select>
@@ -651,7 +674,7 @@ if (isset($_POST['submit'])) {
                     <div class="flex items-end justify-start">
                         <input id="adultSignatureCanvas" name="signature" class="border rounded p-1 h-32 w-1/2 cursor-crosshair"></input>
                         <button type="button" id="clearAdultSignature"
-                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] rounded-lg hover:bg-[#9AC339] focus:outline-none">Clear</button>
+                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none">Clear</button>
                     </div>
                 </div>
             </div>
@@ -660,21 +683,21 @@ if (isset($_POST['submit'])) {
         <!-- Submit and Cancel Buttons -->
         <div class="flex space-x-4">
             <button type="submit" name="submit" value="submit"
-                class="px-6 py-2 bg-[#9AC339] text-white rounded-lg hover:bg-[#9AC354] focus:outline-none focus:ring-2 focus:#9AC339">Submit</button>
+                class="px-6 py-2 bg-[#9AC339] text-white rounded-lg hover:bg-[#9AC354]  focus:outline-none focus:ring-2 focus:#9AC339">Submit</button>
             <button type="button" id="resetForm"
-                class="px-6 py-2 border border-[#9AC339] text-[#9AC339] rounded-lg hover:bg-[#9AC339] focus:outline-none focus:ring-2 focus:#9AC339">Cancel</button>
+                class="px-6 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none focus:ring-2 focus:#9AC339">Cancel</button>
         </div>
     </form>
+     </div>
+    
 
      <!-- footer start -->
-     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20 mt-10">
+     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
       <div class="container mx-auto">
         <div class="lg:flex justify-between items-start">
           <!-- Left Section (Logo and Description) -->
-          <div class="footer-left lg:w-1/4 mb-8 lg:mb-0">
-            <a href="/"
-              ><img src="images/logo.png" alt="Logo" class="mb-4"
-            /></a>
+          <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
+            <a href="/index.html"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
               lifestyle changes, find joy in exercise, and develop healthy
@@ -684,12 +707,12 @@ if (isset($_POST['submit'])) {
           </div>
 
           <!-- Middle Section (Pediatric Enquiries and FAQ) -->
-          <div class="footer-middle md:ml-8 lg:w-1/4 mb-8 lg:mb-0">
+          <div class="footer-middle md:ml-[8vw] lg:w-1/4 mb-8 lg:mb-0">
             <div class="contact-info">
               <!-- Dynamic Email with Gmail Link -->
               <p class="flex items-center mb-2">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                  src="images/logos/email.png"
                   alt="Email"
                   class="w-6 mr-2"
                 />
@@ -703,7 +726,7 @@ if (isset($_POST['submit'])) {
               <!-- Dynamic Phone Numbers -->
               <div class="flex items-center mb-4">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                  src="images/logos/icons.png"
                   alt="Phone"
                   class="w-6 mr-2"
                 />
@@ -719,7 +742,7 @@ if (isset($_POST['submit'])) {
               <!-- Dynamic WhatsApp Numbers -->
               <div class="flex items-center mb-4">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  src="images/logos/whatsapp.png"
                   alt="WhatsApp"
                   class="w-6 mr-2"
                 />
@@ -739,12 +762,12 @@ if (isset($_POST['submit'])) {
                 </div>
               </div>
             </div>
-            <h4 class="text-xl mb-4 font-bold">
+            <h4 class="t mb-4 body-text">
               For Pediatric-Related Enquiries
             </h4>
             <p class="flex items-center mb-2">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                src="images/logos/icons.png"
                 alt="Phone"
                 class="w-6 mr-2"
               />
@@ -754,7 +777,7 @@ if (isset($_POST['submit'])) {
             </p>
           </div>
           <!-- FAQ start -->
-          <div class="footer-middle lg:w-1/4 md:ml-8">
+          <div class="footer-middle lg:w-1/4 md:ml-[8vw]">
             <div class="flex flex-col gap-3">
               <p>Quick Link</p>
               <a href="faq.html" class="text-white hover:underline mb-4 block"
@@ -764,15 +787,18 @@ if (isset($_POST['submit'])) {
           </div>
           <!-- FAQ end -->
           <!-- Right Section (Address and Social Links) -->
-          <div class="footer-right lg:w-1/4">
-            <h4 class="text-xl mb-4 font-bold">Hyderabad</h4>
-            <!-- Dynamic Location Link -->
-            <p class="flex items-center mb-2">
+          <div class="footer-right lg:w-1/3">
+            <div class="flex items-start">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                src="images/logos/location.png"
                 alt="Location"
                 class="w-6 mr-2"
               />
+            <h4 class=" mb-4 body-text">Hyderabad</h4>
+            </div>
+            <!-- Dynamic Location Link -->
+            <p class="flex items-center mb-2">
+              
               <a
                 href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
                 target="_blank"
@@ -785,33 +811,21 @@ if (isset($_POST['submit'])) {
             </p>
             <!-- Social Media Links -->
             <div class="social-icons flex space-x-4 mt-4">
-              <a
-                href="https://www.youtube.com/@s2HealthylifeFitness/community"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.youtube.com/@s2HealthylifeFitness/community" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
                   alt="YouTube"
                   class="w-6"
                 />
               </a>
-              <a
-                href="https://www.instagram.com/s2healthylifeco/"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.instagram.com/s2healthylifeco/" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
                   alt="Instagram"
                   class="w-6"
                 />
               </a>
-              <a
-                href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab"
-                target="_blank"
-                class="block"
-              >
+              <a href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab" target="_blank" class="block">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                   alt="Facebook"
@@ -829,7 +843,7 @@ if (isset($_POST['submit'])) {
       </div>
     </footer>
     <!-- footer end -->
-     <script src='js/script'></script>
+     <script src='js/script.js'></script>
     <script>
         // Initialize date pickers
         document.addEventListener('DOMContentLoaded', function () {

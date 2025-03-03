@@ -108,24 +108,24 @@ height: 400px;
 .satellite1 {
 position: absolute;
 top: 55%;
-left: 55%;
+left: 90%;
 width: 128px;
 height: 128px;
 margin-top: -64px;
-margin-left: -64px;
-animation: rotate1 20s linear infinite;
+/* margin-left: -64px; */
+/* animation: rotate1 20s linear infinite; */
 z-index: 10;
 }
 
 .satellite2 {
 position: absolute;
-top: 51%;
+top: 11%;
 left: 50%;
 width: 128px;
 height: 128px;
-margin-top: -64px;
+margin-top: -114px;
 margin-left: -64px;
-animation: rotate2 25s linear infinite;
+/* animation: rotate2 25s linear infinite; */
 z-index: 10;
 }
 
@@ -136,12 +136,12 @@ left: 55%;
 width: 128px;
 height: 128px;
 margin-top: -64px;
-margin-left: -64px;
+margin-left: -314px;
 animation: rotate3 30s linear infinite;
 z-index: 10;
 }
 
-@keyframes rotate1 {
+/* @keyframes rotate1 {
 0% { transform: translate(200px, 0) rotate(0deg); }
 100% { transform: translate(200px, 0) rotate(360deg); }
 }
@@ -154,7 +154,7 @@ z-index: 10;
 @keyframes rotate3 {
 0% { transform: translate(-250px, 0) rotate(0deg); }
 100% { transform: translate(-250px, 0) rotate(360deg); }
-}
+} */
 
 .orbit-path-1 {
 position: absolute;
@@ -225,14 +225,28 @@ transform: translateX(0);
   height: 380px;
 }
 
-.satellite1, .satellite2, .satellite3 {
+.satellite1 {
   width: 96px;
   height: 96px;
   margin-top: -48px;
+  margin-left: -12px;
+}
+
+.satellite2 {
+  width: 96px;
+  height: 96px;
+  margin-top: -78px;
   margin-left: -48px;
 }
 
-@keyframes rotate1 {
+.satellite3 {
+  width: 96px;
+  height: 96px;
+  margin-top: -48px;
+  margin-left: -218px;
+}
+
+/* @keyframes rotate1 {
   0% { transform: translate(150px, 0) rotate(0deg); }
   100% { transform: translate(150px, 0) rotate(360deg); }
 }
@@ -245,7 +259,7 @@ transform: translateX(0);
 @keyframes rotate3 {
   0% { transform: translate(-190px, 0) rotate(0deg); }
   100% { transform: translate(-190px, 0) rotate(360deg); }
-}
+} */
 
 .Navbar{
   margin: 0px 10px;
@@ -275,14 +289,28 @@ transform: translateX(0);
   height: 320px;
 }
 
-.satellite1, .satellite2, .satellite3 {
+.satellite1 {
   width: 80px;
   height: 80px;
   margin-top: -40px;
+  margin-left: -10px;
+}
+
+.satellite2 {
+  width: 80px;
+  height: 80px;
+  margin-top: -60px;
   margin-left: -40px;
 }
 
-@keyframes rotate1 {
+.satellite3 {
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -200px;
+}
+
+/* @keyframes rotate1 {
   0% { transform: translate(125px, 0) rotate(0deg); }
   100% { transform: translate(125px, 0) rotate(360deg); }
 }
@@ -295,7 +323,7 @@ transform: translateX(0);
 @keyframes rotate3 {
   0% { transform: translate(-160px, 0) rotate(0deg); }
   100% { transform: translate(-160px, 0) rotate(360deg); }
-}
+} */
 }
 
 /* fitness and nutrition end */

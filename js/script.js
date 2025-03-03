@@ -372,6 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
       bmiResult.textContent = bmi;
     } else {
       bmiResult.textContent = "Please enter valid height and weight";
+      bmiResult.style.color = "red";
     }
   });
 });
