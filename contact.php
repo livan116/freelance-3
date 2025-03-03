@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body class="bg-white font1">
      <!-- Navigation - Fixed at the top -->
-     <nav class="Navbar shadow-md z-50 transition-all duration-300" id="navbar">
+     <nav class="Navbar shadow-md z-50 px-3 transition-all duration-300" id="navbar">
       <div class="container mx-auto px-2">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
@@ -221,7 +221,7 @@ if (isset($_POST['submit'])) {
 
     <!-- nav section end -->
    
-        <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex flex-col p-4 mt-4 md:px-16 lg:flex-row gap-8">
             <!-- Left Section -->
             <div class="w-full lg:w-1/2">
                 <div class="flex items-center mb-2">

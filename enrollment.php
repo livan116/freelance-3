@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
        <!-- nav section start -->
    <!-- Navigation - Fixed at the top -->
    <!-- Navigation - Fixed at the top -->
-   <nav class="Navbar shadow-md z-50 transition-all duration-300" id="navbar">
+   <nav class="Navbar shadow-md z-50 px-3 transition-all duration-300" id="navbar">
       <div class="container mx-auto px-2">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
