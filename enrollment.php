@@ -11,7 +11,11 @@ $successMessage = '';
 $firstName = $lastName = $phone = $dob = $address = $emergencyName = $relationship = $emergencyPhone = '';
 $fitnessLevel = $healthcareProfessional = $healthcareDetails = $medicalConditions = $medicalDetails = '';
 $surgeries = $surgeryDetails = $physicalLimitations = $limitationDetails = '';
-$formDate = $under18 = $guardianName = $guardianRelationship = $signature = '';
+$formDate = $under18 = $guardianName = $guardianRelationship = $signature = $guardianSignature = '';
+
+// Consent for Social Media
+$fullNameConsent = $firstNameOnlyConsent = $nicknameConsent = $noNameConsent = '';
+$groupPhotoConsent = $individualPhotoConsent = $compensationConsent = '';
 
 if (isset($_POST['submit'])) {
     // Collect form data
@@ -36,7 +40,17 @@ if (isset($_POST['submit'])) {
     $under18 = htmlspecialchars($_POST['under18'] ?? '');
     $guardianName = htmlspecialchars($_POST['guardianName'] ?? '');
     $guardianRelationship = htmlspecialchars($_POST['guardianRelationship'] ?? '');
-    $signature = htmlspecialchars($_POST['signature'] ?? '');
+    $signature = htmlspecialchars($_POST['signature'] ?? ''); // Full name as signature
+    $guardianSignature = htmlspecialchars($_POST['guardianSignature'] ?? ''); // Guardian full name as signature
+
+    // Consent for Social Media
+    $fullNameConsent = isset($_POST['fullName']) ? 'Yes' : 'No';
+    $firstNameOnlyConsent = isset($_POST['firstNameOnly']) ? 'Yes' : 'No';
+    $nicknameConsent = isset($_POST['nickname']) ? 'Yes' : 'No';
+    $noNameConsent = isset($_POST['noName']) ? 'Yes' : 'No';
+    $groupPhotoConsent = isset($_POST['groupPhoto']) ? $_POST['groupPhoto'] : '';
+    $individualPhotoConsent = isset($_POST['individualPhoto']) ? $_POST['individualPhoto'] : '';
+    $compensationConsent = isset($_POST['compensation']) ? $_POST['compensation'] : '';
 
     // Validation
     if (empty($firstName)) $errors[] = "First name is required";
@@ -58,8 +72,25 @@ if (isset($_POST['submit'])) {
     if ($physicalLimitations === 'Yes' && empty($limitationDetails)) $errors[] = "Limitation details are required";
     if (empty($formDate)) $errors[] = "Date is required";
     if (empty($under18)) $errors[] = "Under 18 status is required";
-    if ($under18 === 'Yes' && (empty($guardianName) || empty($guardianRelationship) || empty($signature))) {
+    if ($under18 === 'Yes' && (empty($guardianName) || empty($guardianRelationship) || empty($guardianSignature))) {
         $errors[] = "Guardian information is required for participants under 18";
+    }
+    if ($under18 === 'No' && empty($signature)) {
+        $errors[] = "Full name (signature) is required";
+    }
+
+    // Consent for Social Media Validation
+    if (!isset($_POST['fullName']) && !isset($_POST['firstNameOnly']) && !isset($_POST['nickname']) && !isset($_POST['noName'])) {
+        $errors[] = "At least one Authorization for Name Usage option is required";
+    }
+    if (empty($groupPhotoConsent)) {
+        $errors[] = "Group Photo Consent is required";
+    }
+    if (empty($individualPhotoConsent)) {
+        $errors[] = "Individual Photo Consent is required";
+    }
+    if (empty($compensationConsent)) {
+        $errors[] = "Compensation Consent is required";
     }
 
     if (empty($errors)) {
@@ -103,10 +134,24 @@ if (isset($_POST['submit'])) {
                 . "Under 18: $under18\n"
                 . "Guardian Name: $guardianName\n"
                 . "Guardian Relationship: $guardianRelationship\n"
-                . "Signature: $signature\n";
+                . "Signature: " . ($under18 === 'Yes' ? $guardianSignature : $signature) . "\n"
+                . "\nConsent for Social Media:\n"
+                . "Full Name Consent: $fullNameConsent\n"
+                . "First Name Only Consent: $firstNameOnlyConsent\n"
+                . "Nickname Consent: $nicknameConsent\n"
+                . "No Name Consent: $noNameConsent\n"
+                . "Group Photo Consent: $groupPhotoConsent\n"
+                . "Individual Photo Consent: $individualPhotoConsent\n"
+                . "Compensation Consent: $compensationConsent\n";
 
             $mail->send();
             $successMessage = "Thank you! Your enrollment form has been submitted.";
+
+            // Reset form fields
+            $firstName = $lastName = $phone = $dob = $address = $emergencyName = $relationship = $emergencyPhone = '';
+            $fitnessLevel = $healthcareProfessional = $healthcareDetails = $medicalConditions = $medicalDetails = '';
+            $surgeries = $surgeryDetails = $physicalLimitations = $limitationDetails = '';
+            $formDate = $under18 = $guardianName = $guardianRelationship = $signature = $guardianSignature = '';
         } catch (Exception $e) {
             $errors[] = "Mailer Error: " . $mail->ErrorInfo;
         }
@@ -129,6 +174,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="styles/styles.css">
     
 </head>
+
 
 <body class="bg-white font1 text-gray-800">
        <!-- nav section start -->
@@ -168,7 +214,7 @@ if (isset($_POST['submit'])) {
           </button>
 
           <!-- Desktop Navigation Links -->
-          <div class="hidden md:flex md:space-x-2 lg:space-x-8 text-sm lg:text-base">
+          <div class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base">
             <a
               href="/index.html"
               class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
@@ -282,17 +328,17 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
     <!-- Header -->
-    <div class="pb-2 mb-6 p-2 px-16">
-        <h1 class="heading font-semibold flex items-center">
-            <span class="inline-block w-6 h-0.5 bg-[#9AC339] mr-2"></span>
-            <span>Enrollment Form</span>
-        </h1>
+    <div class="pb-2 mb-6 mt-20 md:px-16 px-8 lg:px-32">
+    <div class="flex items-center mb-2">
+                    <div class="w-12 h-1 bg-[#9AC339]"></div>
+                    <h2 class="content-Heading ml-2">Enrollment Form</h2>
+                </div>
         <p class="text-sm mt-1">S2Healthylife Client Intake Waiver, Social Media Waiver, and Release of Liability Form</p>
     </div>
 
     <!-- Form -->
-     <div class="px-16">
-     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8  p-2">
+     <div class="md:px-16 px-8 mb-12 lg:px-32">
+     <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="space-y-8 max-w-7xl p-2">
         <!-- Error and Success Messages -->
         <?php if (!empty($errors)): ?>
             <div class="bg-red-100  border-l-4 border-red-500 text-red-700 p-4 mb-4">
@@ -501,7 +547,7 @@ if (isset($_POST['submit'])) {
                 <label class="block body-text mb-1">e) Are you aware of any physical limitations or restrictions that may impact your participation in exercise activities? <span class="text-red-500">*</span> (Yes/No)</label>
                 <div class="relative w-32">
                     <select id="physicalLimitations" name="physicalLimitations" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
-                    <option value="none" selected disabled hidden>Selec</option>
+                    <option value="none" selected disabled hidden>Select</option>
                         <option value="Yes" <?php echo ($physicalLimitations === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                         <option value="No" <?php echo ($physicalLimitations === 'No') ? 'selected' : ''; ?>>No</option>
                     </select>
@@ -542,76 +588,78 @@ if (isset($_POST['submit'])) {
         </div>
 
         <!-- 6. Consent for Social Media -->
+        <!-- Consent for Social Media -->
+<!-- Consent for Social Media -->
+<div>
+    <h2 class="sub-title font-semibold mb-2">6. Consent for Social Media:</h2>
+    <p class=" mb-4">By participating in the S2Healthylife program, I consent to the following:</p>
+
+    <div class="ml-4 space-y-3">
         <div>
-            <h2 class="sub-title font-semibold mb-2">6. Consent for Social Media:</h2>
-            <p class=" mb-4">By participating in the S2Healthylife program, I consent to the following:</p>
-
-            <div class="ml-4 space-y-3">
-                <div>
-                    <p class=" font-medium mb-2">• Authorization for Name Usage:</p>
-                    <div class="space-y-1">
-                        <div class="flex items-center">
-                            <input type="checkbox" id="fullName" class="mr-2">
-                            <label for="fullName" class="">Full Name</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="firstNameOnly" class="mr-2">
-                            <label for="firstNameOnly" class="">First Name Only</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="nickname" class="mr-2">
-                            <label for="nickname" class="">Use a Nickname</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="noName" class="mr-2">
-                            <label for="noName" class="">Do Not Use Any Name</label>
-                        </div>
-                    </div>
+            <p class=" font-medium mb-2">• Authorization for Name Usage:</p>
+            <div class="space-y-1">
+                <div class="flex items-center">
+                    <input type="checkbox" id="fullName" name="fullName" class="mr-2">
+                    <label for="fullName" class="">Full Name</label>
                 </div>
-
-                <div>
-                    <p class=" font-medium mb-2">• Can Use Picture in Group Photos or Videos:</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center">
-                            <input type="radio" name="groupPhoto" id="groupPhotoYes" class="mr-1">
-                            <label for="groupPhotoYes" class="">Yes</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="radio" name="groupPhoto" id="groupPhotoNo" class="mr-1">
-                            <label for="groupPhotoNo" class="">No</label>
-                        </div>
-                    </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="firstNameOnly" name="firstNameOnly" class="mr-2">
+                    <label for="firstNameOnly" class="">First Name Only</label>
                 </div>
-
-                <div>
-                    <p class=" font-medium mb-2">• Permission to Use Individual Photos or Videos:</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center">
-                            <input type="radio" name="individualPhoto" id="individualPhotoYes" class="mr-1">
-                            <label for="individualPhotoYes" class="">Yes</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="radio" name="individualPhoto" id="individualPhotoNo" class="mr-1">
-                            <label for="individualPhotoNo" class="">No</label>
-                        </div>
-                    </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="nickname" name="nickname" class="mr-2">
+                    <label for="nickname" class="">Use a Nickname</label>
                 </div>
-
-                <div>
-                    <p class=" font-medium mb-2">• I understand that I will not receive any monetary compensation for the use of photos or videos:</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center">
-                            <input type="radio" name="compensation" id="compensationYes" class="mr-1">
-                            <label for="compensationYes" class="">Yes</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="radio" name="compensation" id="compensationNo" class="mr-1">
-                            <label for="compensationNo" class="">No</label>
-                        </div>
-                    </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="noName" name="noName" class="mr-2">
+                    <label for="noName" class="">Do Not Use Any Name</label>
                 </div>
             </div>
         </div>
+
+        <div>
+            <p class=" font-medium mb-2">• Can Use Picture in Group Photos or Videos:</p>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <input type="radio" name="groupPhoto" id="groupPhotoYes" value="Yes" class="mr-1" required>
+                    <label for="groupPhotoYes" class="">Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" name="groupPhoto" id="groupPhotoNo" value="No" class="mr-1" required>
+                    <label for="groupPhotoNo" class="">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p class=" font-medium mb-2">• Permission to Use Individual Photos or Videos:</p>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <input type="radio" name="individualPhoto" id="individualPhotoYes" value="Yes" class="mr-1" required>
+                    <label for="individualPhotoYes" class="">Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" name="individualPhoto" id="individualPhotoNo" value="No" class="mr-1" required>
+                    <label for="individualPhotoNo" class="">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p class=" font-medium mb-2">• I understand that I will not receive any monetary compensation for the use of photos or videos:</p>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <input type="radio" name="compensation" id="compensationYes" value="Yes" class="mr-1" required>
+                    <label for="compensationYes" class="">Yes</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" name="compensation" id="compensationNo" value="No" class="mr-1" required>
+                    <label for="compensationNo" class="">No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Date and Under 18 Section -->
         <div>
@@ -659,10 +707,10 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="mt-3">
                     <label for="guardianSignature" class="block body-text mb-1">Signature of Parent / Guardian<span class="text-red-500">*</span></label>
-                    <div class="flex items-start">
-                        <div id="signatureCanvas" class="border rounded p-1 h-32 w-full cursor-crosshair"></div>
+                    <div class="flex items-end justify-start">
+                        <input id="signatureCanvas" name="guardianSignature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-1/2 " ></input>
                         <button type="button" id="clearGuardianSignature"
-                            class="ml-2 px-4 py-1 text-sm border border-green-500 text-green-500 rounded hover:bg-green-50 focus:outline-none">Clear</button>
+                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none" onclick="signatureClear('signatureCanvas')">Clear</button>
                     </div>
                 </div>
             </div>
@@ -672,9 +720,9 @@ if (isset($_POST['submit'])) {
                 <div>
                     <label for="signature" class="block body-text mb-1">Signature<span class="text-red-500">*</span></label>
                     <div class="flex items-end justify-start">
-                        <input id="adultSignatureCanvas" name="signature" class="border rounded p-1 h-32 w-1/2 cursor-crosshair"></input>
+                        <input id="adultSignatureCanvas" name="signature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-1/2 "></input>
                         <button type="button" id="clearAdultSignature"
-                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none">Clear</button>
+                            class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none" onclick="signatureClear('adultSignatureCanvas')">Clear</button>
                     </div>
                 </div>
             </div>
@@ -843,194 +891,98 @@ if (isset($_POST['submit'])) {
       </div>
     </footer>
     <!-- footer end -->
-     <script src='js/script.js'></script>
+    <script src='js/script.js'></script>
     <script>
-        // Initialize date pickers
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Flatpickr date pickers
-            const dateInputs = document.querySelectorAll('.datepicker');
-            dateInputs.forEach(input => {
-                flatpickr(input, {
-                    dateFormat: "Y-m-d",
-                    allowInput: true
-                });
-            });
+        function signatureClear(component) {
+    const inputComponent = document.getElementById(component);
+    if (inputComponent) {
+        inputComponent.value = "";
+    }
+}
+       document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Flatpickr date pickers
+    const dateInputs = document.querySelectorAll('.datepicker');
+    dateInputs.forEach(input => {
+        flatpickr(input, {
+            dateFormat: "d-m-Y",
+            allowInput: true
+        });
+    });
 
-            // Calendar button click handlers
-            const calendarButtons = document.querySelectorAll('.calendar-btn');
-            calendarButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const input = this.parentElement.querySelector('.datepicker');
-                    if (input._flatpickr) {
-                        input._flatpickr.toggle();
-                    }
-                });
-            });
-
-            // Handle under 18 toggle
-            const under18Yes = document.getElementById('under18Yes');
-            const under18No = document.getElementById('under18No');
-            const guardianSection = document.getElementById('guardianSection');
-            const adultSignatureSection = document.getElementById('adultSignatureSection');
-
-            // Function to toggle sections based on age selection
-            function toggleSections() {
-                if (under18Yes.checked) {
-                    guardianSection.style.display = 'block';
-                    adultSignatureSection.style.display = 'none';
-                } else {
-                    guardianSection.style.display = 'none';
-                    adultSignatureSection.style.display = 'block';
-                }
-            }
-
-            // Initial setup
-            toggleSections();
-
-            // Add event listeners
-            under18Yes.addEventListener('change', toggleSections);
-            under18No.addEventListener('change', toggleSections);
-
-            // Handle dynamic details sections
-            const healthcareProfessional = document.getElementById('healthcareProfessional');
-            const healthcareDetailsSection = document.getElementById('healthcareDetailsSection');
-            const medicalConditions = document.getElementById('medicalConditions');
-            const medicalDetailsSection = document.getElementById('medicalDetailsSection');
-            const surgeries = document.getElementById('surgeries');
-            const surgeryDetailsSection = document.getElementById('surgeryDetailsSection');
-            const physicalLimitations = document.getElementById('physicalLimitations');
-            const limitationDetailsSection = document.getElementById('limitationDetailsSection');
-
-            healthcareProfessional.addEventListener('change', function () {
-                healthcareDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
-            });
-
-            medicalConditions.addEventListener('change', function () {
-                medicalDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
-            });
-
-            surgeries.addEventListener('change', function () {
-                surgeryDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
-            });
-
-            physicalLimitations.addEventListener('change', function () {
-                limitationDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
-            });
-
-            // Initialize signature pads
-            function initializeSignaturePad(canvasContainer, clearButton) {
-                if (!canvasContainer) return;
-
-                // Create canvas element
-                const canvas = document.createElement('canvas');
-                canvas.width = canvasContainer.offsetWidth;
-                canvas.height = canvasContainer.offsetHeight;
-                canvas.style.width = '100%';
-                canvas.style.height = '100%';
-                canvasContainer.appendChild(canvas);
-
-                const ctx = canvas.getContext('2d');
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = '#000';
-                let isDrawing = false;
-
-                // Mouse events for desktop
-                canvas.addEventListener('mousedown', startDrawing);
-                canvas.addEventListener('mousemove', draw);
-                canvas.addEventListener('mouseup', stopDrawing);
-                canvas.addEventListener('mouseout', stopDrawing);
-
-                // Touch events for mobile
-                canvas.addEventListener('touchstart', handleTouch);
-                canvas.addEventListener('touchmove', handleTouch);
-                canvas.addEventListener('touchend', stopDrawing);
-
-                // Clear signature button
-                if (clearButton) {
-                    clearButton.addEventListener('click', function () {
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    });
-                }
-
-                function startDrawing(e) {
-                    isDrawing = true;
-                    ctx.beginPath();
-                    const rect = e.target.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    ctx.moveTo(x, y);
-                }
-
-                function draw(e) {
-                    if (!isDrawing) return;
-                    const rect = e.target.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                }
-
-                function handleTouch(e) {
-                    e.preventDefault();
-                    if (e.type === 'touchstart') {
-                        isDrawing = true;
-                        ctx.beginPath();
-                        const touch = e.touches[0];
-                        const rect = e.target.getBoundingClientRect();
-                        const x = touch.clientX - rect.left;
-                        const y = touch.clientY - rect.top;
-                        ctx.moveTo(x, y);
-                    } else if (e.type === 'touchmove' && isDrawing) {
-                        const touch = e.touches[0];
-                        const rect = e.target.getBoundingClientRect();
-                        const x = touch.clientX - rect.left;
-                        const y = touch.clientY - rect.top;
-                        ctx.lineTo(x, y);
-                        ctx.stroke();
-                    }
-                }
-
-                function stopDrawing() {
-                    isDrawing = false;
-                }
-
-                return { canvas, ctx };
-            }
-
-            // Initialize both signature pads
-            const adultSignaturePad = initializeSignaturePad(
-                document.getElementById('adultSignatureCanvas'),
-                document.getElementById('clearAdultSignature')
-            );
-
-            const guardianSignaturePad = initializeSignaturePad(
-                document.getElementById('signatureCanvas'),
-                document.getElementById('clearGuardianSignature')
-            );
-
-            // Form reset button
-            const resetFormBtn = document.getElementById('resetForm');
-            if (resetFormBtn) {
-                resetFormBtn.addEventListener('click', function () {
-                    if (confirm('Are you sure you want to reset the form?')) {
-                        document.querySelector('form').reset();
-
-                        // Clear both signature pads
-                        if (adultSignaturePad && adultSignaturePad.ctx) {
-                            adultSignaturePad.ctx.clearRect(0, 0, adultSignaturePad.canvas.width, adultSignaturePad.canvas.height);
-                        }
-
-                        if (guardianSignaturePad && guardianSignaturePad.ctx) {
-                            guardianSignaturePad.ctx.clearRect(0, 0, guardianSignaturePad.canvas.width, guardianSignaturePad.canvas.height);
-                        }
-
-                        // Reset sections visibility
-                        under18No.checked = true;
-                        toggleSections();
-                    }
-                });
+    // Calendar button click handlers
+    const calendarButtons = document.querySelectorAll('.calendar-btn');
+    calendarButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const input = this.parentElement.querySelector('.datepicker');
+            if (input._flatpickr) {
+                input._flatpickr.toggle();
             }
         });
+    });
+
+    // Handle under 18 toggle
+    const under18Yes = document.getElementById('under18Yes');
+    const under18No = document.getElementById('under18No');
+    const guardianSection = document.getElementById('guardianSection');
+    const adultSignatureSection = document.getElementById('adultSignatureSection');
+
+    function toggleSections() {
+        if (under18Yes.checked) {
+            guardianSection.style.display = 'block';
+            adultSignatureSection.style.display = 'none';
+        } else {
+            guardianSection.style.display = 'none';
+            adultSignatureSection.style.display = 'block';
+        }
+    }
+
+    // Initial setup
+    toggleSections();
+
+    // Add event listeners
+    under18Yes.addEventListener('change', toggleSections);
+    under18No.addEventListener('change', toggleSections);
+
+    // Handle dynamic details sections
+    const healthcareProfessional = document.getElementById('healthcareProfessional');
+    const healthcareDetailsSection = document.getElementById('healthcareDetailsSection');
+    const medicalConditions = document.getElementById('medicalConditions');
+    const medicalDetailsSection = document.getElementById('medicalDetailsSection');
+    const surgeries = document.getElementById('surgeries');
+    const surgeryDetailsSection = document.getElementById('surgeryDetailsSection');
+    const physicalLimitations = document.getElementById('physicalLimitations');
+    const limitationDetailsSection = document.getElementById('limitationDetailsSection');
+
+    healthcareProfessional.addEventListener('change', function () {
+        healthcareDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
+    });
+
+    medicalConditions.addEventListener('change', function () {
+        medicalDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
+    });
+
+    surgeries.addEventListener('change', function () {
+        surgeryDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
+    });
+
+    physicalLimitations.addEventListener('change', function () {
+        limitationDetailsSection.style.display = (this.value === 'Yes') ? 'block' : 'none';
+    });
+
+
+    // Form reset button
+    const resetFormBtn = document.getElementById('resetForm');
+    if (resetFormBtn) {
+        resetFormBtn.addEventListener('click', function () {
+            if (confirm('Are you sure you want to reset the form?')) {
+                document.querySelector('form').reset();
+                // Reset sections visibility
+                under18No.checked = true;
+                toggleSections();
+            }
+        });
+    }
+});
     </script>
 </body>
 
