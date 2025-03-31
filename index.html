@@ -19,194 +19,207 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
   </head>
   <body class="relative font1">
     <!-- Navigation - Fixed at the top -->
     <!-- nav section start -->
   <!-- Navigation - Fixed at the top -->
-  <nav class="Navbar shadow-md z-50 transition-all px-3 duration-300" id="navbar">
-    <div class="container mx-auto px-2">
-      <div class="flex justify-between items-center h-16">
-        <!-- Logo -->
-        <a href="/index.html" class="flex-shrink-0 mr-4">
-          <img
-            src="images/logo.png"
-            alt="S2 Logo"
-            class="h-12 md:h-16 w-auto max-w-[120px]"
-          />
-        </a>
+ <!-- Navigation - Fixed at the top -->
+ <nav
+ class="Navbar shadow-md z-50 transition-all px-3 duration-300"
+ id="navbar"
+>
+ <div class="container mx-auto px-2">
+   <div class="flex justify-between items-center py-2">
+     <!-- Logo -->
+     <a href="/index.html" class="flex-shrink-0 md:mr-2 lg:mr-4">
+       <img
+         src="images/logo.png"
+         alt="S2 Logo"
+         class="h-12 md:h-16 w-[120px]"
+       />
+     </a>
 
-        <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-button"
-          class="md:hidden text-white focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
 
-        <!-- Desktop Navigation Links -->
-        <div class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base">
-          <a
-            href="/index.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Home</a
-          >
-          <a
-            href="/about.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >About Us</a
-          >
-          <a
-            href="/services.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Services</a
-          >
-          <a
-            href="/nutrition.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Nutrition</a
-          >
-          <a
-            href="/fitness-retreat.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Fitness Retreat</a
-          >
-          <a
-            href="/photos.html"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Photos</a
-          >
-          <a
-            href="/contact.php"
-            class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
-            >Reach Us</a
-          >
-        </div>
+     <!-- Mobile Menu Button -->
+     <button
+       id="mobile-menu-button"
+       class="md:hidden text-white focus:outline-none"
+     >
+       <svg
+         xmlns="http://www.w3.org/2000/svg"
+         class="h-6 w-6"
+         fill="none"
+         viewBox="0 0 24 24"
+         stroke="currentColor"
+       >
+         <path
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="2"
+           d="M4 6h16M4 12h16M4 18h16"
+         />
+       </svg>
+     </button>
 
-        <!-- Enroll Button (Desktop) -->
- 
-        <a href="/enrollment.php"
-        class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
-      >
-        Enroll Now
-      </a>
-      
+     <!-- Desktop Navigation Links -->
+     <div
+       class="hidden md:flex md:space-x-1 lg:space-x-5 text-sm lg:text-base"
+     >
+       <a
+         href="/index.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Home</a
+       >
+       <a
+         href="/about.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >About Us</a
+       >
+       <a
+         href="/services.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Services</a
+       >
+       <a
+         href="/nutrition.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Nutrition</a
+       >
+       <a
+         href="/fitness-retreat.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Fitness Retreat</a
+       >
+       <a
+         href="/photos.html"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Photos</a
+       >
+       <a
+         href="/contact.php"
+         class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+         >Reach Us</a
+       >
+     </div>
 
-      </div>
-    </div>
-  </nav>
+     <!-- Enroll Button (Desktop) -->
 
-  <!-- Mobile Menu -->
-  <div
-    class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-[60] overflow-y-auto transform translate-x-full transition-transform duration-300"
-    id="mobile-menu"
-  >
-    <div class="flex justify-between bg-[#304E0C] items-center border-b">
-      <a href="/index.html" class="flex-shrink-0">
-        <img
-          src="images/logo.png"
-          alt="S2 Logo"
-          class="h-12 md:h-16 w-auto max-w-[120px]"
-        />
-      </a>
-      <button class="mobile-close-button focus:outline-none text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-    </div>
-    <div class="flex flex-col p-4">
-      <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
-        >Home</a
-      >
-      <a href="/about.html" class="py-4 border-b border-gray-200 text-lg"
-        >About Us</a
-      >
-      <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
-        >Services</a
-      >
-      <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
-        >Nutrition</a
-      >
-      <a
-        href="/fitness-retreat.html"
-        class="py-4 border-b border-gray-200 text-lg"
-        >Fitness Retreat</a
-      >
-      <a href="/photos.html" class="py-4 border-b border-gray-200 text-lg"
-        >Photos</a
-      >
-      <a href="/contact.php" class="py-4 border-b border-gray-200 text-lg"
-        >Reach Us</a
-      >
-      <a
-        href="/enrollment.php"
-        class="py-4 border-b border-gray-200 text-lg bg-[#9AC339] text-center text-white mt-4 rounded-md"
-      >
-        Enroll Now
-      </a>
-    </div>
-  </div>
+     <a
+       href="/enrollment.php"
+       class="hidden md:block lg:text-[16px] flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 "
+     >
+       Enroll Now
+     </a>
+   </div>
+ </div>
+</nav>
 
+<!-- Mobile Menu -->
+<div
+ class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-[60] overflow-y-auto transform translate-x-full transition-transform duration-300"
+ id="mobile-menu"
+>
+ <div class="flex justify-between bg-[#304E0C] items-center border-b">
+   <a href="/index.html" class="flex-shrink-0">
+     <img
+       src="images/logo.png"
+       alt="S2 Logo"
+       class="h-12 md:h-16 w-auto max-w-[120px]"
+       loading="lazy"
+     />
+   </a>
+   <button class="mobile-close-button focus:outline-none text-white">
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       class="h-6 w-6"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor"
+     >
+       <path
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         d="M6 18L18 6M6 6l12 12"
+       />
+     </svg>
+   </button>
+ </div>
+ <div class="flex flex-col p-4">
+   <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
+     >Home</a
+   >
+   <a href="/about.html" class="py-4 border-b border-gray-200 text-lg"
+     >About Us</a
+   >
+   <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
+     >Services</a
+   >
+   <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
+     >Nutrition</a
+   >
+   <a
+     href="/fitness-retreat.html"
+     class="py-4 border-b border-gray-200 text-lg"
+     >Fitness Retreat</a
+   >
+   <a href="/photos.html" class="py-4 border-b border-gray-200 text-lg"
+     >Photos</a
+   >
+   <a href="/contact.php" class="py-4 border-b border-gray-200 text-lg"
+     >Reach Us</a
+   >
+   <a
+     href="/enrollment.php"
+     class="py-4 border-b border-gray-200 text-lg bg-[#9AC339] text-center text-white mt-4 rounded-md"
+   >
+     Enroll Now
+   </a>
+ </div>
+</div>
+
+<!-- nav section end -->
 
     <!-- Add padding to the top to account for fixed navbar -->
     <div class="pt-16"></div>
 
     <!-- Hero Section -->
     <div class="relative -mt-[30vh] md:-mt-[20vh] h-[700px]">
-      <video
-        autoplay
-        loop
-        muted
-        class="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="video/home_video.mp4" type="video/mp4" />
-      </video>
+      <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      poster="video/home_video.png"
+      loading = "lazy"
+      class="absolute inset-0 w-full h-full object-cover">
+      <source src="video/Home Video.webm" type="video/webm">
+      <source src="video/Home Video.mp4" type="video/mp4">
+    </video>
 
       <div class="absolute inset-0 bg-black bg-opacity-20"></div>
 
       <div
-        class="relative container mx-auto px-4 h-full flex flex-col justify-center">
+        class="relative container mx-auto px-4 h-full flex flex-col justify-end">
         <div
           class="md:max-w-3xl w-full text-center md:text-left section1">
           <h1 class="text-white heading font-700 font-bold mb-6">
             Enhanced Mental Well-being
           </h1>
 
-          <p class="text-white body-text text-justify font-600 mb-8">
+          <p class="text-white body-text text-justify font-600 mb-16">
             Physical activity and a nutritious diet are key to mental
             well-being. Exercise releases endorphins, reducing stress and
             anxiety, while a healthy diet supports brain function and stabilizes
@@ -217,16 +230,16 @@
     </div>
 
     <!-- BMI Button (fixed) -->
-    <button class="bmi text-white px-8 py-3 rounded-full transition-colors">
+    <button class="bmi text-white px-8 py-3 mb-16 rounded-full transition-colors">
       Calculate your BMI
     </button>
 
     <!-- fitness and nutrition start -->
     <!-- Content Section -->
     <div class="container  py-16 h-full ">
-      <div class="flex flex-col md:flex-row items-center gap-12 ">
+      <div class="flex flex-col lg:flex-row md:justify-between items-center gap-8 ">
         <!-- Left content -->
-        <div class="md:w-1/2 px-4">
+        <div class="lg:w-1/2  px-4 lg:ml-12 ">
           <div class="w-full flex items-center gap-4 md:mb-6">
             <div class="h-1 w-12 bg-[#9AC339]"></div>
             <h2 class="sub-title content-Heading">
@@ -254,530 +267,293 @@
         </div>
 
         <!-- Right content with circular animation -->
-        <div class="md:w-1/2 mt-4 relative">
-          <div class="satellite-container mx-auto relative">
-            <!-- Orbit paths -->
-            <div>
-              <div class="orbit-path-1"></div>
-              <div class="orbit-path-2"></div>
-            </div>
-
-            <!-- Center image -->
-            <div
-              class="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full overflow-hidden shadow-lg md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px]"
-            >
-              <img
-                src="images/home/img1.png"
-                alt="Central fitness image"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Rotating images with individual classes -->
-            <div class="satellite1">
-              <img
-                src="images/home/satellite_img1.png"
-                alt="Fitness activity"
-                class="w-full h-full rounded-full object-cover shadow-md"
-              />
-            </div>
-            <div class="satellite2">
-              <img
-                src="images/home/satellite_img2.png"
-                alt="Nutrition"
-                class="w-full h-full rounded-full object-cover shadow-md"
-              />
-            </div>
-            <div class="satellite3">
-              <img
-                src="images/home/satellite_img3.png"
-                alt="Meditation"
-                class="w-full h-full rounded-full object-cover shadow-md"
-              />
-            </div>
-          </div>
+        <div class="md:w-[500px] relative ">
+         <img src="images/home-right.png" alt="fitness and nutrition" loading="lazy" class="h-full w-full md:block hidden" >
+         <img src="images/home-right-compress.png" alt="fitness and nutrition" loading="lazy" class="h-full w-full md:hidden block" >
         </div>
       </div>
     </div>
 
     <!-- fitness and nutrition end -->
 
-    <!-- polyclinic start -->
-    <section class="py-12 md:py-16 md:h-[700px]">
-      <div class="flex items-center justify-end md:mr-36 gap-4 mb-6">
-        <h2 class="content-Heading">
-          Polyclinic and <span class="span-color">Wellness Center</span>
-        </h2>
-        <div class="h-1 w-12 bg-[#9AC339]"></div>
-      </div>
-      <div class="container mx-auto h-full px-4">
-        <!-- Flexbox container for layout -->
-        <div
-          class="flex flex-col md:flex-row h-full items-center justify-center md:items-start"
-        >
-          <!-- Image section -->
-          <div class="md:w-1/2 h-full mb-6 md:mb-0 relative">
-            <div
-              class="border-2 md:h-[300px] h-[200px] w-[250px] md:w-[400px] ml-2  rounded-md border-[#304E0C] z-0 -left-5 md:-left-10 md:-top-6 absolute"
-            ></div>
-            <div class="h-full z-50">
-              <img
-                src="images/home/img2.png"
-                alt="Polyclinic and Wellness Center"
-                class="object-cover relative md:absolute mt-7 w-[90vw] md:w-full h-[55vh]"
-              />
-            </div>
+   <!-- polyclinic start -->
+   <section class="py-12 md:py-16 md:h-[700px]">
+    <div class="flex items-center justify-end md:mr-36 gap-4 mb-6">
+      <h2 class="content-Heading">
+        Polyclinic and <span class="span-color">Wellness Center</span>
+      </h2>
+      <div class="h-1 w-12 bg-[#9AC339]"></div>
+    </div>
+    <div class="container mx-auto h-full px-4">
+      <!-- Flexbox container for layout -->
+      <div
+        class="flex flex-col md:flex-row h-full items-center justify-center md:items-start"
+      >
+        <!-- Image section -->
+        <div class="md:w-1/2 h-full mb-6 md:mb-0 relative">
+          <div
+            class="border-2 md:h-[300px] h-[200px] w-[250px] md:w-[400px] ml-2  rounded-md border-[#304E0C] z-0 -left-5 md:-left-10 md:-top-6 absolute"
+          ></div>
+          <div class="h-full z-50">
+            <img
+              src="images/home/img2.png"
+              alt="Polyclinic and Wellness Center"
+              loading="lazy"
+              class="object-cover relative md:absolute mt-7 w-[90vw] md:w-full"
+            />
           </div>
+          
+        </div>
 
-          <!-- Text content section -->
-          <div class="md:w-[40vw] md:pl-8">
-            <p class="text-gray-700 body-text leading-7 md:leading-9">
-              S2HealthyLife Polyclinic and Wellness Center is dedicated to
-              providing comprehensive healthcare services aimed at promoting
-              overall well-being. Our facility combines advanced medical
-              instruments with personalized wellness programs to ensure optimal
-              health for all our patients. With a team of experienced
-              professionals and state-of-the-art equipment, we strive to create
-              a healing environment that supports both physical and mental
-              health. Visit us to experience holistic care tailored to meet your
-              individual needs.
-            </p>
+        <!-- Text content section -->
+        <div class="md:w-[40vw] md:pl-8">
+          <p class="text-gray-700 body-text leading-7 md:leading-9">
+            S2HealthyLife Polyclinic and Wellness Center is dedicated to
+            providing comprehensive healthcare services aimed at promoting
+            overall well-being. Our facility combines advanced medical
+            instruments with personalized wellness programs to ensure optimal
+            health for all our patients. With a team of experienced
+            professionals and state-of-the-art equipment, we strive to create
+            a healing environment that supports both physical and mental
+            health. Visit us to experience holistic care tailored to meet your
+            individual needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- polyclinic end -->
+
+    <!-- gallery start -->
+   
+    <section class="gallery-section flex justify-center">
+      <div class="container max-w-7xl">
+        <div class="flex items-center px-12 gap-4 mb-6">
+          <h2 class="content-Heading text-white">Gallery</h2>
+          <div class="h-1 w-12 bg-[#9AC339]"></div>
+        </div>
+        <p class="text-white body-text mb-8 px-12">
+          They can turn into your instructor,&nbsp; your helper,&nbsp; your
+          mentor.
+        </p>
+
+        <div class="gallery-carousel">
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img1.jpg"
+              alt="Person doing push-up with equipment"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img2.jpg"
+              alt="Person lifting weights"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img3.jpg"
+              alt="Person using pull-up machine"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img4.jpg"
+              alt="Person doing squats"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img5.jpg"
+              alt="Person using resistance bands"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img6.jpg"
+              alt="Person doing stretches"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img7.jpg"
+              alt="Person doing stretches"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img8.jpg"
+              alt="Person doing stretches"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/img9.jpg"
+              alt="Person doing stretches"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- polyclinic end -->
-
-    <!-- gallery start -->
-    <div class="bg-[#304E0C] p-6 md:p-10">
-      <!-- Gallery Heading Section -->
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-center md:mr-36 gap-4 mb-6">
-          <h2 class="content-Heading text-white">Gallery</h2>
-          <div class="h-1 w-12 bg-[#9AC339]"></div>
-        </div>
-        <p class="text-white body-text mb-8">
-          They can turn into your instructor,&nbsp; your helper,&nbsp; your mentor.
-        </p>
-
-        <!-- Carousel Container -->
-        <div class="relative">
-          <!-- Left Arrow -->
-          <button
-            id="prev-btn"
-            class="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <!-- Carousel -->
-          <div class="overflow-hidden relative">
-            <div
-              id="carousel"
-              class="carousel-container flex transition-transform duration-300 ease-in-out"
-            >
-              <!-- Image 1 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img1.png"
-                  alt="Person doing push-up with weights"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 2 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img2.png"
-                  alt="Person lifting weights"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 3 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img3.png"
-                  alt="Person with arms raised"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 4 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img4.png"
-                  alt="Person performing squat"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 5 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img5.png"
-                  alt="Person doing cardio"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 6 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img6.png"
-                  alt="Person stretching"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 7 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img7.png"
-                  alt="Group fitness class"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 8 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img8.png"
-                  alt="Person on exercise machine"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 9 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img9.png"
-                  alt="Person with exercise ball"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Arrow -->
-          <button
-            id="next-btn"
-            class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          <!-- Indicator Dots -->
-          <div class="flex justify-center mt-4">
-            <div class="flex space-x-2">
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot active"
-                data-index="0"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
-                data-index="1"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
-                data-index="2"
-              ></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- gallery end -->
 
-    <!-- onsite and online start -->
-    <div class="max-w-7xl mx-auto px-2 py-8">
-      <!-- Onsite Services Section -->
-      <div class="mb-16">
+     <!-- Onsite section start -->
+     <div class="mx-auto px-4 py-8 mb-16 max-w-7xl">
+      <div class="pl-4 md:max-w-2xl">
         <div class="flex items-center md:mr-36 gap-4 mb-2">
           <div class="h-1 w-12 bg-[#9AC339]"></div>
           <h2 class="content-Heading">Onsite Services</h2>
         </div>
-        <p class="text-gray-600 mb-8 max-w-3xl body-text">
+        <p class="text-gray-600 mb-8 md:w-3/4 lg:w-full body-text">
           In-person pediatric care for illness treatment, health check-ups, and
           vaccination schedules.
         </p>
-
-        <div class="carousel-container w-full">
-          <!-- Navigation Arrows -->
-          <button id="onsite-prev" class="carousel-btn carousel-btn-prev">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <div class="overflow-hidden w-full">
-            <div
-              id="onsite-services"
-              class="services-slider flex md:gap-3 transition-transform duration-500 ease-in-out"
-            >
-              <!-- Service 1 -->
-               
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/onsite/img1.png"
-                    alt="Pediatric care"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">
-                      Management of General Pediatric Illness (Newborn-18 years)
-                    </h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-         
-
-              <!-- Service 2 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/onsite/img2.png"
-                    alt="Well visits"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">
-                      Well Visits and Vaccines
-                    </h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-
-              <!-- Service 3 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/onsite/img3.jpg"
-                    alt="Mental health"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">
-                      Medication & Counseling for ADHD, Autism, Anxiety and
-                      Depression
-                    </h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-
-              <!-- Service 4 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/onsite/img4.png"
-                    alt="Newborn care"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">Newborn Care</h3>
-                  </div>
+      </div>
+      <div class="carousel-container relative">
+        <div class="service-carousel">
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img src="images/onsite/img1.jpg" alt="Child with doctor" />
+                <div class="service-overlay">
+                  <h3 class="service-title">
+                    Management of General Pediatric Illness (Newborn -18 years)
+                  </h3>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
           </div>
-
-          <button id="onsite-next" class="carousel-btn carousel-btn-next">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          <!-- Indicator Dots -->
-          <div id="onsite-dots" class="dots-container md:hidden">
-            <!-- Dots will be generated by JS -->
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img
+                  src="images/onsite/img2.jpg"
+                  alt="Child getting vaccinated"
+                />
+                <div class="service-overlay">
+                  <h3 class="service-title">Well Visits and Vaccines</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img src="images/onsite/img3.jpg" alt="Child counseling" />
+                <div class="service-overlay">
+                  <h3 class="service-title">
+                    Medication & Counseling for ADHD, Autism, Anxiety and
+                    Depression
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img
+                  src="images/onsite/img4.jpg"
+                  alt="Child development check"
+                />
+                <div class="service-overlay">
+                  <h3 class="service-title">Nebulization</h3>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
+        <!-- Custom navigation buttons outside of slick structure -->
+        <div class="custom-arrow prev" id="prevArrow">&#10094;</div>
+        <div class="custom-arrow next" id="nextArrow">&#10095;</div>
       </div>
+    </div>
+    <!-- Onsite section end -->
 
-      <!-- Online Services Section -->
-      <div class="mb-10">
+    <!-- online services start -->
+
+       <!-- Online section start -->
+    <div class="mx-auto px-4 py-6 mb-16 max-w-7xl md:my-4">
+      <div class="pl-4 max-w-4xl">
         <div class="flex items-center md:mr-36 gap-4 mb-2">
           <div class="h-1 w-12 bg-[#9AC339]"></div>
           <h2 class="content-Heading">Online Services</h2>
         </div>
-        <p class="text-gray-600 mb-8 max-w-3xl body-text">
+        <p class="text-gray-600 mb-8 md:w-3/4 lg:w-full body-text">
           Empower your wellness with personalized nutrition counseling, tailored
           fitness programs, and specialized yoga sessions for all ages.
         </p>
-
-        <div class="carousel-container">
-          <!-- Navigation Arrows -->
-          <button id="online-prev" class="carousel-btn carousel-btn-prev">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <div class="overflow-hidden">
-            <div
-              id="online-services"
-              class="services-slider flex md:gap-3 transition-transform duration-500 ease-in-out"
-            >
-              <!-- Service 1 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/online/img1.jpg"
-                    alt="Nutrition counseling"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">Nutrition Counselling</h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-
-              <!-- Service 2 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/online/img2.jpg"
-                    alt="Fitness programs"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">Fitness Programs</h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-
-              <!-- Service 3 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/online/img3.jpg"
-                    alt="Yoga"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">Yoga</h3>
-                  </div>
-                </div>
-              </a>
-              </div>
-
-              <!-- Service 4 -->
-              <div class="service-item p-2">
-                <a href="services.html">
-                <div class="service-card">
-                  <img
-                    src="images/online/img4.jpg"
-                    alt="Mental wellness"
-                    class="w-full h-full object-cover"
-                  />
-                  <div class="service-card-content">
-                    <h3 class="text-lg font-medium">Strength training for seniors</h3>
-                  </div>
+      </div>
+      <div class="carousel-container relative">
+        <div class="online-service-carousel">
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img src="images/online/img1.jpg" alt="Child with doctor" />
+                <div class="service-overlay">
+                  <h3 class="service-title">Nutrition Counselling</h3>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
           </div>
-
-          <button id="online-next" class="carousel-btn carousel-btn-next">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          <!-- Indicator Dots -->
-          <div id="online-dots" class="dots-container md:hidden">
-            <!-- Dots will be generated by JS -->
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img
+                  src="images/online/img2.jpg"
+                  alt="Child getting vaccinated"
+                />
+                <div class="service-overlay">
+                  <h3 class="service-title">Fitness programs</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img
+                  src="images/online/img3.jpg"
+                  class="object-cover"
+                  alt="Child counseling"
+                />
+                <div class="service-overlay">
+                  <h3 class="service-title">Yoga</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="services.html">
+              <div class="service-card">
+                <img
+                  src="images/online/img4.jpg"
+                  alt="Child development check"
+                />
+                <div class="service-overlay">
+                  <h3 class="service-title">Strength Training for Seniors</h3>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
+        <!-- Custom navigation buttons outside of slick structure -->
+        <div class="custom-arrow prev" id="onlineprevArrow">&#10094;</div>
+        <div class="custom-arrow next" id="onlinenextArrow">&#10095;</div>
       </div>
     </div>
-    <!-- onsite and online end -->
+    <!-- online services end -->
 
     <!-- make payment start -->
     <div class="flex justify-center p-2">
@@ -836,11 +612,11 @@
         </div>
 
         <!-- Testimonial Carousel -->
-        <div class="testimonial-carousel min-h-[60vh] flex items-center">
+        <div class="testimonial-carousel h-full flex items-center">
           <!-- Testimonial 1 -->
           <div class="px-2">
             <div
-              class="bg-white shadow-md p-6 mb-2 relative min-h-[48vh] pb-4 flex flex-col"
+              class="bg-white shadow-md p-6 mb-2 relative min-h-[400px] pb-4 flex flex-col"
             >
               <div class="absolute -top-6 -left-2">
                 <div
@@ -876,7 +652,7 @@
 
           <!-- Testimonial 2 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -909,7 +685,7 @@
 
           <!-- Testimonial 3 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -943,7 +719,7 @@
 
           <!-- Testimonial 4 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -976,7 +752,7 @@
 
           <!-- Testimonial 5 (New) -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -1010,7 +786,7 @@
 
           <!-- testimonial-5 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -1044,7 +820,7 @@
 
           <!-- testimonial-6 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -1079,7 +855,7 @@
 
           <!-- testimonial - 7  -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -1112,7 +888,7 @@
 
           <!-- testimonial -8 -->
           <div class="px-2">
-            <div class="bg-white shadow-md p-6 relative mb-4 min-h-[48vh] flex flex-col">
+            <div class="bg-white shadow-md p-6 relative min-h-[400px] mb-4 flex flex-col">
               <div class="absolute -top-6 -left-2">
                 <div
                   class="w-16 h-16 bg-[#31501d] rounded-br-3xl flex items-end justify-end p-2"
@@ -1164,52 +940,62 @@
     <!-- testimonial end -->
 
     <!-- modal start -->
-    <div id="bmiModal" class="fixed inset-0 flex items-center justify-center md:justify-end z-50 hidden">
-      <div class="fixed inset-0 bg-black bg-opacity-50"></div>
-      <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 relative">
-        <button id="closeModal" class="absolute top-4 right-4 text-3xl font-thin">&times;</button>
-        
-        <div class="p-6">
-          <h2 class="text-2xl font-bold mb-6">BMI Calculator</h2>
-          
-          <div class="flex gap-4" > 
-            <div class="mb-4">
-              <label class="block mb-2 body-text">Age</label>
-              <input type="number" id="age" placeholder="Years" class=" w-40  px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
-            </div>
-            
-            <div class="mb-4">
-              <label class="block mb-2 body-text">Height<span class="text-red-500">*</span></label>
-              <input type="number" id="height" placeholder="cm" class="w-40  px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
-            </div>
-          </div>
-          
-          <div class="flex gap-4">
-            <div class="mb-4">
-              <label class="block mb-2 body-text">Weight<span class="text-red-500">*</span></label>
-              <input type="number" id="weight" placeholder="kg" class=" w-40 px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
-            </div>
-            
-           <div class="flex items-center">
-            <button id="calculateBtn" class="w-40  body-text bg-[#9AC339] px-4 py-2 mt-2 rounded-full h-14 text-white">Calculate</button>
-           </div>
-          </div>
-          
-          <div class="mt-2">
-            <label class="block mb-2">Your BMI</label>
-            <div id="bmiResult" class="w-full px-4 py-2 h-12 border border-[#304E0C] rounded-full"></div>
-          </div>
-           
-          <div class="mt-4">
-            <h3 class="font-medium mb-2">BMI Categories:</h3>
-            <p>Underweight = 18.5</p>
-            <p>Normal weight = 18.5–24.9</p>
-            <p>Obesity = BMI of 30 or greater</p>
-          </div>
+<div id="bmiModal" class="fixed inset-0 flex items-center justify-center md:justify-end z-50 hidden">
+  <div class="fixed inset-0 bg-black bg-opacity-50"></div>
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 relative">
+    <button id="closeModal" class="absolute top-4 right-4 text-3xl font-thin">&times;</button>
+    
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-6">BMI Calculator</h2>
+      <div class="flex gap-8 mb-4">
+        <div class="mb-4 flex gap-4 body-text items-center">
+          <input type="radio" name="gender" id="male" required value="male" class="w-5 h-5" checked>
+          <label for="male">Male</label>
+        </div>
+        <div class="mb-4 flex gap-4 body-text items-center">
+          <input type="radio" name="gender" id="female" required value="female" class="w-5 h-5">
+          <label for="female">Female</label>
         </div>
       </div>
+
+      <div class="flex gap-4" > 
+        <div class="mb-4">
+          <label class="block mb-2 body-text">Age<span class="text-red-500">*</span></label>
+          <input type="number" id="age" placeholder="Years" required class="w-40 px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
+        </div>
+        
+        <div class="mb-4">
+          <label class="block mb-2 body-text">Height<span class="text-red-500">*</span></label>
+          <input type="number" id="height" placeholder="cm" class="w-40 px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
+        </div>
+      </div>
+      
+      <div class="flex gap-4">
+        <div class="mb-4">
+          <label class="block mb-2 body-text">Weight<span class="text-red-500">*</span></label>
+          <input type="number" id="weight" placeholder="kg" class="w-40 px-4 py-2 h-12 border border-[#304E0C] rounded-full focus:outline-none">
+        </div>
+        
+        <div class="flex items-center">
+          <button id="calculateBtn" class="w-40 body-text bg-[#9AC339] px-4 py-2 mt-2 rounded-full h-14 text-white">Calculate</button>
+        </div>
+      </div>
+      
+      <div class="mt-2">
+        <label class="block mb-2">Your BMI</label>
+        <div class="w-full px-4 py-2 h-12 border border-[#304E0C] rounded-full flex justify-between items-center">
+          <div id="bmiResult" class="flex gap-2"></div>
+          <div id="bmiCategories" class="text-gray-600" ></div>
+        </div>
+      </div>
+        
+      <div class="flex mt-4 float-right mb-4">
+        <button id="clearBtn" class="w-[100px] body-text bg-[#9AC339] px-2 py-2 rounded-full h-10 text-center text-white">Clear</button>
+      </div>
     </div>
-    <!-- modal end -->
+  </div>
+</div>
+<!-- modal end -->
 
     <!-- footer start -->
     <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
@@ -1217,7 +1003,7 @@
         <div class="lg:flex justify-between items-start">
           <!-- Left Section (Logo and Description) -->
           <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
-            <a href="/index.html"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
+            <a href="/index.html"><img src="images/logo.png" loading="lazy" alt="Logo" class="mb-4" /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
               lifestyle changes, find joy in exercise, and develop healthy
@@ -1234,6 +1020,7 @@
                 <img
                   src="images/logos/email.png"
                   alt="Email"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <a
@@ -1248,6 +1035,7 @@
                 <img
                   src="images/logos/icons.png"
                   alt="Phone"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -1264,6 +1052,7 @@
                 <img
                   src="images/logos/whatsapp.png"
                   alt="WhatsApp"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -1289,6 +1078,7 @@
               <img
                 src="images/logos/icons.png"
                 alt="Phone"
+                
                 class="w-6 mr-2"
               />
               <a href="tel:+918125507159" class="hover:underline"
@@ -1335,6 +1125,7 @@
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
                   alt="YouTube"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>
@@ -1342,6 +1133,7 @@
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
                   alt="Instagram"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>

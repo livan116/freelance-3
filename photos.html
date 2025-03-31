@@ -50,6 +50,21 @@
         opacity: 0;
       }
 
+      .happy-clients-carousel-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .happy-clients-carousel-slide {
+        display: flex;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .happy-clients-carousel-slide.fade-out {
+        opacity: 0;
+      }
+
       .tab-indicator {
         transition: transform 0.3s ease;
         position: absolute;
@@ -73,7 +88,7 @@
       .carousel-image {
         height: 300px;
         width: 100%;
-        object-fit: cover;
+        object-fit:fill;
         border-radius: 0.75rem;
       }
 
@@ -83,11 +98,7 @@
       }
 
       /* Make all sections same width */
-      .section-container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+    
     </style>
   </head>
 
@@ -95,19 +106,22 @@
     <!-- Navigation - Fixed at the top -->
     <!-- Navigation - Fixed at the top -->
     <nav
-      class="Navbar shadow-md z-50 px-3 transition-all duration-300"
+      class="Navbar shadow-md z-50 transition-all px-3 duration-300"
       id="navbar"
     >
       <div class="container mx-auto px-2">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center py-2">
           <!-- Logo -->
-          <a href="/index.html" class="flex-shrink-0 mr-4">
+          <a href="/index.html" class="flex-shrink-0 md:mr-2 lg:mr-4">
             <img
               src="images/logo.png"
+          
               alt="S2 Logo"
-              class="h-12 md:h-16 w-auto max-w-[120px]"
+              loading="lazy"
+              class="h-12 md:h-16 w-[120px]"
             />
           </a>
+  
 
           <!-- Mobile Menu Button -->
           <button
@@ -132,41 +146,41 @@
 
           <!-- Desktop Navigation Links -->
           <div
-            class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base"
+            class="hidden md:flex md:space-x-1 lg:space-x-5 text-sm lg:text-base"
           >
             <a
               href="/index.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Home</a
             >
             <a
               href="/about.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >About Us</a
             >
             <a
               href="/services.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Services</a
             >
             <a
               href="/nutrition.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Nutrition</a
             >
             <a
               href="/fitness-retreat.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Fitness Retreat</a
             >
             <a
               href="/photos.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Photos</a
             >
             <a
               href="/contact.php"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Reach Us</a
             >
           </div>
@@ -175,7 +189,7 @@
 
           <a
             href="/enrollment.php"
-            class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
+            class="hidden md:block lg:text-[16px] flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 "
           >
             Enroll Now
           </a>
@@ -192,6 +206,7 @@
         <a href="/index.html" class="flex-shrink-0">
           <img
             src="images/logo.png"
+            loading="lazy"
             alt="S2 Logo"
             class="h-12 md:h-16 w-auto max-w-[120px]"
           />
@@ -245,6 +260,8 @@
         </a>
       </div>
     </div>
+
+    <!-- nav section end -->
 
     <div class="container mx-auto mt-20 px-4 max-w-7xl">
       <!-- Photos Section - Place this before the Tab Navigation -->
@@ -301,7 +318,8 @@
                 <div class="carousel-slide md:justify-between" id="slide-1">
                   <div class="w-full md:w-[32%] flex-shrink-0">
                     <img
-                      src="images/page_7/gym1.png"
+                      src="images/page_7/gym1.jpeg"
+                      loading="lazy"
                       alt="Person doing pushup with weights"
                       class="carousel-image rounded-lg"
                     />
@@ -309,16 +327,18 @@
 
                   <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
                     <img
-                      src="images/page_7/gym2.png"
+                      src="images/page_7/gym2.jpeg"
                       alt="Person lifting barbell"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
 
                   <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
                     <img
-                      src="images/page_7/gym3.png"
+                      src="images/page_7/gym3.jpeg"
                       alt="Person doing another pushup variation"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -328,8 +348,9 @@
                 <div class="carousel-slide hidden" id="mobile-slide-1">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym1.png"
+                      src="images/page_7/gym1.jpeg"
                       alt="Person lifting barbell"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -338,8 +359,9 @@
                 <div class="carousel-slide hidden" id="mobile-slide-2">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym2.png"
+                      src="images/page_7/gym2.jpeg"
                       alt="Person doing another pushup variation"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -347,7 +369,8 @@
                 <div class="carousel-slide hidden" id="mobile-slide-3">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym3.png"
+                      src="images/page_7/gym3.jpeg"
+                      loading="lazy"
                       alt="Person doing another pushup variation"
                       class="carousel-image rounded-lg"
                     />
@@ -361,25 +384,28 @@
                 >
                   <div class="w-full md:w-[32%] flex-shrink-0">
                     <img
-                      src="images/page_7/gym4.png"
+                      src="images/page_7/gym4.jpeg"
                       alt="Additional workout image 1"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
 
                   <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
                     <img
-                      src="images/page_7/gym5.png"
+                      src="images/page_7/gym5.jpeg"
                       alt="Additional workout image 2"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
 
                   <div class="w-full md:w-[32%] flex-shrink-0 hidden md:block">
                     <img
-                      src="images/page_7/gym6.png"
+                      src="images/page_7/gym6.jpeg"
                       alt="Additional workout image 3"
-                      class="carousel-image rounded-lg"
+                      loading="lazy"
+                      class="carousel-image object-fit rounded-lg"
                     />
                   </div>
                 </div>
@@ -388,8 +414,9 @@
                 <div class="carousel-slide hidden" id="mobile-slide-4">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym4.png"
+                      src="images/page_7/gym4.jpeg"
                       alt="Additional workout image 2"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -398,8 +425,9 @@
                 <div class="carousel-slide hidden" id="mobile-slide-5">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym5.png"
+                      src="images/page_7/gym5.jpeg"
                       alt="Additional workout image 3"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -407,8 +435,9 @@
                 <div class="carousel-slide hidden" id="mobile-slide-6">
                   <div class="w-full flex-shrink-0">
                     <img
-                      src="images/page_7/gym6.png"
+                      src="images/page_7/gym6.jpeg"
                       alt="Additional workout image 3"
+                      loading="lazy"
                       class="carousel-image rounded-lg"
                     />
                   </div>
@@ -478,8 +507,9 @@
                   >
                     <div class="w-full md:w-[32%] flex-shrink-0">
                       <img
-                        src="images/page_7/fitness1.png"
+                        src="images/page_7/fitness1.jpeg"
                         alt="Person lifting barbell"
+                        loading="lazy"
                         class="carousel-image rounded-lg"
                       />
                     </div>
@@ -488,8 +518,9 @@
                       class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
                     >
                       <img
-                        src="images/page_7/fitness2.png"
+                        src="images/page_7/fitness2.jpeg"
                         alt="Person with dumbbells"
+                        loading="lazy"
                         class="carousel-image rounded-lg"
                       />
                     </div>
@@ -498,7 +529,8 @@
                       class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
                     >
                       <img
-                        src="images/page_7/fitness3.png"
+                        src="images/page_7/fitness3.jpeg"
+                        loading="lazy"
                         alt="People doing squats"
                         class="carousel-image rounded-lg"
                       />
@@ -512,7 +544,8 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness1.png"
+                        src="images/page_7/fitness1.jpeg"
+                        loading="lazy"
                         alt="Person with dumbbells"
                         class="carousel-image rounded-lg"
                       />
@@ -525,7 +558,8 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness2.png"
+                        src="images/page_7/fitness2.jpeg"
+                        loading="lazy"
                         alt="People doing squats"
                         class="carousel-image rounded-lg"
                       />
@@ -537,7 +571,8 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness3.png"
+                        src="images/page_7/fitness3.jpeg"
+                        loading="lazy"
                         alt="People doing squats"
                         class="carousel-image rounded-lg"
                       />
@@ -551,9 +586,10 @@
                   >
                     <div class="w-full md:w-[32%] flex-shrink-0">
                       <img
-                        src="images/page_7/fitness4.png"
+                        src="images/page_7/fitness4.jpeg"
                         alt="Person doing yoga"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
 
@@ -561,9 +597,10 @@
                       class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
                     >
                       <img
-                        src="images/page_7/fitness5.png"
+                        src="images/page_7/fitness5.jpeg"
                         alt="Person doing push-ups"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
 
@@ -571,9 +608,10 @@
                       class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
                     >
                       <img
-                        src="images/page_7/fitness6.png"
+                        src="images/page_7/fitness6.jpeg"
                         alt="Person doing pull-ups"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -585,9 +623,10 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness4.png"
+                        src="images/page_7/fitness4.jpeg"
                         alt="Person doing push-ups"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -598,9 +637,10 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness5.png"
+                        src="images/page_7/fitness5.jpeg"
                         alt="Person doing pull-ups"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -610,9 +650,10 @@
                   >
                     <div class="w-full flex-shrink-0">
                       <img
-                        src="images/page_7/fitness6.png"
+                        src="images/page_7/fitness6.jpeg"
                         alt="Person doing pull-ups"
                         class="carousel-image rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -667,34 +708,188 @@
           </section>
 
           <!-- Happy Clients Section -->
-          <section class="max-w-6xl mx-auto" id="gallery-content-3">
-            <div class="flex flex-col justify-center items-center">
+          <section class=" " id="gallery-content-3">
+            <div class="flex flex-col w-full justify-center items-center">
               <h2 class="content-Heading text-center mb-10">Happy Clients</h2>
-              <div
-                class="w-full flex flex-col md:flex-row gap-6 md:justify-between"
-              >
-                <div class="w-full md:w-[32%] mb-6 md:mb-0 h-64 md:h-80">
-                  <img
-                    src="images/page_7/happy1.png"
-                    alt="Group of happy clients outdoors"
-                    class="w-full h-full rounded-2xl object-cover"
-                  />
+              <!-- Happy Clients Carousel Container -->
+              <div class="happy-clients-carousel-container w-full md:px-12">
+                <div id="happy-clients-carousel-wrapper">
+                  <!-- Set 1 -->
+                  <div
+                    class="happy-clients-carousel-slide md:justify-between"
+                    id="happy-clients-slide-1"
+                  >
+                    <div class="w-full md:w-[32%] flex-shrink-0">
+                      <img
+                        src="images/page_7/happy1.jpeg"
+                        alt="Group of happy clients outdoors"
+                        loading="lazy"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+
+                    <div
+                      class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
+                    >
+                      <img
+                        src="images/page_7/happy2.jpeg"
+                        alt="Woman in outdoor setting"
+                        loading="lazy"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+
+                    <div
+                      class="w-full md:w-[32%] flex-shrink-0 hidden md:block"
+                    >
+                      <img
+                        src="images/page_7/happy3.jpeg"
+                        alt="Group of friends with arms around each other"
+                        class="carousel-image rounded-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Mobile-only slides (for individual navigation) -->
+                  <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-1"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy1.jpeg"
+                        loading="lazy"
+                        alt="Group of happy clients outdoors"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-2"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy2.jpeg"
+                        loading="lazy"
+                        alt="Woman in outdoor setting"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-3"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy3.jpeg"
+                        loading="lazy"
+                        alt="Group of friends with arms around each other"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Set 2 -->
+                  <div
+                    class="happy-clients-carousel-slide md:justify-between hidden"
+                    id="happy-clients-slide-2"
+                  >
+                    
+
+                   
+                    
+                  </div>
+
+                  <!-- Mobile-only additional slides -->
+                  <!-- <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-4"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy4.png"
+                        alt="Additional happy clients image 1"
+                        loading="lazy"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-5"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy5.png"
+                        alt="Additional happy clients image 2"
+                        loading="lazy"
+                        class="carousel-image rounded-lg"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="happy-clients-carousel-slide hidden"
+                    id="happy-clients-mobile-slide-6"
+                  >
+                    <div class="w-full flex-shrink-0">
+                      <img
+                        src="images/page_7/happy6.png"
+                        alt="Additional happy clients image 3"
+                        class="carousel-image rounded-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div> -->
                 </div>
 
-                <div class="w-full md:w-[32%] mb-6 md:mb-0 h-64 md:h-80">
-                  <img
-                    src="images/page_7/happy2.png"
-                    alt="Woman in outdoor setting"
-                    class="w-full h-full rounded-2xl object-cover"
-                  />
-                </div>
+                <!-- Navigation Buttons -->
+                <div
+                  class="flex justify-center mt-4 space-x-4 gap-[30vw] md:gap-[20vw]"
+                >
+                  <button
+                    id="happy-clients-prev-btn"
+                    class="w-12 h-12 bg-[#9AC339] rounded-full flex items-center justify-center focus:outline-none"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
 
-                <div class="w-full md:w-[32%] h-64 md:h-80">
-                  <img
-                    src="images/page_7/happy3.png"
-                    alt="Group of friends with arms around each other"
-                    class="w-full h-full rounded-2xl object-cover"
-                  />
+                  <button
+                    id="happy-clients-next-btn"
+                    class="w-12 h-12 bg-[#9AC339] rounded-full flex items-center justify-center focus:outline-none"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -704,101 +899,144 @@
         <!-- Transformation Content -->
         <div
           id="transformation-content"
-          class="tab-content absolute md:relative top-12 md:-top-[45vh] md:-mb-[35vh] mb-[-70vh]"
+          class="tab-content -top-2 relative -mt-80"
         >
+        <div
+          class="flex flex-col gap-3"
+        >
+          <!-- part 1 -->
           <div
-            class="flex flex-col items-center justify-center gap-10 md:gap-[8vw]"
+            class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto"
           >
-            <!-- part 1 -->
+            <!-- Before Image -->
             <div
-              class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto"
+              class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]"
             >
-              <!-- Before Image -->
-              <div
-                class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]"
-              >
-                <img
-                  src="images/page_7/before1.png"
-                  alt="Before transformation"
-                  class="w-full rounded-lg"
-                />
-                <div class="text-2xl md:text-4xl text-[#000] font-semibold">
-                  Before
-                </div>
-              </div>
-
-              <!-- Arrow -->
-              <div>
-                <div>
-                  <img src="images/page_7/arrow.png" alt="" class="" />
-                </div>
-              </div>
-
-              <!-- After Image -->
-              <div
-                class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]"
-              >
-                <img
-                  src="images/page_7/after1.png"
-                  alt="After transformation"
-                  class="w-full rounded-lg"
-                />
-                <div class="text-2xl md:text-4xl text-black font-semibold">
-                  After
-                </div>
+              <img
+                src="images/page_7/before1.png"
+                alt="Before transformation"
+                class="w-full rounded-lg"
+                loading="lazy"
+              />
+              <div class="text-2xl md:text-4xl text-[#000] font-semibold">
+                Before
               </div>
             </div>
 
-            <!-- part 2 -->
-            <div
-              class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto"
-            >
-              <!-- Before Image -->
-              <div
-                class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]"
-              >
-                <img
-                  src="images/page_7/before2.png"
-                  alt="Before transformation"
-                  class="w-full rounded-lg"
-                />
-                <div class="text-2xl md:text-4xl text-[#000] font-semibold">
-                  Before
-                </div>
-              </div>
-
-              <!-- Arrow -->
+            <!-- Arrow -->
+            <div>
               <div>
-                <img src="images/page_7/arrow.png" alt="" />
+                <img src="images/page_7/arrow.png" alt="" loading="lazy" class="" />
               </div>
+            </div>
 
-              <!-- After Image -->
-              <div
-                class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]"
-              >
-                <img
-                  src="images/page_7/after2.png"
-                  alt="After transformation"
-                  class="w-full rounded-lg"
-                />
-                <div class="text-2xl md:text-4xl text-black font-semibold">
-                  After
-                </div>
+            <!-- After Image -->
+            <div
+              class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]"
+            >
+              <img
+                src="images/page_7/after1.png"
+                alt="After transformation"
+                loading="lazy"
+                class="w-full rounded-lg"
+              />
+              <div class="text-2xl md:text-4xl text-black font-semibold">
+                After
               </div>
             </div>
           </div>
+
+          <!-- part 2 -->
+          <div
+            class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto"
+          >
+            <!-- Before Image -->
+            <div
+              class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]"
+            >
+              <img
+                src="images/page_7/before2.png"
+                alt="Before transformation"
+                loading="lazy"
+                class="w-full rounded-lg"
+              />
+              <div class="text-2xl md:text-4xl text-[#000] font-semibold">
+                Before
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div>
+              <img src="images/page_7/arrow.png" loading="lazy" alt="" />
+            </div>
+
+            <!-- After Image -->
+            <div
+              class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]"
+            >
+              <img
+                src="images/page_7/after2.png"
+                alt="After transformation"
+                loading="lazy"
+                class="w-full rounded-lg"
+              />
+              <div class="text-2xl md:text-4xl text-black font-semibold">
+                After
+              </div>
+            </div>
+          </div>
+          <!-- part 3 -->
+          <div
+            class="flex flex-row justify-center md:gap-[5vw] items-center space-x-4 max-w-4xl mx-auto"
+          >
+            <!-- Before Image -->
+            <div
+              class="relative w-1/2 flex flex-col gap-4 items-center justify-center md:w-[15vw]"
+            >
+              <img
+                src="images/page_7/after3.jpg"
+                loading="lazy"
+                alt="Before transformation"
+                class="w-full h-full rounded-lg"
+              />
+              <div class="text-2xl md:text-4xl text-[#000] font-semibold">
+                Before
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div>
+              <img src="images/page_7/arrow.png" loading="lazy" alt="" />
+            </div>
+
+            <!-- After Image -->
+            <div
+              class="relative flex flex-col gap-4 justify-center items-center w-1/2 md:w-[15vw]"
+            >
+              <img
+                src="images/page_7/before3.jpg"
+                alt="After transformation"
+                loading="lazy"
+                class="w-full h-full rounded-lg"
+              />
+              <div class="text-2xl md:text-4xl text-black font-semibold">
+                After
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
 
     <!-- footer start -->
-    <footer class="footer bg-[#304E0C] mt-12 text-white p-8 lg:px-20">
+    <footer class="footer bg-[#304E0C] mt-20 text-white p-8 lg:px-20">
       <div class="container mx-auto">
         <div class="lg:flex justify-between items-start">
           <!-- Left Section (Logo and Description) -->
           <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
             <a href="/index.html"
-              ><img src="images/logo.png" alt="Logo" class="mb-4"
+              ><img src="images/logo.png" loading="lazy" alt="Logo" class="mb-4"
             /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
@@ -815,6 +1053,7 @@
               <p class="flex items-center mb-2">
                 <img
                   src="images/logos/email.png"
+                  loading="lazy"
                   alt="Email"
                   class="w-6 mr-2"
                 />
@@ -830,6 +1069,7 @@
                 <img
                   src="images/logos/icons.png"
                   alt="Phone"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -846,6 +1086,7 @@
                 <img
                   src="images/logos/whatsapp.png"
                   alt="WhatsApp"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -866,7 +1107,7 @@
             </div>
             <h4 class="t mb-4 body-text">For Pediatric-Related Enquiries</h4>
             <p class="flex items-center mb-2">
-              <img src="images/logos/icons.png" alt="Phone" class="w-6 mr-2" />
+              <img src="images/logos/icons.png" loading="lazy" alt="Phone" class="w-6 mr-2" />
               <a href="tel:+918125507159" class="hover:underline"
                 >+91 8125507159</a
               >
@@ -887,6 +1128,7 @@
             <div class="flex items-start">
               <img
                 src="images/logos/location.png"
+                loading="lazy"
                 alt="Location"
                 class="w-6 mr-2"
               />
@@ -913,6 +1155,7 @@
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                  loading="lazy"
                   alt="YouTube"
                   class="w-6"
                 />
@@ -924,6 +1167,7 @@
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                  loading="lazy"
                   alt="Instagram"
                   class="w-6"
                 />
@@ -935,6 +1179,7 @@
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  loading="lazy"
                   alt="Facebook"
                   class="w-6"
                 />
@@ -953,265 +1198,474 @@
 
     <script src="js/script.js"></script>
 
-    <script>
-      // Initialize tab indicator position
-      const tabIndicator = document.querySelector(".tab-indicator");
-      const galleryTab = document.getElementById("gallery-tab");
-      const transformationTab = document.getElementById("transformation-tab");
-      const galleryContent = document.getElementById("gallery-content");
-      const galleryContent2 = document.getElementById("gallery-content-2");
-      const galleryContent3 = document.getElementById("gallery-content-3");
-      const transformationContent = document.getElementById(
-        "transformation-content"
-      );
-      const gallerySections = document.querySelector(".gallery-sections");
+   <script>
+    // Initialize tab indicator position
+const tabIndicator = document.querySelector(".tab-indicator");
+const galleryTab = document.getElementById("gallery-tab");
+const transformationTab = document.getElementById("transformation-tab");
+const galleryContent = document.getElementById("gallery-content");
+const galleryContent2 = document.getElementById("gallery-content-2");
+const galleryContent3 = document.getElementById("gallery-content-3");
+const transformationContent = document.getElementById("transformation-content");
+const gallerySections = document.querySelector(".gallery-sections");
 
-      // Set initial position of tab indicator
-      function setInitialIndicatorPosition() {
-        tabIndicator.style.transform = "translateX(0)";
+// Set initial position of tab indicator
+function setInitialIndicatorPosition() {
+  tabIndicator.style.transform = "translateX(0)";
+}
+setInitialIndicatorPosition();
+
+// Tab functionality with transition
+function switchToGalleryTab() {
+  // Move indicator
+  tabIndicator.style.transform = "translateX(0)";
+
+  // Change text colors
+  galleryTab.classList.add("text-white");
+  galleryTab.classList.remove("text-green-800");
+  transformationTab.classList.add("text-green-800");
+  transformationTab.classList.remove("text-white");
+
+  // First fade out transformation content if it's visible
+  if (transformationContent.classList.contains("active")) {
+    transformationContent.style.opacity = "0";
+
+    setTimeout(() => {
+      transformationContent.classList.remove("active");
+
+      // Then fade in gallery sections
+      gallerySections.style.opacity = "1";
+      galleryContent.classList.add("active");
+      galleryContent2.classList.add("active");
+      galleryContent3.classList.add("active");
+
+      // Reset transformation opacity for next time
+      transformationContent.style.opacity = "";
+    }, 300);
+  }
+}
+
+function switchToTransformationTab() {
+  // Move indicator
+  tabIndicator.style.transform = "translateX(100%)";
+
+  // Change text colors
+  transformationTab.classList.add("text-white");
+  transformationTab.classList.remove("text-green-800");
+  galleryTab.classList.add("text-green-800");
+  galleryTab.classList.remove("text-white");
+
+  // Fade out the entire gallery sections container
+  gallerySections.style.opacity = "0";
+
+  // After short transition, hide gallery and show transformation
+  setTimeout(() => {
+    transformationContent.classList.add("active");
+    galleryContent.classList.remove("active");
+    galleryContent2.classList.remove("active");
+    galleryContent3.classList.remove("active");
+  }, 300);
+}
+
+galleryTab.addEventListener("click", switchToGalleryTab);
+transformationTab.addEventListener("click", switchToTransformationTab);
+
+// Get all slides
+const allDesktopSlides = [
+  document.getElementById("slide-1"),
+  document.getElementById("slide-2"),
+];
+
+// Get all mobile individual slides
+const allMobileSlides = [
+  document.getElementById("mobile-slide-1"),
+  document.getElementById("mobile-slide-2"),
+  document.getElementById("mobile-slide-3"),
+  document.getElementById("mobile-slide-4"),
+  document.getElementById("mobile-slide-5"),
+  document.getElementById("mobile-slide-6"),
+];
+
+// Variables for tracking current slide
+let currentSlide = 0;
+let isMobile = window.innerWidth < 768;
+let slides = isMobile ? allMobileSlides : allDesktopSlides;
+let totalSlides = slides.length;
+
+// Initialize: show first slide
+slides[currentSlide].classList.remove("hidden");
+
+function goToSlide(index) {
+  // Add fade-out class to current slide
+  slides[currentSlide].classList.add("fade-out");
+
+  setTimeout(() => {
+    // Hide current slide
+    slides[currentSlide].classList.add("hidden");
+    slides[currentSlide].classList.remove("fade-out");
+
+    // Update current slide index
+    currentSlide = index;
+
+    // Show new slide
+    slides[currentSlide].classList.remove("hidden");
+
+    // Force a reflow to ensure the opacity transition works
+    slides[currentSlide].offsetHeight;
+  }, 500); // Match with CSS transition time
+}
+
+// Navigation buttons for first carousel
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+prevBtn.addEventListener("click", () => {
+  const newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+  goToSlide(newIndex);
+});
+
+nextBtn.addEventListener("click", () => {
+  const newIndex = (currentSlide + 1) % totalSlides;
+  goToSlide(newIndex);
+});
+
+// Fitness carousel slides
+const allFitnessDesktopSlides = [
+  document.getElementById("fitness-slide-1"),
+  document.getElementById("fitness-slide-2"),
+];
+
+// Get all fitness mobile individual slides
+const allFitnessMobileSlides = [
+  document.getElementById("fitness-mobile-slide-1"),
+  document.getElementById("fitness-mobile-slide-2"),
+  document.getElementById("fitness-mobile-slide-3"),
+  document.getElementById("fitness-mobile-slide-4"),
+  document.getElementById("fitness-mobile-slide-5"),
+  document.getElementById("fitness-mobile-slide-6"),
+];
+
+// Variables for tracking current fitness slide
+let fitnessCurrentSlide = 0;
+let fitnessSlides = isMobile
+  ? allFitnessMobileSlides
+  : allFitnessDesktopSlides;
+let fitnessTotalSlides = fitnessSlides.length;
+
+// Initialize: show first fitness slide
+fitnessSlides[fitnessCurrentSlide].classList.remove("hidden");
+
+function goToFitnessSlide(index) {
+  // Add fade-out class to current slide
+  fitnessSlides[fitnessCurrentSlide].classList.add("fade-out");
+
+  setTimeout(() => {
+    // Hide current slide
+    fitnessSlides[fitnessCurrentSlide].classList.add("hidden");
+    fitnessSlides[fitnessCurrentSlide].classList.remove("fade-out");
+
+    // Update current slide index
+    fitnessCurrentSlide = index;
+
+    // Show new slide
+    fitnessSlides[fitnessCurrentSlide].classList.remove("hidden");
+
+    // Force a reflow to ensure the opacity transition works
+    fitnessSlides[fitnessCurrentSlide].offsetHeight;
+  }, 500); // Match with CSS transition time
+}
+
+// Navigation buttons for fitness carousel
+const fitnessPrevBtn = document.getElementById("fitness-prev-btn");
+const fitnessNextBtn = document.getElementById("fitness-next-btn");
+
+fitnessPrevBtn.addEventListener("click", () => {
+  const newIndex =
+    (fitnessCurrentSlide - 1 + fitnessTotalSlides) % fitnessTotalSlides;
+  goToFitnessSlide(newIndex);
+});
+
+fitnessNextBtn.addEventListener("click", () => {
+  const newIndex = (fitnessCurrentSlide + 1) % fitnessTotalSlides;
+  goToFitnessSlide(newIndex);
+});
+
+// Happy Clients carousel slides
+const allHappyClientsDesktopSlides = [
+  document.getElementById("happy-clients-slide-1"),
+
+];
+
+// Get all happy clients mobile individual slides
+const allHappyClientsMobileSlides = [
+  document.getElementById("happy-clients-mobile-slide-1"),
+  document.getElementById("happy-clients-mobile-slide-2"),
+  document.getElementById("happy-clients-mobile-slide-3"),
+
+];
+
+// Variables for tracking current happy clients slide
+let happyClientsCurrentSlide = 0;
+let happyClientsSlides = isMobile
+  ? allHappyClientsMobileSlides
+  : allHappyClientsDesktopSlides;
+let happyClientsTotalSlides = happyClientsSlides.length;
+
+// Initialize: show first happy clients slide
+happyClientsSlides[happyClientsCurrentSlide].classList.remove("hidden");
+
+function goToHappyClientsSlide(index) {
+  // Add fade-out class to current slide
+  happyClientsSlides[happyClientsCurrentSlide].classList.add("fade-out");
+
+  setTimeout(() => {
+    // Hide current slide
+    happyClientsSlides[happyClientsCurrentSlide].classList.add("hidden");
+    happyClientsSlides[happyClientsCurrentSlide].classList.remove("fade-out");
+
+    // Update current slide index
+    happyClientsCurrentSlide = index;
+
+    // Show new slide
+    happyClientsSlides[happyClientsCurrentSlide].classList.remove("hidden");
+
+    // Force a reflow to ensure the opacity transition works
+    happyClientsSlides[happyClientsCurrentSlide].offsetHeight;
+  }, 500); // Match with CSS transition time
+}
+
+// Navigation buttons for happy clients carousel
+const happyClientsPrevBtn = document.getElementById("happy-clients-prev-btn");
+const happyClientsNextBtn = document.getElementById("happy-clients-next-btn");
+
+happyClientsPrevBtn.addEventListener("click", () => {
+  const newIndex =
+    (happyClientsCurrentSlide - 1 + happyClientsTotalSlides) % happyClientsTotalSlides;
+  goToHappyClientsSlide(newIndex);
+});
+
+happyClientsNextBtn.addEventListener("click", () => {
+  const newIndex = (happyClientsCurrentSlide + 1) % happyClientsTotalSlides;
+  goToHappyClientsSlide(newIndex);
+});
+
+// Function to adjust slides for viewport size
+function adjustForViewport() {
+  isMobile = window.innerWidth < 768;
+
+  // Reset current slides and update arrays based on screen size
+  if (isMobile) {
+    // Set appropriate slide arrays for mobile
+    slides = allMobileSlides;
+    fitnessSlides = allFitnessMobileSlides;
+    happyClientsSlides = allHappyClientsMobileSlides;
+
+    // Hide all slides first
+    allDesktopSlides.forEach((slide) => slide.classList.add("hidden"));
+    allMobileSlides.forEach((slide) => slide.classList.add("hidden"));
+    allFitnessDesktopSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allFitnessMobileSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allHappyClientsDesktopSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allHappyClientsMobileSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+
+    // Show only the current mobile slides
+    slides[0].classList.remove("hidden");
+    fitnessSlides[0].classList.remove("hidden");
+    happyClientsSlides[0].classList.remove("hidden");
+
+    // Reset current slide indexes
+    currentSlide = 0;
+    fitnessCurrentSlide = 0;
+    happyClientsCurrentSlide = 0;
+  } else {
+    // Set appropriate slide arrays for desktop
+    slides = allDesktopSlides;
+    fitnessSlides = allFitnessDesktopSlides;
+    happyClientsSlides = allHappyClientsDesktopSlides;
+
+    // Hide all slides first
+    allDesktopSlides.forEach((slide) => slide.classList.add("hidden"));
+    allMobileSlides.forEach((slide) => slide.classList.add("hidden"));
+    allFitnessDesktopSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allFitnessMobileSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allHappyClientsDesktopSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+    allHappyClientsMobileSlides.forEach((slide) =>
+      slide.classList.add("hidden")
+    );
+
+    // Show only the current desktop slides
+    slides[0].classList.remove("hidden");
+    fitnessSlides[0].classList.remove("hidden");
+    happyClientsSlides[0].classList.remove("hidden");
+
+    // Reset current slide indexes
+    currentSlide = 0;
+    fitnessCurrentSlide = 0;
+    happyClientsCurrentSlide = 0;
+
+    // Show the secondary and tertiary images in desktop view
+    const desktopImages = document.querySelectorAll(".md\\:block");
+    desktopImages.forEach((image) => {
+      image.classList.remove("hidden");
+    });
+  }
+
+  // Update total slides count
+  totalSlides = slides.length;
+  fitnessTotalSlides = fitnessSlides.length;
+  happyClientsTotalSlides = happyClientsSlides.length;
+}
+
+// Run on load and resize
+adjustForViewport();
+window.addEventListener("resize", adjustForViewport);
+
+// --------------------- DRAG FUNCTIONALITY ADDITION ---------------------
+
+// Main carousel draggable functionality
+function addDragToCarousel(carouselElement, slideArray, currentSlideVar, totalSlidesVar, goToSlideFunction) {
+  if (!carouselElement) return;
+  
+  let isDragging = false;
+  let startX, startY;
+  let startTime;
+  let moveX, moveY;
+  const minSwipeDistance = 50; // Minimum distance to register as a swipe
+  const maxSwipeTime = 300; // Maximum time in ms for a swipe
+  
+  // Get the parent element that will detect drag events
+  const carouselContainer = carouselElement.closest('.carousel-container') || carouselElement;
+  
+  // Add cursor styles to indicate draggable area
+  carouselContainer.style.cursor = 'grab';
+  
+  // Touch events
+  carouselContainer.addEventListener('touchstart', handleDragStart, { passive: false });
+  carouselContainer.addEventListener('touchmove', handleDragMove, { passive: false });
+  carouselContainer.addEventListener('touchend', handleDragEnd);
+  
+  // Mouse events
+  carouselContainer.addEventListener('mousedown', handleDragStart);
+  carouselContainer.addEventListener('mousemove', handleDragMove);
+  carouselContainer.addEventListener('mouseup', handleDragEnd);
+  carouselContainer.addEventListener('mouseleave', handleDragEnd);
+  
+  function handleDragStart(e) {
+    isDragging = true;
+    startTime = new Date().getTime();
+    
+    // Change cursor style
+    carouselContainer.style.cursor = 'grabbing';
+    
+    if (e.type === 'touchstart') {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    } else {
+      startX = e.clientX;
+      startY = e.clientY;
+      // Prevent default to avoid text selection during drag
+      e.preventDefault();
+    }
+    
+    // Reset move tracking
+    moveX = 0;
+    moveY = 0;
+  }
+  
+  function handleDragMove(e) {
+    if (!isDragging) return;
+    
+    let currentX, currentY;
+    
+    if (e.type === 'touchmove') {
+      currentX = e.touches[0].clientX;
+      currentY = e.touches[0].clientY;
+    } else {
+      currentX = e.clientX;
+      currentY = e.clientY;
+    }
+    
+    // Calculate distance moved
+    moveX = currentX - startX;
+    moveY = currentY - startY;
+    
+    // If dragging horizontally, prevent page scrolling
+    if (Math.abs(moveX) > Math.abs(moveY) && e.cancelable) {
+      e.preventDefault();
+    }
+  }
+  
+  function handleDragEnd() {
+    if (!isDragging) return;
+    
+    // Reset cursor
+    carouselContainer.style.cursor = 'grab';
+    
+    const endTime = new Date().getTime();
+    const timeElapsed = endTime - startTime;
+    
+    // Check if it was a quick, horizontal swipe
+    if (Math.abs(moveX) > minSwipeDistance && 
+        Math.abs(moveX) > Math.abs(moveY) && 
+        timeElapsed < maxSwipeTime) {
+      
+      // Get the current slide variable from scope
+      let currentSlideValue = window[currentSlideVar];
+      if (typeof currentSlideValue !== 'number') {
+        // If it's not a global variable, use the variable directly
+        currentSlideValue = eval(currentSlideVar);
       }
-      setInitialIndicatorPosition();
-
-      // Tab functionality with transition
-      function switchToGalleryTab() {
-        // Move indicator
-        tabIndicator.style.transform = "translateX(0)";
-
-        // Change text colors
-        galleryTab.classList.add("text-white");
-        galleryTab.classList.remove("text-green-800");
-        transformationTab.classList.add("text-green-800");
-        transformationTab.classList.remove("text-white");
-
-        // First fade out transformation content if it's visible
-        if (transformationContent.classList.contains("active")) {
-          transformationContent.style.opacity = "0";
-
-          setTimeout(() => {
-            transformationContent.classList.remove("active");
-
-            // Then fade in gallery sections
-            gallerySections.style.opacity = "1";
-            galleryContent.classList.add("active");
-            galleryContent2.classList.add("active");
-            galleryContent3.classList.add("active");
-
-            // Reset transformation opacity for next time
-            transformationContent.style.opacity = "";
-          }, 300);
-        }
+      
+      // Get total slides
+      let totalSlidesValue = window[totalSlidesVar];
+      if (typeof totalSlidesValue !== 'number') {
+        // If it's not a global variable, use the variable directly
+        totalSlidesValue = eval(totalSlidesVar);
       }
-
-      function switchToTransformationTab() {
-        // Move indicator
-        tabIndicator.style.transform = "translateX(100%)";
-
-        // Change text colors
-        transformationTab.classList.add("text-white");
-        transformationTab.classList.remove("text-green-800");
-        galleryTab.classList.add("text-green-800");
-        galleryTab.classList.remove("text-white");
-
-        // Fade out the entire gallery sections container
-        gallerySections.style.opacity = "0";
-
-        // After short transition, hide gallery and show transformation
-        setTimeout(() => {
-          transformationContent.classList.add("active");
-          galleryContent.classList.remove("active");
-          galleryContent2.classList.remove("active");
-          galleryContent3.classList.remove("active");
-        }, 300);
+      
+      if (moveX > 0) {
+        // Swipe right - go to previous slide
+        const newIndex = (currentSlideValue - 1 + totalSlidesValue) % totalSlidesValue;
+        goToSlideFunction(newIndex);
+      } else {
+        // Swipe left - go to next slide
+        const newIndex = (currentSlideValue + 1) % totalSlidesValue;
+        goToSlideFunction(newIndex);
       }
+    }
+    
+    // Reset drag state
+    isDragging = false;
+  }
+}
 
-      galleryTab.addEventListener("click", switchToGalleryTab);
-      transformationTab.addEventListener("click", switchToTransformationTab);
+// Add draggable functionality to the main carousel
+// Find carousel container elements
+const mainCarouselContainer = document.getElementById('slide-1').closest('.carousel-container') || 
+                             document.getElementById('slide-1').parentElement;
+const fitnessCarouselContainer = document.getElementById('fitness-slide-1').closest('.carousel-container') || 
+                                document.getElementById('fitness-slide-1').parentElement;
+const happyClientsCarouselContainer = document.getElementById('happy-clients-slide-1').closest('.carousel-container') || 
+                                     document.getElementById('happy-clients-slide-1').parentElement;
 
-      // Get all slides
-      const allDesktopSlides = [
-        document.getElementById("slide-1"),
-        document.getElementById("slide-2"),
-      ];
-
-      // Get all mobile individual slides
-      const allMobileSlides = [
-        document.getElementById("mobile-slide-1"),
-        document.getElementById("mobile-slide-2"),
-        document.getElementById("mobile-slide-3"),
-        document.getElementById("mobile-slide-4"),
-        document.getElementById("mobile-slide-5"),
-        document.getElementById("mobile-slide-6"),
-      ];
-
-      // Variables for tracking current slide
-      let currentSlide = 0;
-      let isMobile = window.innerWidth < 768;
-      let slides = isMobile ? allMobileSlides : allDesktopSlides;
-      let totalSlides = slides.length;
-
-      // Initialize: show first slide
-      slides[currentSlide].classList.remove("hidden");
-
-      function goToSlide(index) {
-        // Add fade-out class to current slide
-        slides[currentSlide].classList.add("fade-out");
-
-        setTimeout(() => {
-          // Hide current slide
-          slides[currentSlide].classList.add("hidden");
-          slides[currentSlide].classList.remove("fade-out");
-
-          // Update current slide index
-          currentSlide = index;
-
-          // Show new slide
-          slides[currentSlide].classList.remove("hidden");
-
-          // Force a reflow to ensure the opacity transition works
-          slides[currentSlide].offsetHeight;
-        }, 500); // Match with CSS transition time
-      }
-
-      // Navigation buttons for first carousel
-      const prevBtn = document.getElementById("prev-btn");
-      const nextBtn = document.getElementById("next-btn");
-
-      prevBtn.addEventListener("click", () => {
-        const newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-        goToSlide(newIndex);
-      });
-
-      nextBtn.addEventListener("click", () => {
-        const newIndex = (currentSlide + 1) % totalSlides;
-        goToSlide(newIndex);
-      });
-
-      // Fitness carousel slides
-      const allFitnessDesktopSlides = [
-        document.getElementById("fitness-slide-1"),
-        document.getElementById("fitness-slide-2"),
-      ];
-
-      // Get all fitness mobile individual slides
-      const allFitnessMobileSlides = [
-        document.getElementById("fitness-mobile-slide-1"),
-        document.getElementById("fitness-mobile-slide-2"),
-        document.getElementById("fitness-mobile-slide-3"),
-        document.getElementById("fitness-mobile-slide-4"),
-        document.getElementById("fitness-mobile-slide-5"),
-        document.getElementById("fitness-mobile-slide-6"),
-      ];
-
-      // Variables for tracking current fitness slide
-      let fitnessCurrentSlide = 0;
-      let fitnessSlides = isMobile
-        ? allFitnessMobileSlides
-        : allFitnessDesktopSlides;
-      let fitnessTotalSlides = fitnessSlides.length;
-
-      // Initialize: show first fitness slide
-      fitnessSlides[fitnessCurrentSlide].classList.remove("hidden");
-
-      function goToFitnessSlide(index) {
-        // Add fade-out class to current slide
-        fitnessSlides[fitnessCurrentSlide].classList.add("fade-out");
-
-        setTimeout(() => {
-          // Hide current slide
-          fitnessSlides[fitnessCurrentSlide].classList.add("hidden");
-          fitnessSlides[fitnessCurrentSlide].classList.remove("fade-out");
-
-          // Update current slide index
-          fitnessCurrentSlide = index;
-
-          // Show new slide
-          fitnessSlides[fitnessCurrentSlide].classList.remove("hidden");
-
-          // Force a reflow to ensure the opacity transition works
-          fitnessSlides[fitnessCurrentSlide].offsetHeight;
-        }, 500); // Match with CSS transition time
-      }
-
-      // Navigation buttons for fitness carousel
-      const fitnessPrevBtn = document.getElementById("fitness-prev-btn");
-      const fitnessNextBtn = document.getElementById("fitness-next-btn");
-
-      fitnessPrevBtn.addEventListener("click", () => {
-        const newIndex =
-          (fitnessCurrentSlide - 1 + fitnessTotalSlides) % fitnessTotalSlides;
-        goToFitnessSlide(newIndex);
-      });
-
-      fitnessNextBtn.addEventListener("click", () => {
-        const newIndex = (fitnessCurrentSlide + 1) % fitnessTotalSlides;
-        goToFitnessSlide(newIndex);
-      });
-
-      // Function to adjust slides for viewport size
-      function adjustForViewport() {
-        isMobile = window.innerWidth < 768;
-
-        // Reset current slides and update arrays based on screen size
-        if (isMobile) {
-          // Set appropriate slide arrays for mobile
-          slides = allMobileSlides;
-          fitnessSlides = allFitnessMobileSlides;
-
-          // Hide all slides first
-          allDesktopSlides.forEach((slide) => slide.classList.add("hidden"));
-          allMobileSlides.forEach((slide) => slide.classList.add("hidden"));
-          allFitnessDesktopSlides.forEach((slide) =>
-            slide.classList.add("hidden")
-          );
-          allFitnessMobileSlides.forEach((slide) =>
-            slide.classList.add("hidden")
-          );
-
-          // Show only the current mobile slides
-          slides[0].classList.remove("hidden");
-          fitnessSlides[0].classList.remove("hidden");
-
-          // Reset current slide indexes
-          currentSlide = 0;
-          fitnessCurrentSlide = 0;
-        } else {
-          // Set appropriate slide arrays for desktop
-          slides = allDesktopSlides;
-          fitnessSlides = allFitnessDesktopSlides;
-
-          // Hide all slides first
-          allDesktopSlides.forEach((slide) => slide.classList.add("hidden"));
-          allMobileSlides.forEach((slide) => slide.classList.add("hidden"));
-          allFitnessDesktopSlides.forEach((slide) =>
-            slide.classList.add("hidden")
-          );
-          allFitnessMobileSlides.forEach((slide) =>
-            slide.classList.add("hidden")
-          );
-
-          // Show only the current desktop slides
-          slides[0].classList.remove("hidden");
-          fitnessSlides[0].classList.remove("hidden");
-
-          // Reset current slide indexes
-          currentSlide = 0;
-          fitnessCurrentSlide = 0;
-
-          // Show the secondary and tertiary images in desktop view
-          const desktopImages = document.querySelectorAll(".md\\:block");
-          desktopImages.forEach((image) => {
-            image.classList.remove("hidden");
-          });
-        }
-
-        // Update total slides count
-        totalSlides = slides.length;
-        fitnessTotalSlides = fitnessSlides.length;
-      }
-
-      // Run on load and resize
-      adjustForViewport();
-      window.addEventListener("resize", adjustForViewport);
-    </script>
+// Add drag functionality to all carousels
+addDragToCarousel(mainCarouselContainer, slides, 'currentSlide', 'totalSlides', goToSlide);
+addDragToCarousel(fitnessCarouselContainer, fitnessSlides, 'fitnessCurrentSlide', 'fitnessTotalSlides', goToFitnessSlide);
+addDragToCarousel(happyClientsCarouselContainer, happyClientsSlides, 'happyClientsCurrentSlide', 'happyClientsTotalSlides', goToHappyClientsSlide);
+   </script>
   </body>
 </html>

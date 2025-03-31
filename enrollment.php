@@ -98,52 +98,64 @@ if (isset($_POST['submit'])) {
         try {
             // SMTP Configuration
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'vyoma.x23@gmail.com'; // Your Gmail address
-            $mail->Password = 'ecpdjzgkvrdkdbmt'; // Use Google App Password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
-
+            $mail->Host = 'localhost'; // GoDaddy SMTP relay
+            $mail->SMTPAuth = false;  // No authentication required
+            $mail->Port = 25;  // Default GoDaddy SMTP port
+            $mail->SMTPSecure = false; // No SSL/TLS
             // Sender & Recipient
-            $mail->setFrom('saigoud1710@gmail.com', 'S2Healthylife Enrollment Form');
-            $mail->addAddress('your-email@example.com'); // Your email
+            $mail->setFrom('fitnesstestemail@s2healthylife.com', 'Your Name'); 
+            $mail->addAddress('fitness@s2healthylife.com'); // Your email
 
             // Email Content
-            $mail->isHTML(false);
+            $mail->isHTML(true);
             $mail->Subject = 'New Enrollment Form Submission';
-            $mail->Body = "You have received a new enrollment form submission:\n\n"
-                . "First Name: $firstName\n"
-                . "Last Name: $lastName\n"
-                . "Phone: $phone\n"
-                . "Date of Birth: $dob\n"
-                . "Address: $address\n"
-                . "Emergency Contact Name: $emergencyName\n"
-                . "Relationship: $relationship\n"
-                . "Emergency Contact Phone: $emergencyPhone\n"
-                . "Fitness Level: $fitnessLevel\n"
-                . "Under Healthcare Professional: $healthcareProfessional\n"
-                . "Healthcare Details: $healthcareDetails\n"
-                . "Medical Conditions: $medicalConditions\n"
-                . "Medical Details: $medicalDetails\n"
-                . "Surgeries: $surgeries\n"
-                . "Surgery Details: $surgeryDetails\n"
-                . "Physical Limitations: $physicalLimitations\n"
-                . "Limitation Details: $limitationDetails\n"
-                . "Form Date: $formDate\n"
-                . "Under 18: $under18\n"
-                . "Guardian Name: $guardianName\n"
-                . "Guardian Relationship: $guardianRelationship\n"
-                . "Signature: " . ($under18 === 'Yes' ? $guardianSignature : $signature) . "\n"
-                . "\nConsent for Social Media:\n"
-                . "Full Name Consent: $fullNameConsent\n"
-                . "First Name Only Consent: $firstNameOnlyConsent\n"
-                . "Nickname Consent: $nicknameConsent\n"
-                . "No Name Consent: $noNameConsent\n"
-                . "Group Photo Consent: $groupPhotoConsent\n"
-                . "Individual Photo Consent: $individualPhotoConsent\n"
-                . "Compensation Consent: $compensationConsent\n";
-
+            $mail->Body = "
+    <p>You have received a new enrollment form submission:</p>
+    <p><strong>Participant Information </strong></p>
+    <p><strong>First Name:</strong> $firstName</p>
+    <p><strong>Last Name:</strong> $lastName</p>
+    <p><strong>Phone Number:</strong> $phone</p>
+    <p><strong>DOB:</strong> $dob</p>
+    <p><strong>Address:</strong> $address</p>
+    <p><strong>Emergency Contact Information: </strong> </p>
+    <p><strong>Full Name:</strong> $emergencyName</p>
+    <p><strong>Relationship:</strong> $relationship</p>
+    <p><strong>Phone Number:</strong> $emergencyPhone</p>
+    <p><strong>Fitness Level and Readiness:</strong></p>
+    <p><strong>Current Fitness Level:</strong> $fitnessLevel</p>
+    <p><strong>Are you currently under the care of healthcare professional? :</strong> $healthcareProfessional</p>
+    <p><strong>Provide details about your healthcare professional:</strong> $healthcareDetails</p>
+    <p><strong>Do you have any known medical conditions or injuries that may affect your ability to exercise? :</strong> $medicalConditions</p>
+    <p><strong>Provide details about your medical conditions:</strong> $medicalDetails</p>
+    <p><strong>Have you recently undergone any surgeries or medical procedures?:</strong> $surgeries</p>
+    <p><strong>Provide details about your surgeries:</strong> $surgeryDetails</p>
+    <p><strong>Are you aware of any physical limitations or restrictions that may impact your participation in exercise
+ activities? :</strong> $physicalLimitations</p>
+    <p><strong>Provide details about your physical limitations:</strong> $limitationDetails</p>
+   <p>By completing this section, you acknowledge that the provided information is accurate and that you have disclosed any relevant 
+health conditions  or concerns that may affect your participation in the exercise program.</p>
+   
+     <p><strong>Release and Waiver of Liability:</strong> I, the undersigned participant, hereby release S2Healthylife management, staff, and trainers conducting the exercise program from any liability or responsibility for injuries, accidents, or damages that may occur during or as a result of participation in the exercise activities.</p>
+    <p><strong>Indemnification:</strong> The participants agrees indemnify and hold harmless S2Healthlife management, staff and trainers conducting the exercise program from any claims, damages or losses arising from their participation.</p>
+    <p><strong>Consent to Emergency Medical Treatment:</strong>I give my consent to receive emergency medical treatment if required during the exercise program.</p>
+    <p><strong>Consent for Social Media:</strong></p>
+    <p>By participating in the S2Healthylife program, I consent to the following:</p>
+    <p>Authorization for Name Usage:</p>
+    <p><strong>Full Name:</strong> $fullNameConsent</p>
+    <p><strong>First Name Only:</strong> $firstNameOnlyConsent</p>
+    <p><strong>Use a Nickname:</strong> $nicknameConsent</p>
+    <p><strong>Do Not Use Any Name:</strong> $noNameConsent</p>
+    <p><strong>Can Use Picture in Group Photos or Videos:</strong> $groupPhotoConsent</p>
+    <p><strong>Permission to Use Individual Photos or Videos: </strong> $individualPhotoConsent</p>
+    <p><strong>I understand that I will not receive any monetary compensation for the use of photos or videos :</strong> $compensationConsent</p>
+    
+    <p><strong>Date:</strong> $formDate</p>
+    <p><strong>Is the participant under 18 years of age?:</strong> $under18</p>
+    <p><strong>Parent / Guardian Name:</strong> $guardianName</p>
+    <p><strong>Relationship to Participant:</strong> $guardianRelationship</p>
+    <p><strong>" . ($under18 === 'Yes' ? 'Signature of Parent / Guardian' : 'Signature') . ":</strong> " . ($under18 === 'Yes' ? $guardianSignature : $signature) . "</p>
+    
+";
             $mail->send();
             $successMessage = "Thank you! Your enrollment form has been submitted.";
 
@@ -172,25 +184,45 @@ if (isset($_POST['submit'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/styles.css">
+
+<style>
+/* Remove dropdown arrows from date inputs */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="text"].datepicker::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Additional styles for wider browser compatibility */
+input[type="text"].datepicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+</style>
     
 </head>
 
 
 <body class="bg-white font1 text-gray-800">
        <!-- nav section start -->
-   <!-- Navigation - Fixed at the top -->
-   <!-- Navigation - Fixed at the top -->
-   <nav class="Navbar shadow-md z-50 px-3 transition-all duration-300" id="navbar">
+    <!-- Navigation - Fixed at the top -->
+    <nav
+      class="Navbar shadow-md z-50 transition-all px-3 duration-300"
+      id="navbar"
+    >
       <div class="container mx-auto px-2">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center py-2">
           <!-- Logo -->
-          <a href="/index.html" class="flex-shrink-0 mr-4">
+          <a href="/index.html" class="flex-shrink-0 md:mr-2 lg:mr-4">
             <img
               src="images/logo.png"
+              loading="lazy"
               alt="S2 Logo"
-              class="h-12 md:h-16 w-auto max-w-[120px]"
+              class="h-12 md:h-16 w-[120px]"
             />
           </a>
+  
 
           <!-- Mobile Menu Button -->
           <button
@@ -214,53 +246,54 @@ if (isset($_POST['submit'])) {
           </button>
 
           <!-- Desktop Navigation Links -->
-          <div class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base">
+          <div
+            class="hidden md:flex md:space-x-1 lg:space-x-5 text-sm lg:text-base"
+          >
             <a
               href="/index.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Home</a
             >
             <a
               href="/about.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >About Us</a
             >
             <a
               href="/services.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Services</a
             >
             <a
               href="/nutrition.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Nutrition</a
             >
             <a
               href="/fitness-retreat.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Fitness Retreat</a
             >
             <a
               href="/photos.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Photos</a
             >
             <a
               href="/contact.php"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Reach Us</a
             >
           </div>
 
           <!-- Enroll Button (Desktop) -->
-   
-          <a href="/enrollment.php"
-          class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
-        >
-          Enroll Now
-        </a>
-        
 
+          <a
+            href="/enrollment.php"
+            class="hidden md:block lg:text-[16px] flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 "
+          >
+            Enroll Now
+          </a>
         </div>
       </div>
     </nav>
@@ -275,6 +308,7 @@ if (isset($_POST['submit'])) {
           <img
             src="images/logo.png"
             alt="S2 Logo"
+            loading="lazy"
             class="h-12 md:h-16 w-auto max-w-[120px]"
           />
         </a>
@@ -327,6 +361,8 @@ if (isset($_POST['submit'])) {
         </a>
       </div>
     </div>
+
+    <!-- nav section end -->
     <!-- Header -->
     <div class="pb-2 mb-6 mt-20 md:px-16 px-8 lg:px-32">
     <div class="flex items-center mb-2">
@@ -370,27 +406,28 @@ if (isset($_POST['submit'])) {
                     <input type="text" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $lastName ?? ''; ?>"
                         class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                 </div>
-                <div>
+                <div class=
+ >
                     <label for="phone" class="block body-text mb-1">Phone Number <span class="text-red-500">*</span></label>
                     <div class="flex">
-                        <div class="w-16 mr-1">
-                            <select class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
-                            <option>+91</option>
-                                <option>+61</option>
-                                <option>+81</option>
-                                <option>+86</option>
-                                <option>+49</option>
-                                <option>+44</option>
-                                <option>+94</option>
-                                <option>+41</option>
-                                <option>+1</option>
-                                <option>+20</option>
-                                <option>+20</option>
-                                <option>+33</option>
+                    <div class=" mr-1">
+                            <select class="w-20 p-3 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
+                            
+                            <option>(+91) India</option>
+                                <option>(+61) Australia</option>
+                                <option>(+81) Japan</option>
+                                <option>(+86) China</option>
+                                <option>(+49) Germany</option>
+                                <option>(+44) UK</option>
+                                <option>(+94) Sri Lanka</option>
+                                <option>(+41) Switzerland</option>
+                                <option>(+1) Canada</option>
+                                <option>(+20) Egypt</option>
+                                <option>(+33) France</option>
                             </select>
                         </div>
-                        <input type="number" maxlength="10" id="phone" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
-                            class="flex-1 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
+                        <input type="tel" maxlength="10" id="phone" name="phone" placeholder="Phone Number" value="<?php echo $phone ?? ''; ?>"
+                            class="flex-1 w-32 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                     </div>
                 </div>
             </div>
@@ -399,14 +436,14 @@ if (isset($_POST['submit'])) {
                 <div>
                     <label for="dob" class="block body-text mb-1">DOB <span class="text-red-500">*</span></label>
                     <div class="relative">
-                        <input type="text" id="dob" name="dob" placeholder="Date of Birth" value="<?php echo $dob ?? ''; ?>"
-                            class="datepicker w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
-                        <button type="button" class="absolute right-2 top-2 calendar-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </button>
-                    </div>
+    <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" value="<?php echo $dob ?? ''; ?>"
+        class="datepicker w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none appearance-none">
+    <button type="button" class="absolute right-2 top-2 calendar-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+    </button>
+</div>  
                 </div>
                 <div class="md:col-span-2">
                     <label for="address" class="block body-text mb-1">Address <span class="text-red-500">*</span></label>
@@ -430,24 +467,24 @@ if (isset($_POST['submit'])) {
                 <div>
                     <label for="emergencyPhone" class="block body-text mb-1">Phone Number <span class="text-red-500">*</span></label>
                     <div class="flex">
-                        <div class="w-16 mr-1">
-                            <select class="w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
-                                <option>+91</option>
-                                <option>+61</option>
-                                <option>+81</option>
-                                <option>+86</option>
-                                <option>+49</option>
-                                <option>+44</option>
-                                <option>+94</option>
-                                <option>+41</option>
-                                <option>+1</option>
-                                <option>+20</option>
-                                <option>+20</option>
-                                <option>+33</option>
+                    <div class=" mr-1">
+                            <select class="w-20 p-3 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
+                            
+                            <option>(+91) India</option>
+                                <option>(+61) Australia</option>
+                                <option>(+81) Japan</option>
+                                <option>(+86) China</option>
+                                <option>(+49) Germany</option>
+                                <option>(+44) UK</option>
+                                <option>(+94) Sri Lanka</option>
+                                <option>(+41) Switzerland</option>
+                                <option>(+1) Canada</option>
+                                <option>(+20) Egypt</option>
+                                <option>(+33) France</option>
                             </select>
                         </div>
-                        <input type="number" maxlength="10" id="emergencyPhone" name="emergencyPhone" placeholder="Phone Number" value="<?php echo $emergencyPhone ?? ''; ?>"
-                            class="flex-1 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
+                        <input type="tel" maxlength="10" id="emergencyPhone" name="emergencyPhone" placeholder="Phone Number" value="<?php echo $emergencyPhone ?? ''; ?>"
+                            class="flex-1 w-32 p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
                     </div>
                 </div>
             </div>
@@ -475,8 +512,8 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div>
                     <label class="block body-text mb-1">b) Are you currently under the care of healthcare professional? <span class="text-red-500">*</span> (Yes/No)</label>
-                    <div class="relative w-1/3">
-                        <select id="healthcareProfessional" name="healthcareProfessional" class="w-full p-2 pr-8 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
+                    <div class="relative w-1/2">
+                        <select id="healthcareProfessional" name="healthcareProfessional" class="w-full p-2 pr-2 border rounded appearance-none focus:ring-2 focus:ring-green-300 focus:outline-none">
                         <option value="none" selected disabled hidden>Select</option>
                             <option value="Yes" <?php echo ($healthcareProfessional === 'Yes') ? 'selected' : ''; ?>>Yes</option>
                             <option value="No" <?php echo ($healthcareProfessional === 'No') ? 'selected' : ''; ?>>No</option>
@@ -667,14 +704,14 @@ if (isset($_POST['submit'])) {
                 <div>
                     <label for="formDate" class="block body-text mb-1">Date <span class="text-red-500">*</span></label>
                     <div class="relative">
-                        <input type="text" id="formDate" name="formDate" placeholder="Date" value="<?php echo $formDate ?? ''; ?>"
-                            class="datepicker w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none">
-                        <button type="button" class="absolute right-2 top-2 calendar-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </button>
-                    </div>
+    <input type="text" id="formDate" name="formDate" placeholder="DD/MM/YYYY" value="<?php echo $formDate ?? ''; ?>"
+        class="datepicker w-full p-2 border rounded focus:ring-2 focus:ring-green-300 focus:outline-none appearance-none">
+    <button type="button" class="absolute right-2 top-2 calendar-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+    </button>
+</div>
                 </div>
             </div>
 
@@ -707,8 +744,9 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="mt-3">
                     <label for="guardianSignature" class="block body-text mb-1">Signature of Parent / Guardian<span class="text-red-500">*</span></label>
+                    <label class="block text-[14px] mb-2 text-gray-700" > This is a digital signature and is legally considered equivalent to a handwritten signature. </label>
                     <div class="flex items-end justify-start">
-                        <input id="signatureCanvas" name="guardianSignature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-1/2 " ></input>
+                        <input id="signatureCanvas" name="guardianSignature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-64 " ></input>
                         <button type="button" id="clearGuardianSignature"
                             class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none" onclick="signatureClear('signatureCanvas')">Clear</button>
                     </div>
@@ -719,8 +757,9 @@ if (isset($_POST['submit'])) {
             <div class="mt-4" id="adultSignatureSection" style="display: <?php echo ($under18 === 'Yes') ? 'none' : 'block'; ?>;">
                 <div>
                     <label for="signature" class="block body-text mb-1">Signature<span class="text-red-500">*</span></label>
+                    <label class="block text-[14px] mb-2" > This is a digital signature and is legally considered equivalent to a handwritten signature. </label>
                     <div class="flex items-end justify-start">
-                        <input id="adultSignatureCanvas" name="signature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-1/2 "></input>
+                        <input id="adultSignatureCanvas" name="signature" placeholder="Enter Your Full Name" class="border rounded p-1 h-32 w-64 "></input>
                         <button type="button" id="clearAdultSignature"
                             class="ml-2 px-4 py-2 border border-[#9AC339] text-[#9AC339] hover:text-white rounded-lg hover:bg-[#9AC339] focus:outline-none" onclick="signatureClear('adultSignatureCanvas')">Clear</button>
                     </div>
@@ -745,7 +784,7 @@ if (isset($_POST['submit'])) {
         <div class="lg:flex justify-between items-start">
           <!-- Left Section (Logo and Description) -->
           <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
-            <a href="/index.html"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
+            <a href="/index.html"><img src="images/logo.png" loading="lazy" alt="Logo" class="mb-4" /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
               lifestyle changes, find joy in exercise, and develop healthy
@@ -762,6 +801,7 @@ if (isset($_POST['submit'])) {
                 <img
                   src="images/logos/email.png"
                   alt="Email"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <a
@@ -776,6 +816,7 @@ if (isset($_POST['submit'])) {
                 <img
                   src="images/logos/icons.png"
                   alt="Phone"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -792,6 +833,7 @@ if (isset($_POST['submit'])) {
                 <img
                   src="images/logos/whatsapp.png"
                   alt="WhatsApp"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -817,6 +859,7 @@ if (isset($_POST['submit'])) {
               <img
                 src="images/logos/icons.png"
                 alt="Phone"
+                loading="lazy"
                 class="w-6 mr-2"
               />
               <a href="tel:+918125507159" class="hover:underline"
@@ -840,6 +883,7 @@ if (isset($_POST['submit'])) {
               <img
                 src="images/logos/location.png"
                 alt="Location"
+                loading="lazy"
                 class="w-6 mr-2"
               />
             <h4 class=" mb-4 body-text">Hyderabad</h4>
@@ -863,6 +907,7 @@ if (isset($_POST['submit'])) {
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
                   alt="YouTube"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>
@@ -870,6 +915,7 @@ if (isset($_POST['submit'])) {
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
                   alt="Instagram"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>
@@ -878,6 +924,7 @@ if (isset($_POST['submit'])) {
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                   alt="Facebook"
                   class="w-6"
+                  loading="lazy"
                 />
               </a>
             </div>

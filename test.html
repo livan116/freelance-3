@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Slick Carousel CSS (only loads on mobile) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="(max-width: 768px)"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" media="(max-width: 768px)"/>
+    
+    <style>
+        :root {
+            --primary-color: #9AC339;
+            --background-color: #ECF6DF;
+            --text-color: #666;
+        }
+
+        /* Gradient styles */
+        .peach-gradient {
+            background: linear-gradient(180deg, #FFE1D9 0%, #FFFFFF 75%);
+        }
+        .orange-gradient {
+            background: linear-gradient(180deg, #F9B01F 0%, #FFFFFF 75%);
+        }
+        .blue-gradient {
+            background: linear-gradient(180deg, #8AB9FF 0%, #FFFFFF 75%);
+        }
+        .sky-gradient {
+            background: linear-gradient(180deg, #91E9FF 0%, #FFFFFF 75%);
+        }
+        .violet-gradient {
+            background: linear-gradient(180deg, #9797FD 0%, #FFFFFF 75%);
+        }
+        .brown-gradient {
+            background: linear-gradient(180deg, #C7AD37 0%, #FFFFFF 75%);
+        }
+        .gold-gradient {
+            background: linear-gradient(180deg, #F9B01F 0%, #FFFFFF 75%);
+        }
+
+        /* Card hover effect */
+        .service-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Mobile Carousel Styles */
+        @media (max-width: 768px) {
+            .services-slider .slick-slide {
+                margin: 0 10px;
+            }
+            
+            .services-slider .slick-dots {
+                bottom: -40px;
+            }
+            
+            .services-slider .slick-dots li button:before {
+                font-size: 12px;
+                color: var(--primary-color);
+            }
+            
+            .services-slider .slick-prev,
+            .services-slider .slick-next {
+                width: 50px;
+                height: 50px;
+                background: var(--primary-color);
+                border-radius: 50%;
+                z-index: 1;
+            }
+            
+            .services-slider .slick-prev:before,
+            .services-slider .slick-next:before {
+                font-size: 24px;
+                line-height: 1;
+                opacity: 1;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="container mx-auto px-4 py-12">
+        <div class="bg-[#ECF6DF] rounded-xl p-6 md:p-12">
+            <!-- Section Header -->
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-1 w-12 bg-[#9AC339]"></div>
+                <h2 class="text-2xl md:text-3xl font-semibold">
+                    Online <span class="text-[#9AC339]">Services</span>
+                </h2>
+            </div>
+
+            <!-- Description -->
+            <p class="text-[#666] text-center mb-12 max-w-3xl mx-auto">
+                In-person pediatric care for illness treatment, health check-ups and vaccination schedules.
+            </p>
+
+            <!-- Desktop Grid -->
+            <div class="hidden md:grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="service-card peach-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service12.png" alt="Nutrition" class="h-full w-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Nutrition Sessions</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        In addition to the workout sessions, we provide 1:1 nutrition sessions for personalized guidance on nutrition and healthy eating habits.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card orange-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service6.png" alt="Workout" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Workout Sessions</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        We offer personalized 1:1 live workout sessions with a coach, tailored to your goals. Get at least two sessions per week.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card blue-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service7.png" alt="Group Workout" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Group Workout Sessions</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        We offer group workout sessions with a small group of individuals. These sessions provide a supportive environment. Three sessions per week available.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card sky-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service8.png" alt="Children Workout" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Children's Workout Sessions</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        Tailored workout sessions for children 8+ years, focusing on age-appropriate exercises and healthy habits. Three sessions per week provided.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card violet-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service9.png" alt="Wellness" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Wellness Sessions</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        Personalized counseling sessions providing guidance on healthy eating, mindful exercise, and sustainable lifestyle habits.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card peach-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service10.png" alt="Senior Training" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Senior Strength Training</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        Specialized strength training programs for seniors, focusing on maintaining mobility, independence, and overall health.
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="service-card orange-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service11.png" alt="Trial Workout" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Complimentary Trial Week</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        Experience our services with a one-week complimentary workout program. Try different sessions and find what works best for you.
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="service-card blue-gradient rounded-[30px] mt-32 shadow-lg p-6 min-h-[400px]">
+                    <div class="h-[200px] flex justify-center mb-6 -mt-36">
+                        <img src="images/services/service12.png" alt="Custom Program" class="h-full object-contain"/>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Custom Fitness Programs</h3>
+                    <p class="text-[#666] text-base leading-relaxed">
+                        Personalized fitness programs designed to meet your specific goals, schedule, and preferences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mobile Carousel -->
+            <div class="md:hidden services-slider">
+                <!-- Card 1 -->
+                <div class="p-4">
+                    <div class="service-card peach-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service12.png" alt="Nutrition" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Nutrition Sessions</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            In addition to the workout sessions, we provide 1:1 nutrition sessions for personalized guidance on nutrition and healthy eating habits.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-4">
+                    <div class="service-card orange-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service6.png" alt="Workout" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Workout Sessions</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            We offer personalized 1:1 live workout sessions with a coach, tailored to your goals. Get at least two sessions per week, plus a custom workout plan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-4">
+                    <div class="service-card blue-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service7.png" alt="Group Workout" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Group Workout Sessions</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            We offer group workout sessions with a small group of individuals. These sessions provide a supportive environment. Three sessions per week available.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-4">
+                    <div class="service-card sky-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service8.png" alt="Children Workout" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Children's Workout Sessions</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            Tailored workout sessions for children 8+ years, focusing on age-appropriate exercises and healthy habits. Three sessions per week provided.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-4">
+                    <div class="service-card violet-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service9.png" alt="Wellness" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Wellness Sessions</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            Personalized counseling sessions providing guidance on healthy eating, mindful exercise, and sustainable lifestyle habits.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-4">
+                    <div class="service-card peach-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service10.png" alt="Senior Training" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Senior Strength Training</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            Specialized strength training programs for seniors, focusing on maintaining mobility, independence, and overall health.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="p-4">
+                    <div class="service-card orange-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service11.png" alt="Trial Workout" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Complimentary Trial Week</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            Experience our services with a one-week complimentary workout program. Try different sessions and find what works best for you.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="p-4">
+                    <div class="service-card blue-gradient rounded-[30px] shadow-lg p-6 min-h-[450px]">
+                        <div class="h-[200px] flex justify-center mb-6">
+                            <img src="images/services/service12.png" alt="Custom Program" class="h-full object-contain"/>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Custom Fitness Programs</h3>
+                        <p class="text-[#666] text-base leading-relaxed">
+                            Personalized fitness programs designed to meet your specific goals, schedule, and preferences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Only initialize carousel on mobile
+            if(window.innerWidth < 768) {
+                $('.services-slider').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: true,
+                    adaptiveHeight: true
+                });
+            }
+
+            // Handle window resize
+            $(window).resize(function() {
+                if(window.innerWidth < 768) {
+                    if(!$('.services-slider').hasClass('slick-initialized')) {
+                        $('.services-slider').slick({
+                            dots: true,
+                            infinite: true,
+                            speed: 500,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 3000,
+                            arrows: true,
+                            adaptiveHeight: true
+                        });
+                    }
+                } else {
+                    if($('.services-slider').hasClass('slick-initialized')) {
+                        $('.services-slider').slick('unslick');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="styles/fonts.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <style>
-    
-
       .hero-section {
         background-image: linear-gradient(
             rgba(0, 0, 0, 0.5),
@@ -45,161 +43,166 @@
 
   <body class="relative font1">
     <!-- Navigation - Fixed at the top -->
+    <nav
+      class="Navbar shadow-md z-50 transition-all px-3 duration-300"
+      id="navbar"
+    >
+      <div class="container mx-auto px-2">
+        <div class="flex justify-between items-center py-2">
+          <!-- Logo -->
+          <a href="/index.html" class="flex-shrink-0 md:mr-2 lg:mr-4">
+            <img
+              src="images/logo.png"
+              alt="S2 Logo"
+              loading="lazy"
+              class="h-12 md:h-16 w-[120px]"
+            />
+          </a>
 
- <!-- Navigation - Fixed at the top -->
- <nav class="Navbar shadow-md z-50 transition-all px-3 duration-300" id="navbar">
-  <div class="container mx-auto px-2">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo -->
-      <a href="/index.html" class="flex-shrink-0 mr-4">
-        <img
-          src="images/logo.png"
-          alt="S2 Logo"
-          class="h-12 md:h-16 w-auto max-w-[120px]"
-        />
-      </a>
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
 
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-button"
-        class="md:hidden text-white focus:outline-none"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
+          <!-- Desktop Navigation Links -->
+          <div
+            class="hidden md:flex md:space-x-1 lg:space-x-5 text-sm lg:text-base"
+          >
+            <a
+              href="/index.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Home</a
+            >
+            <a
+              href="/about.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >About Us</a
+            >
+            <a
+              href="/services.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Services</a
+            >
+            <a
+              href="/nutrition.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Nutrition</a
+            >
+            <a
+              href="/fitness-retreat.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Fitness Retreat</a
+            >
+            <a
+              href="/photos.html"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Photos</a
+            >
+            <a
+              href="/contact.php"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
+              >Reach Us</a
+            >
+          </div>
+
+          <!-- Enroll Button (Desktop) -->
+          <a
+            href="/enrollment.php"
+            class="hidden md:block lg:text-[16px] flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4"
+          >
+            Enroll Now
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-[60] overflow-y-auto transform translate-x-full transition-transform duration-300"
+      id="mobile-menu"
+    >
+      <div class="flex justify-between bg-[#304E0C] items-center border-b">
+        <a href="/index.html" class="flex-shrink-0">
+          <img
+            src="images/logo.png"
+            alt="S2 Logo"
+            loading="lazy"
+            class="h-12 md:h-16 w-auto max-w-[120px]"
           />
-        </svg>
-      </button>
-
-      <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base">
-        <a
-          href="/index.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        </a>
+        <button class="mobile-close-button focus:outline-none text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col p-4">
+        <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
           >Home</a
         >
-        <a
-          href="/about.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        <a href="/about.html" class="py-4 border-b border-gray-200 text-lg"
           >About Us</a
         >
-        <a
-          href="/services.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
           >Services</a
         >
-        <a
-          href="/nutrition.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
           >Nutrition</a
         >
         <a
           href="/fitness-retreat.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+          class="py-4 border-b border-gray-200 text-lg"
           >Fitness Retreat</a
         >
-        <a
-          href="/photos.html"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        <a href="/photos.html" class="py-4 border-b border-gray-200 text-lg"
           >Photos</a
         >
-        <a
-          href="/contact.php"
-          class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+        <a href="/contact.php" class="py-4 border-b border-gray-200 text-lg"
           >Reach Us</a
         >
+        <a
+          href="/enrollment.php"
+          class="py-4 border-b border-gray-200 text-lg bg-[#9AC339] text-center text-white mt-4 rounded-md"
+        >
+          Enroll Now
+        </a>
       </div>
-
-      <!-- Enroll Button (Desktop) -->
-
-      <a href="/enrollment.php"
-      class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
-    >
-      Enroll Now
-    </a>
-    
-
     </div>
-  </div>
-</nav>
 
-<!-- Mobile Menu -->
-<div
-  class="mobile-menu fixed top-0 left-0 h-full w-full bg-white z-[60] overflow-y-auto transform translate-x-full transition-transform duration-300"
-  id="mobile-menu"
->
-  <div class="flex justify-between bg-[#304E0C] items-center border-b">
-    <a href="/index.html" class="flex-shrink-0">
-      <img
-        src="images/logo.png"
-        alt="S2 Logo"
-        class="h-12 md:h-16 w-auto max-w-[120px]"
-      />
-    </a>
-    <button class="mobile-close-button focus:outline-none text-white">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
-    </button>
-  </div>
-  <div class="flex flex-col p-4">
-    <a href="/index.html" class="py-4 border-b border-gray-200 text-lg"
-      >Home</a
-    >
-    <a href="/about.html" class="py-4 border-b border-gray-200 text-lg"
-      >About Us</a
-    >
-    <a href="/services.html" class="py-4 border-b border-gray-200 text-lg"
-      >Services</a
-    >
-    <a href="/nutrition.html" class="py-4 border-b border-gray-200 text-lg"
-      >Nutrition</a
-    >
-    <a
-      href="/fitness-retreat.html"
-      class="py-4 border-b border-gray-200 text-lg"
-      >Fitness Retreat</a
-    >
-    <a href="/photos.html" class="py-4 border-b border-gray-200 text-lg"
-      >Photos</a
-    >
-    <a href="/contact.php" class="py-4 border-b border-gray-200 text-lg"
-      >Reach Us</a
-    >
-    <a
-      href="/enrollment.php"
-      class="py-4 border-b border-gray-200 text-lg bg-[#9AC339] text-center text-white mt-4 rounded-md"
-    >
-      Enroll Now
-    </a>
-  </div>
-</div>
     <!-- nav section end -->
     <!-- Hero Section -->
-    <section class="relative -mt-16 h-[500px] md:h-[600px] overflow-hidden">
+    <section class="relative -mt-20 h-[500px] md:h-[600px] overflow-hidden">
       <div class="absolute inset-0 bg-black/30"></div>
       <img
         src="images/page_5/baby 1.png"
+        loading="lazy"
         alt="Nutrition background"
         class="w-full h-full object-cover"
       />
@@ -225,7 +228,7 @@
         <div>
           <!-- Heading with green line -->
           <div class="flex items-center mb-2">
-            <div class="w-12 h-1 bg-[#9AC339] mr-3 "></div>
+            <div class="w-12 h-1 bg-[#9AC339] mr-3"></div>
             <h2 class="content-Heading">
               Transform your Health with the
               <span class="span-color">Right Nutrition</span>
@@ -233,7 +236,7 @@
           </div>
 
           <!-- Paragraphs -->
-          <div class="space-y-4  text-[--para-color] leading-9 body-text">
+          <div class="space-y-4 text-[--para-color] leading-9 body-text">
             <p class="leading-7 md:leading-9">
               Nutrition plays a powerful role in our overall health and
               well-being. Throughout history, different cultures and generations
@@ -259,32 +262,26 @@
 
     <section>
       <div class="container mx-auto px-4 py-2 max-w-7xl">
-        <!-- Slider Container -->
         <div class="relative w-full overflow-hidden">
           <!-- Slide 1 -->
           <div class="slide active-slide w-full" id="slide-1">
-            <div
-              class="w-full md:flex md:items-center rounded-img overflow-hidden h-[75vh] md:h-[100vh] lg-h-full "
-            >
+            <div class="w-full md:flex rounded-img overflow-hidden h-[700px]">
               <!-- Image section -->
-              <div class="md:w-3/5 relative ">
+              <div class="md:w-3/5 relative">
                 <img
-                  src="images/page_5/Rectangle 15789.png"
+                  src="images/page_5/Rectangle 15789.jpg"
+                  loading="lazy"
                   alt="Healthy meal with greens and avocado"
                   class="w-full h-auto rounded-img"
                 />
               </div>
 
               <!-- Content section -->
-              <div
-                class="w-[85vw] relative h-[47vh] lg:h-[50vh] md:h-[58vh] mb-16 -top-[90px] -right-[7.5vw] md:w-1/2 font1 md:absolute lg:top-[40vh] md:top-[42vh] md:leading-6 md:right-0 bg-[#304E0C] text-white pt-[25.33px] pr-[32.48px] pb-[32.33px] pl-[32.48px] md:px-12 rounded-2xl"
-              >
+              <div class="md:h-3/2 lg:h-1/2 pb-12 relative -top-12 md:top-32 mb-16 md:w-1/2 font1 md:absolute md:leading-6 md:right-12 bg-[#304E0C] text-white pt-[25.33px] pr-[32.48px] pb-[32.33px] pl-[32.48px] md:px-12 rounded-2xl">
                 <h2 class="text-2xl md:text-3xl font-bold content-Heading mb-4">
                   Nutrition Strategies
                 </h2>
-                <p
-                  class=" body-text md:leading-7 lg:leading-9 text-justify"
-                >
+                <p class="body-text md:leading-7 lg:leading-9 text-justify">
                   It's important to approach nutrition with a balanced and
                   evidence-based mindset. While ancestral tips and beliefs can
                   provide valuable cultural insights. Consult with healthcare
@@ -296,44 +293,36 @@
           </div>
 
           <!-- Slide 2 (duplicate for demonstration) -->
-          <div class="slide active-slide w-full" id="slide-1">
-            <div
-              class="w-full md:flex md:items-center rounded-img overflow-hidden h-[75vh] md:h-[100vh] lg-h-full "
-            >
+          <div class="slide active-slide w-full" id="slide-2">
+            <div class="w-full md:flex rounded-img overflow-hidden h-[700px]">
               <!-- Image section -->
-              <div class="md:w-3/5 relative ">
+              <div class="md:w-3/5 relative">
                 <img
                   src="images/page_5/banana_Image.png"
                   alt="Healthy meal with greens and avocado"
+                  loading="lazy"
                   class="w-full h-auto rounded-img md:rounded-r-none"
                 />
               </div>
 
               <!-- Content section -->
-              <div
-                class="w-[85vw] relative h-[47vh] lg:h-[50vh] md:h-[58vh] mb-12 -top-[90px] -right-[7.5vw] md:w-1/2 font1 md:absolute lg:top-[40vh] md:top-[42vh] md:leading-6 md:right-0 bg-[#304E0C] text-white pt-[25.33px] pr-[32.48px] pb-[32.33px] pl-[32.48px] md:px-12 rounded-2xl"
-              >
+              <div class="md:h-3/2 lg:h-1/2 pb-12 relative -top-12 md:top-32 mb-16 md:w-1/2 font1 md:absolute md:leading-6 md:right-12 bg-[#304E0C] text-white pt-[25.33px] pr-[32.48px] pb-[32.33px] pl-[32.48px] md:px-12 rounded-2xl">
                 <h2 class="text-2xl md:text-3xl font-bold content-Heading mb-4">
                   Health and well-being
-
                 </h2>
-                <p
-                  class="body-text md:text-lg body-text md:leading-9 text-justify"
-                >
-                  By understanding the power of nutrition and making informed choices about the foods we consume, we can optimize our
-                  health and well-being.
+                <p class="body-text md:text-lg body-text md:leading-9 text-justify">
+                  By understanding the power of nutrition and making informed
+                  choices about the foods we consume, we can optimize our health
+                  and well-being.
                 </p>
               </div>
             </div>
           </div>
 
-        
           <!-- Navigation Arrows - Desktop (top right) -->
-          <div
-            class="hidden md:flex md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 space-x-4"
-          >
+          <div class="hidden md:flex md:absolute md:top-0 md:right-0 md:mt-4 md:mr-4 space-x-4">
             <button
-              onclick="moveSlide(-1)"
+              data-direction="-1"
               class="bg-[#a3cb39] rounded-full w-12 h-12 md:mr-16 flex items-center justify-center focus:outline-none hover:bg-[#8baf30]"
             >
               <svg
@@ -352,7 +341,7 @@
               </svg>
             </button>
             <button
-              onclick="moveSlide(1)"
+              data-direction="1"
               class="bg-[#a3cb39] rounded-full w-12 h-12 flex items-center justify-center focus:outline-none hover:bg-[#8baf30]"
             >
               <svg
@@ -372,11 +361,11 @@
             </button>
           </div>
 
-          <!-- Navigation Arrows - Mobile (bottom center) -->
-          <div class="flex md:hidden justify-between mt-4">
+          <!-- Navigation Arrows - Mobile -->
+          <div class="md:hidden relative flex justify-between -top-24 -mt-24">
             <button
-              onclick="moveSlide(-1)"
-              class="bg-[#a3cb39] rounded-full w-12 h-12 flex items-center justify-center focus:outline-none hover:bg-[#8baf30]"
+              data-direction="-1"
+              class="bg-[#a3cb39] rounded-full w-12 h-12 md:mr-16 flex items-center justify-center focus:outline-none hover:bg-[#8baf30]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -394,7 +383,7 @@
               </svg>
             </button>
             <button
-              onclick="moveSlide(1)"
+              data-direction="1"
               class="bg-[#a3cb39] rounded-full w-12 h-12 flex items-center justify-center focus:outline-none hover:bg-[#8baf30]"
             >
               <svg
@@ -435,7 +424,9 @@
             </div>
 
             <!-- Description Text -->
-            <p class="text-[--para-color] leading-9 body-text mb-4 md:leading-9 leading-7">
+            <p
+              class="text-[--para-color] leading-9 body-text mb-4 md:leading-9 leading-7"
+            >
               Our online nutrition consultation is supported by one of the
               world's best teams. We have a well-integrated group of experts,
               including healthcare volunteers specializing in gastroenterology
@@ -457,7 +448,8 @@
           <!-- Image (Right in desktop, Bottom in mobile) -->
           <div class="md:w-[30vw] md:h-[50vh] mt-6 md:mt-0">
             <img
-              src="images/page_5/pexels-valeriya-29843070 1.png"
+              src="images/page_5/pexels-valeriya-29843070 1.jpg"
+              loading="lazy"
               alt="Healthy colorful food in a pan"
               class="w-full h-full rounded-lg shadow-md"
             />
@@ -466,184 +458,296 @@
       </div>
     </section>
 
+    <!-- footer start -->
+    <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
+      <div class="container mx-auto">
+        <div class="lg:flex justify-between items-start">
+          <!-- Left Section (Logo and Description) -->
+          <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
+            <a href="/index.html"
+              ><img
+                src="images/logo.png"
+                alt="Logo"
+                loading="lazy"
+                class="mb-4"
+            /></a>
+            <p class="body-text mb-4">
+              We aim to empower our clients, helping them make sustainable
+              lifestyle changes, find joy in exercise, and develop healthy
+              eating habits that work for their individual preferences and
+              needs.
+            </p>
+          </div>
 
-        <!-- footer start -->
-        <footer class="footer bg-[#304E0C] text-white p-8 lg:px-20">
-          <div class="container mx-auto">
-            <div class="lg:flex justify-between items-start">
-              <!-- Left Section (Logo and Description) -->
-              <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
-                <a href="/index.html"><img src="images/logo.png" alt="Logo" class="mb-4" /></a>
-                <p class="body-text mb-4">
-                  We aim to empower our clients, helping them make sustainable
-                  lifestyle changes, find joy in exercise, and develop healthy
-                  eating habits that work for their individual preferences and
-                  needs.
-                </p>
-              </div>
-    
-              <!-- Middle Section (Pediatric Enquiries and FAQ) -->
-              <div class="footer-middle lg:ml-[8vw] lg:w-1/4 mb-8 lg:mb-0">
-                <div class="contact-info">
-                  <!-- Dynamic Email with Gmail Link -->
-                  <p class="flex items-center mb-2">
-                    <img
-                      src="images/logos/email.png"
-                      alt="Email"
-                      class="w-6 mr-2"
-                    />
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=fitness@s2healthylife.com"
-                      class="hover:underline"
-                      target="_blank"
-                      >fitness@s2healthylife.com</a
-                    >
-                  </p>
-                  <!-- Dynamic Phone Numbers -->
-                  <div class="flex items-center mb-4">
-                    <img
-                      src="images/logos/icons.png"
-                      alt="Phone"
-                      class="w-6 mr-2"
-                    />
-                    <div class="flex flex-col gap-2">
-                      <a href="tel:+919949379073" class="hover:underline"
-                        >+91 9949379073</a
-                      >
-                      <a href="tel:+15128100136" class="hover:underline"
-                        >+1 (512) 810-0136</a
-                      >
-                    </div>
-                  </div>
-                  <!-- Dynamic WhatsApp Numbers -->
-                  <div class="flex items-center mb-4">
-                    <img
-                      src="images/logos/whatsapp.png"
-                      alt="WhatsApp"
-                      class="w-6 mr-2"
-                    />
-                    <div class="flex flex-col gap-2">
-                      <a
-                        href="https://wa.me/919949379073"
-                        class="hover:underline"
-                        target="_blank"
-                        >+91 9949379073</a
-                      >
-                      <a
-                        href="https://wa.me/15128100136"
-                        class="hover:underline"
-                        target="_blank"
-                        >+1 (512) 810-0136</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <h4 class="t mb-4 body-text">
-                  For Pediatric-Related Enquiries
-                </h4>
-                <p class="flex items-center mb-2">
-                  <img
-                    src="images/logos/icons.png"
-                    alt="Phone"
-                    class="w-6 mr-2"
-                  />
-                  <a href="tel:+918125507159" class="hover:underline"
-                    >+91 8125507159</a
+          <!-- Middle Section (Pediatric Enquiries and FAQ) -->
+          <div class="footer-middle lg:ml-[8vw] lg:w-1/4 mb-8 lg:mb-0">
+            <div class="contact-info">
+              <!-- Dynamic Email with Gmail Link -->
+              <p class="flex items-center mb-2">
+                <img
+                  src="images/logos/email.png"
+                  loading="lazy"
+                  alt="Email"
+                  class="w-6 mr-2"
+                />
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fitness@s2healthylife.com"
+                  class="hover:underline"
+                  target="_blank"
+                  >fitness@s2healthylife.com</a
+                >
+              </p>
+              <!-- Dynamic Phone Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="images/logos/icons.png"
+                  alt="Phone"
+                  loading="lazy"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
+                  <a href="tel:+919949379073" class="hover:underline"
+                    >+91 9949379073</a
                   >
-                </p>
-              </div>
-              <!-- FAQ start -->
-              <div class="footer-middle lg:w-1/4 lg:ml-[8vw]">
-                <div class="flex flex-col gap-3">
-                  <p class="body-text">Quick Link</p>
-                  <a href="faq.html" class="text-white hover:underline mb-4 block"
-                    >FAQ's</a
+                  <a href="tel:+15128100136" class="hover:underline"
+                    >+1 (512) 810-0136</a
                   >
                 </div>
               </div>
-              <!-- FAQ end -->
-              <!-- Right Section (Address and Social Links) -->
-              <div class="footer-right lg:w-1/3">
-                <div class="flex items-start">
-                  <img
-                    src="images/logos/location.png"
-                    alt="Location"
-                    class="w-6 mr-2"
-                  />
-                <h4 class=" mb-4 body-text">Hyderabad</h4>
-                </div>
-                <!-- Dynamic Location Link -->
-                <p class="flex items-center mb-2">
-                  
+              <!-- Dynamic WhatsApp Numbers -->
+              <div class="flex items-center mb-4">
+                <img
+                  src="images/logos/whatsapp.png"
+                  alt="WhatsApp"
+                  loading="lazy"
+                  class="w-6 mr-2"
+                />
+                <div class="flex flex-col gap-2">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
-                    target="_blank"
+                    href="https://wa.me/919949379073"
                     class="hover:underline"
+                    target="_blank"
+                    >+91 9949379073</a
                   >
-                    S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,
-                    100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,
-                    Madhapur, Hyderabad, Telangana 500081
-                  </a>
-                </p>
-                <!-- Social Media Links -->
-                <div class="social-icons flex space-x-4 mt-4">
-                  <a href="https://www.youtube.com/@s2HealthylifeFitness/community" target="_blank" class="block">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-                      alt="YouTube"
-                      class="w-6"
-                    />
-                  </a>
-                  <a href="https://www.instagram.com/s2healthylifeco/" target="_blank" class="block">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
-                      alt="Instagram"
-                      class="w-6"
-                    />
-                  </a>
-                  <a href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab" target="_blank" class="block">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                      alt="Facebook"
-                      class="w-6"
-                    />
-                  </a>
+                  <a
+                    href="https://wa.me/15128100136"
+                    class="hover:underline"
+                    target="_blank"
+                    >+1 (512) 810-0136</a
+                  >
                 </div>
               </div>
             </div>
-    
-            <!-- Bottom Copyright Section -->
-            <div class="text-center border-t border-gray-600 mt-8 pt-4">
-              <p class="text-sm">&copy; S2HealthyLife 2023. All rights reserved.</p>
+            <h4 class="t mb-4 body-text">For Pediatric-Related Enquiries</h4>
+            <p class="flex items-center mb-2">
+              <img
+                src="images/logos/icons.png"
+                alt="Phone"
+                loading="lazy"
+                class="w-6 mr-2"
+              />
+              <a href="tel:+918125507159" class="hover:underline"
+                >+91 8125507159</a
+              >
+            </p>
+          </div>
+          <!-- FAQ start -->
+          <div class="footer-middle lg:w-1/4 lg:ml-[8vw]">
+            <div class="flex flex-col gap-3">
+              <p class="body-text">Quick Link</p>
+              <a href="faq.html" class="text-white hover:underline mb-4 block"
+                >FAQ's</a
+              >
             </div>
           </div>
-        </footer>
-        <!-- footer end -->
-   
+          <!-- FAQ end -->
+          <!-- Right Section (Address and Social Links) -->
+          <div class="footer-right lg:w-1/3">
+            <div class="flex items-start">
+              <img
+                src="images/logos/location.png"
+                alt="Location"
+                loading="lazy"
+                class="w-6 mr-2"
+              />
+              <h4 class="mb-4 body-text">Hyderabad</h4>
+            </div>
+            <!-- Dynamic Location Link -->
+            <p class="flex items-center mb-2">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=S2HealthyLife,+Ayyappa+Central,+100+Feet+Rd,+Madhapur,+Hyderabad,+Telangana+500081"
+                target="_blank"
+                class="hover:underline"
+              >
+                S2HealthyLife, 4th floor, plot no: 802 & 803, Ayyappa Central,
+                100 Feet Rd, Beside YSR statue, Ayyappa Society, Mega Hills,
+                Madhapur, Hyderabad, Telangana 500081
+              </a>
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons flex space-x-4 mt-4">
+              <a
+                href="https://www.youtube.com/@s2HealthylifeFitness/community"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                  alt="YouTube"
+                  class="w-6"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/s2healthylifeco/"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                  alt="Instagram"
+                  loading="lazy"
+                  class="w-6"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/people/S2Healthy-Life/61561522904918/?sk=reels_tab"
+                target="_blank"
+                class="block"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  alt="Facebook"
+                  loading="lazy"
+                  class="w-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright Section -->
+        <div class="text-center border-t border-gray-600 mt-8 pt-4">
+          <p class="text-sm">&copy; S2HealthyLife 2023. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
     <script>
+      // Simplified JavaScript for the carousel
       let slideIndex = 1;
-      showSlide(slideIndex);
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let slides, slideContainer;
 
-      function moveSlide(n) {
-        showSlide((slideIndex += n));
-      }
+document.addEventListener("DOMContentLoaded", init);
 
-      function showSlide(n) {
-        let slides = document.getElementsByClassName("slide");
+function init() {
+  slides = document.getElementsByClassName("slide");
+  slideContainer = slides[0].parentElement;
 
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
+  // Set initial slide
+  showSlide(slideIndex);
 
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].classList.remove("active-slide");
-        }
+  // Add event listeners for navigation buttons
+  const buttons = document.querySelectorAll("button[data-direction]");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const direction = parseInt(button.getAttribute("data-direction"));
+      moveSlide(direction);
+    });
+  });
 
-        slides[slideIndex - 1].classList.add("active-slide");
-      }
+  // Add event listeners for dragging
+  slides[slideIndex - 1].addEventListener("mousedown", dragStart);
+  slides[slideIndex - 1].addEventListener("touchstart", dragStart, { passive: true });
+  slides[slideIndex - 1].addEventListener("mouseup", dragEnd);
+  slides[slideIndex - 1].addEventListener("touchend", dragEnd);
+  slides[slideIndex - 1].addEventListener("mousemove", drag);
+  slides[slideIndex - 1].addEventListener("touchmove", drag, { passive: true });
+  slides[slideIndex - 1].addEventListener("mouseleave", dragEnd);
+}
+
+function dragStart(event) {
+  if (event.type === "touchstart") {
+    startPos = event.touches[0].clientX;
+  } else {
+    startPos = event.clientX;
+    event.preventDefault(); // Prevent text selection during drag
+  }
+
+  isDragging = true;
+  slides[slideIndex - 1].style.transition = "none"; // Disable transition during drag
+}
+
+function drag(event) {
+  if (isDragging) {
+    const currentPosition = event.type.includes("touch") 
+      ? event.touches[0].clientX 
+      : event.clientX;
+    const diff = currentPosition - startPos;
+
+    // Apply the drag effect
+    slides[slideIndex - 1].style.transform = `translateX(${diff}px)`;
+  }
+}
+
+function dragEnd(event) {
+  if (!isDragging) return;
+
+  const endPos = event.type.includes("touch") 
+    ? event.changedTouches[0].clientX 
+    : event.clientX;
+  const diff = endPos - startPos;
+
+  // Enable transition for smooth slide change
+  slides[slideIndex - 1].style.transition = "transform 0.3s ease";
+
+  // Determine if the slide should change based on drag distance
+  if (Math.abs(diff) > 100) { // Threshold for slide change
+    moveSlide(diff > 0 ? -1 : 1);
+  } else {
+    // Reset the slide position if the drag distance is insufficient
+    slides[slideIndex - 1].style.transform = "translateX(0)";
+  }
+
+  isDragging = false;
+}
+
+function moveSlide(n) {
+  showSlide(slideIndex + n);
+}
+
+function showSlide(n) {
+  const slides = document.getElementsByClassName("slide");
+
+  // Handle wrapping
+  if (n > slides.length) n = 1;
+  if (n < 1) n = slides.length;
+
+  // Update global index
+  slideIndex = n;
+
+  // Update classes and reset transforms
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active-slide");
+    slides[i].style.transform = "translateX(0)"; // Reset transform
+  }
+
+  slides[slideIndex - 1].classList.add("active-slide");
+
+  // Reattach drag event listeners to the new active slide
+  slides[slideIndex - 1].addEventListener("mousedown", dragStart);
+  slides[slideIndex - 1].addEventListener("touchstart", dragStart, { passive: true });
+  slides[slideIndex - 1].addEventListener("mouseup", dragEnd);
+  slides[slideIndex - 1].addEventListener("touchend", dragEnd);
+  slides[slideIndex - 1].addEventListener("mousemove", drag);
+  slides[slideIndex - 1].addEventListener("touchmove", drag, { passive: true });
+  slides[slideIndex - 1].addEventListener("mouseleave", dragEnd);
+}
     </script>
     <script src="js/script.js"></script>
   </body>

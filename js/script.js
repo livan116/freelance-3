@@ -61,231 +61,276 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+
 // gallery start
+$(document).ready(function () {
+  console.log(screen.availWidth);
+  let customWidth = screen.availWidth;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.getElementById("carousel");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
-  const indicators = document.querySelectorAll(".indicator-dot");
+  // Initialize the carousel once
+  $(".gallery-carousel").slick({
+    infinite: false,
+    slidesToShow: customWidth > 500 ? 3 : 1,
+    slidesToScroll: 1,
+    speed: 100,
+    arrows: true,
+    prevArrow:
+      '<button type="button" class="gallery-slick-prev">&#10094;</button>',
+    nextArrow:
+      '<button type="button" class="gallery-slick-next">&#10095;</button>',
+    dots: false,
+    draggable: true,
+    swipeToSlide: true,
+    autoplay: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
 
-  let currentIndex = 0;
-  const itemWidth = 100; // Width in percentage
-  let itemsPerView = 1;
+  // Update button states initially
+  updateArrowStates();
 
-  function updateItemsPerView() {
-    if (window.innerWidth >= 1024) {
-      itemsPerView = 3;
-    } else if (window.innerWidth >= 640) {
-      itemsPerView = 2;
+  // Handle button states on slide change
+  $(".gallery-carousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    updateArrowStates(nextSlide);
+  });
+
+  // Function to update arrow states
+  function updateArrowStates(nextSlide) {
+    const slick = $(".gallery-carousel").slick("getSlick");
+    const slideIndex = nextSlide !== undefined ? nextSlide : slick.currentSlide;
+    const slidesToShow = slick.options.slidesToShow;
+    
+    // Handle prev button
+    if (slideIndex === 0) {
+      $(".gallery-slick-prev").addClass("inactive");
     } else {
-      itemsPerView = 1;
+      $(".gallery-slick-prev").removeClass("inactive");
+    }
+    
+    // Handle next button
+    if (slideIndex >= slick.slideCount - slidesToShow) {
+      $(".gallery-slick-next").addClass("inactive");
+    } else {
+      $(".gallery-slick-next").removeClass("inactive");
     }
   }
 
-  function updateCarousel() {
-    const translateX = -currentIndex * (itemWidth / itemsPerView);
-    carousel.style.transform = `translateX(${translateX}%)`;
+  // On resize, dynamically update the settings
+  window.addEventListener("resize", () => {
+    console.log(screen.availWidth);
+    customWidth = screen.availWidth;
 
-    // Update indicators
-    indicators.forEach((dot, index) => {
-      if (Math.floor(currentIndex / itemsPerView) === index) {
-        dot.classList.add("bg-opacity-100");
-        dot.classList.remove("bg-opacity-50");
-      } else {
-        dot.classList.add("bg-opacity-50");
-        dot.classList.remove("bg-opacity-100");
-      }
-    });
-  }
-
-  prevBtn.addEventListener("click", function () {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
-    }
+    $(".gallery-carousel").slick(
+      "slickSetOption",
+      "slidesToShow",
+      customWidth > 500 ? 3 : 1,
+      true
+    );
+    
+    // Update arrow states after resize
+    setTimeout(updateArrowStates, 100);
   });
-
-  nextBtn.addEventListener("click", function () {
-    const totalItems = carousel.children.length;
-    if (currentIndex < totalItems - itemsPerView) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
-
-  indicators.forEach((dot, index) => {
-    dot.addEventListener("click", function () {
-      currentIndex = index * itemsPerView;
-      updateCarousel();
-    });
-  });
-
-  // Update on resize
-  window.addEventListener("resize", function () {
-    updateItemsPerView();
-    updateCarousel();
-  });
-
-  // Initial setup
-  updateItemsPerView();
-  updateCarousel();
 });
 
 // gallery end
 
-// onsite and online services start
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to create carousel functionality
-  function setupCarousel(sliderId, prevBtnId, nextBtnId, dotsContainerId) {
-    const slider = document.getElementById(sliderId);
-    const prevBtn = document.getElementById(prevBtnId);
-    const nextBtn = document.getElementById(nextBtnId);
-    const dotsContainer = document.getElementById(dotsContainerId);
-    
-    let currentPosition = 0;
-    let itemsPerView = 1;
-    let itemWidth = 100; // percentage width of items on mobile
-    const totalItems = slider.children.length;
-    let maxPositions = totalItems - itemsPerView;
-    
-    // Create dots based on number of pages
-    function createDots() {
-      dotsContainer.innerHTML = '';
-      const pages = Math.ceil(totalItems / itemsPerView);
-      
-      for(let i = 0; i < pages; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if(i === 0) dot.classList.add('active');
-        
-        dot.addEventListener('click', () => {
-          currentPosition = i * itemsPerView;
-          if(currentPosition > maxPositions) currentPosition = maxPositions;
-          moveSlider();
-          updateDots();
-        });
-        
-        dotsContainer.appendChild(dot);
-      }
+
+// online services - fixed
+
+$(document).ready(function () {
+  let customWidth = screen.availWidth;
+
+  // Initialize the carousel based on customWidth
+  var carousel = $(".online-service-carousel").slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: customWidth > 500 ? 3 : 1,
+    slidesToScroll: 1,
+    arrows: false, // Disable default arrows
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  // Handle custom previous button
+  $("#onlineprevArrow").on("click", function () {
+    carousel.slick("slickPrev");
+    updateArrowState();
+  });
+
+  // Handle custom next button
+  $("#onlinenextArrow").on("click", function () {
+    carousel.slick("slickNext");
+    updateArrowState();
+  });
+
+  // Update arrow disabled states
+  function updateArrowState() {
+    var slideCount = $(
+      ".online-service-carousel .slick-slide:not(.slick-cloned)"
+    ).length;
+    var slidesToShow = carousel.slick("slickGetOption", "slidesToShow");
+    var currentSlide = carousel.slick("slickCurrentSlide");
+
+    // Disable prev button if at beginning
+    if (currentSlide === 0) {
+      $("#onlineprevArrow").addClass("slick-disabled");
+    } else {
+      $("#onlineprevArrow").removeClass("slick-disabled");
     }
-    
-    // Update active dot
-    function updateDots() {
-      const activePage = Math.floor(currentPosition / itemsPerView);
-      const dots = dotsContainer.querySelectorAll('.dot');
-      
-      dots.forEach((dot, index) => {
-        if(index === activePage) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
+
+    // Disable next button if at end
+    if (currentSlide >= slideCount - slidesToShow) {
+      $("#onlinenextArrow").addClass("slick-disabled");
+    } else {
+      $("#onlinenextArrow").removeClass("slick-disabled");
     }
-    
-    function updateView() {
-      if (window.innerWidth >= 1024) {
-        itemsPerView = 3;
-        itemWidth = 33.333;
-      } else if (window.innerWidth >= 640) {
-        itemsPerView = 2;
-        itemWidth = 50;
-      } else {
-        itemsPerView = 1;
-        itemWidth = 100;
-      }
-      
-      maxPositions = totalItems - itemsPerView;
-      if(currentPosition > maxPositions) currentPosition = maxPositions;
-      
-      createDots();
-      moveSlider();
-    }
-    
-    function moveSlider() {
-      // Add a little extra for the gap
-      const gapSize = 0.5;
-      const position = currentPosition * (itemWidth + gapSize);
-      slider.style.transform = `translateX(-${position}%)`;
-      updateDots();
-      
-      // Enable/disable buttons based on position
-      if(currentPosition <= 0) {
-        prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        prevBtn.disabled = true;
-      } else {
-        prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-        prevBtn.disabled = false;
-      }
-      
-      if(currentPosition >= maxPositions) {
-        nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        nextBtn.disabled = true;
-      } else {
-        nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-        nextBtn.disabled = false;
-      }
-    }
-    
-    prevBtn.addEventListener('click', function() {
-      if (currentPosition > 0) {
-        currentPosition--;
-        moveSlider();
-      }
-    });
-    
-    nextBtn.addEventListener('click', function() {
-      if (currentPosition < maxPositions) {
-        currentPosition++;
-        moveSlider();
-      }
-    });
-    
-    // Add touch swipe functionality
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
-    
-    slider.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, {passive: true});
-    
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      if(touchEndX < touchStartX - swipeThreshold) {
-        // Swipe left -> next slide
-        if(currentPosition < maxPositions) {
-          currentPosition++;
-          moveSlider();
-        }
-      } else if(touchEndX > touchStartX + swipeThreshold) {
-        // Swipe right -> prev slide
-        if(currentPosition > 0) {
-          currentPosition--;
-          moveSlider();
-        }
-      }
-    }
-    
-    // Update on resize
-    window.addEventListener('resize', function() {
-      updateView();
-    });
-    
-    // Initial setup
-    updateView();
   }
-  
-  // Set up both carousels
-  setupCarousel('onsite-services', 'onsite-prev', 'onsite-next', 'onsite-dots');
-  setupCarousel('online-services', 'online-prev', 'online-next', 'online-dots');
+
+  // Initialize arrow states and bind to slide events
+  updateArrowState();
+  carousel.on("afterChange", updateArrowState);
+
+  // Handle responsive changes with customWidth
+  $(window).on("resize", function () {
+    setTimeout(() => {
+      customWidth = screen.availWidth;
+
+      // Update the number of slides dynamically based on customWidth
+      carousel.slick(
+        "slickSetOption",
+        "slidesToShow",
+        customWidth > 500 ? 3 : 1,
+        true
+      );
+
+      updateArrowState();
+    }, 200);
+  });
 });
-// onsite and online services end
+
+
+//online services end
+
+// onsite services start
+
+$(document).ready(function () {
+  let customWidth = screen.availWidth;
+  // Initialize the carousel
+  var carousel = $(".service-carousel").slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: customWidth > 500 ? 3 : 1,
+    slidesToScroll: 1,
+    arrows: false, // Disable default arrows
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  // Handle custom previous button
+  $("#prevArrow").on("click", function () {
+    carousel.slick("slickPrev");
+    updateArrowState();
+  });
+
+  // Handle custom next button
+  $("#nextArrow").on("click", function () {
+    carousel.slick("slickNext");
+    updateArrowState();
+  });
+
+  // Update arrow disabled states on init and after slide changes
+  function updateArrowState() {
+    var slideCount = $(
+      ".service-carousel .slick-slide:not(.slick-cloned)"
+    ).length;
+    var slidesToShow = carousel.slick("slickGetOption", "slidesToShow");
+    var currentSlide = carousel.slick("slickCurrentSlide");
+
+    // Disable prev button if at beginning
+    if (currentSlide === 0) {
+      $("#prevArrow").addClass("slick-disabled");
+    } else {
+      $("#prevArrow").removeClass("slick-disabled");
+    }
+
+    // Disable next button if at end
+    if (currentSlide >= slideCount - slidesToShow) {
+      $("#nextArrow").addClass("slick-disabled");
+    } else {
+      $("#nextArrow").removeClass("slick-disabled");
+    }
+  }
+
+  // Initialize arrow states and bind to slide events
+  updateArrowState();
+  carousel.on("afterChange", updateArrowState);
+
+  // Handle responsive changes
+  $(window).on("resize", function () {
+    setTimeout(updateArrowState, 200);
+  });
+
+  // On resize, dynamically update the settings
+  window.addEventListener("resize", () => {
+    console.log(screen.availWidth);
+    customWidth = screen.availWidth;
+
+    $(".service-carousel").slick(
+      "slickSetOption",
+      "slidesToShow",
+      customWidth > 500 ? 3 : 1,
+      true
+    );
+  });
+});
+
+// onsite services end
 
 
 // testimonial carousel start
@@ -299,6 +344,9 @@ $(document).ready(function(){
     slidesToScroll: 1,
     prevArrow: $('.prev-arrow'),
     nextArrow: $('.next-arrow'),
+    draggable: true,
+    swipe: true,
+    touchMove: true,
     responsive: [
       {
         breakpoint: 1440,
@@ -338,10 +386,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('bmiModal');
   const closeModal = document.getElementById('closeModal');
   const calculateBtn = document.getElementById('calculateBtn');
+  const clearBtn = document.getElementById('clearBtn');
   const bmiResult = document.getElementById('bmiResult');
   const ageInput = document.getElementById('age');
   const heightInput = document.getElementById('height');
   const weightInput = document.getElementById('weight');
+  const maleRadio = document.getElementById('male');
+  const femaleRadio = document.getElementById('female');
+  const bmiCategories = document.getElementById("bmiCategories");
   
   // Open modal when BMI button is clicked
   bmiButton.addEventListener('click', function() {
@@ -364,16 +416,101 @@ document.addEventListener('DOMContentLoaded', function() {
   calculateBtn.addEventListener('click', function() {
     const height = parseFloat(heightInput.value);
     const weight = parseFloat(weightInput.value);
+    const age = parseInt(ageInput.value);
+    const selectedGender = maleRadio.checked ? "male" : "female";
     
-    if (height && weight) {
+    // Validate mandatory fields
+    if (isNaN(age) || age <= 0) {
+      bmiResult.textContent = "Please enter a valid age";
+      bmiResult.style.color = "red";
+      bmiCategories.textContent = "";
+      return;
+    }
+    
+    if (!isNaN(height) && !isNaN(weight) && height > 0 && weight > 0) {
       // BMI formula: weight (kg) / (height (m))^2
       const heightInMeters = height / 100;
       const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
-      bmiResult.textContent = bmi;
+      bmiResult.innerHTML = `${bmi} <p>kg/m2</p>`;
+      bmiResult.style.color = "black";
+      let category = getBMICategory(age, selectedGender, bmi);
+      bmiCategories.textContent = category;
     } else {
       bmiResult.textContent = "Please enter valid height and weight";
       bmiResult.style.color = "red";
+      bmiCategories.textContent = "";
     }
+  });
+
+  function getBMICategory(age, gender, bmi) {
+    if (age >= 18) {
+      if (bmi < 18.5) return "Underweight";
+      if (bmi >= 18.5 && bmi < 24.9) return "Normal weight";
+      if (bmi >= 25 && bmi < 29.9) return "Overweight";
+      return "Obese";
+    } else {
+      let percentileRanges = {
+        male: {
+          2: [14.0, 18.0, 20.5],
+          3: [14.2, 18.2, 20.8],
+          4: [14.3, 18.4, 21.1],
+          5: [14.5, 18.6, 21.4],
+          6: [14.6, 18.8, 21.7],
+          7: [14.8, 19.0, 22.0],
+          8: [14.9, 19.2, 22.3],
+          9: [15.0, 19.4, 22.6],
+          10: [15.2, 19.6, 22.9],
+          11: [15.4, 19.9, 23.3],
+          12: [15.6, 20.2, 23.7],
+          13: [16.0, 20.6, 24.2],
+          14: [16.4, 21.0, 24.7],
+          15: [16.7, 21.4, 25.2],
+          16: [17.0, 21.8, 25.7],
+          17: [17.2, 22.2, 26.2]
+        },
+        female: {
+          2: [13.8, 17.8, 20.2],
+          3: [14.0, 18.0, 20.5],
+          4: [14.1, 18.2, 20.8],
+          5: [14.3, 18.4, 21.1],
+          6: [14.5, 18.6, 21.4],
+          7: [14.6, 18.8, 21.7],
+          8: [14.8, 19.0, 22.0],
+          9: [15.0, 19.2, 22.3],
+          10: [15.2, 19.4, 22.6],
+          11: [15.4, 19.7, 23.0],
+          12: [15.7, 20.0, 23.4],
+          13: [16.0, 20.4, 23.9],
+          14: [16.3, 20.8, 24.4],
+          15: [16.6, 21.2, 24.9],
+          16: [16.9, 21.6, 25.4],
+          17: [17.1, 22.0, 25.9]
+        }
+      };
+
+      if (percentileRanges[gender] && percentileRanges[gender][age]) {
+        let ranges = percentileRanges[gender][age];
+        if (bmi < ranges[0]) return "Underweight";
+        if (bmi < ranges[1]) return "Healthy weight";
+        if (bmi < ranges[2]) return "Overweight";
+        return "Obese";
+      } else {
+        return "Age out of range for BMI categories";
+      }
+    }
+  }
+
+  // Function to clear the data
+  clearBtn.addEventListener('click', function() {
+    ageInput.value = "";
+    heightInput.value = "";
+    weightInput.value = "";
+    bmiResult.textContent = "";
+    bmiResult.style.color = ""; // Reset text color if it was changed
+    bmiCategories.textContent = "";
+    // Reset radio buttons to default (male)
+    maleRadio.checked = true;
+    femaleRadio.checked = false;
   });
 });
 // modal end

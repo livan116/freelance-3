@@ -10,26 +10,40 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body class="relative font1">
-    <!-- Navigation - Fixed at the top -->
     <!-- Navigation - Fixed at the top -->
     <nav
       class="Navbar shadow-md z-50 transition-all px-3 duration-300"
       id="navbar"
     >
       <div class="container mx-auto px-2">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center py-2">
           <!-- Logo -->
-          <a href="/index.html" class="flex-shrink-0 mr-4">
+          <a href="/index.html" class="flex-shrink-0 md:mr-2 lg:mr-4">
             <img
               src="images/logo.png"
               alt="S2 Logo"
-              class="h-12 md:h-16 w-auto max-w-[120px]"
+              loading="lazy"
+              class="h-12 md:h-16 w-[120px]"
             />
           </a>
+  
 
           <!-- Mobile Menu Button -->
           <button
@@ -54,41 +68,41 @@
 
           <!-- Desktop Navigation Links -->
           <div
-            class="hidden md:flex md:space-x-2 lg:space-x-5 text-sm lg:text-base"
+            class="hidden md:flex md:space-x-1 lg:space-x-5 text-sm lg:text-base"
           >
             <a
               href="/index.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Home</a
             >
             <a
               href="/about.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >About Us</a
             >
             <a
               href="/services.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Services</a
             >
             <a
               href="/nutrition.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Nutrition</a
             >
             <a
               href="/fitness-retreat.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Fitness Retreat</a
             >
             <a
               href="/photos.html"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Photos</a
             >
             <a
               href="/contact.php"
-              class="nav-line nav-link hover:text-[#8baf30] whitespace-nowrap"
+              class="nav-line nav-link lg:text-[16px] hover:text-[#8baf30] whitespace-nowrap"
               >Reach Us</a
             >
           </div>
@@ -97,7 +111,7 @@
 
           <a
             href="/enrollment.php"
-            class="hidden md:block flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 text-sm lg:text-base"
+            class="hidden md:block lg:text-[16px] flex-shrink-0 bg-[#9AC339] text-white px-3 lg:px-6 py-1.5 lg:py-2 rounded-full ml-2 lg:ml-4 "
           >
             Enroll Now
           </a>
@@ -114,6 +128,7 @@
         <a href="/index.html" class="flex-shrink-0">
           <img
             src="images/logo.png"
+            loading="lazy"
             alt="S2 Logo"
             class="h-12 md:h-16 w-auto max-w-[120px]"
           />
@@ -170,7 +185,7 @@
 
     <!-- nav section end -->
     <div class="font-sans bg-white">
-      <div class="container mx-auto px-4  max-w-7xl">
+      <div class="container mx-auto px-4 max-w-7xl">
         <!-- Story Section -->
         <div class="mb-8 mt-20">
           <div class="flex items-center md:mr-36 gap-4 mb-6">
@@ -180,9 +195,9 @@
             <div class="h-1 w-12 bg-[#9AC339]"></div>
           </div>
 
-          <div class="flex content-container gap-8">
+          <div class="flex flex-col lg:flex-row content-container gap-8">
             <!-- Text Content -->
-            <div class="flex-1">
+            <div class="lg:w-1/2">
               <p class="text-gray-700 mb-6 leading-relaxed body-text font1">
                 Our story is one of personal transformation and the desire to
                 help others achieve their health and wellness goals. As
@@ -229,10 +244,11 @@
 
             <!-- Image Container -->
        
-              <div class="relative h-[60vh] md:h-[78vh] md:w-[100vw] lg:w-[34vw] lg:h-[72vh]">
+              <div class="relative">
                 <div class=" flex justify-center items-center">
                   <img
                     src="images/about_images/img1.png"
+                    loading="lazy"
                     alt="Group of wellness coaches with healthy food"
                     
                   
@@ -272,8 +288,9 @@
                 <div class="z-10">
                   <img
                     src="images/about_images/team1.png"
+                    loading="lazy"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden md:hidden"></div>
@@ -281,7 +298,7 @@
               <div class="text-center mt-4">
                 <h3 class="text-gray-700 sub-title">Bala Reddy</h3>
                 <h4 class="text-[#9AC339] my-1 sub-title">Managing Director</h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Bala Reddy serves as the Managing Director, bringing a wealth
                   of experience and leadership to the role. With a keen
                   strategic vision and a deep understanding of the industry,
@@ -300,8 +317,9 @@
                 <div class="z-10">
                   <img
                     src="images/about_images/team2.png"
+                    loading="lazy"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
@@ -311,7 +329,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   MBBS, MD, Certified Fitness Coach, Nutritionist, and Founder
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Dr. Saritha is a medical professional with expertise in
                   fitness coaching and nutrition. With her personal journey of
                   transformation, she has become a certified fitness coach and
@@ -327,13 +345,14 @@
               <div class="flex justify-center items-center gap-4 md:none">
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
                 <div
-                  class="z-10 md:w-[22vw] w-[70vw] h-[40vh] object-cover bg-gray-300 border-x-[25px] border-white"
+                  class="z-10"
                 >
-                  <!-- <img
-                    src="images/about_images/team3.png"
-                    alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                  /> -->
+                  <img
+                    src="images/about_images/doctor.jpg"
+                    loading="lazy"
+                    alt="Dr. Sireesha Reddy"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
+                  />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
               </div>
@@ -342,7 +361,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   MBBS, Certified Fitness Coach, and Co-Founder
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Dr. Sireesha Reddy, MBBS, is a dedicated medical professional
                   and a certified fitness coach. She holds two MBBS degrees, 
                   showcasing her extensive knowledge and expertise in the
@@ -372,13 +391,14 @@
               <div class="flex justify-center items-center gap-4 md:none">
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
                 <div
-                  class="z-10 md:w-[22vw] w-[70vw] h-[40vh] object-cover bg-gray-300 border-x-[25px] border-white"
+                  class="z-10"
                 >
-                  <!-- <img
-                    src="images/about_images/team3.png"
-                    alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
-                  /> -->
+                  <img
+                    src="images/about_images/doctor2.jpg"
+                    loading="lazy"
+                    alt="Dr. Rajani Uppala"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
+                  />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
               </div>
@@ -387,7 +407,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   MBBS, DCH, and MD USA
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Dr. Rajani Uppala holds a Bachelor of Medicine and Bachelor of
                   Surgery (MBBS) degree along with a Diploma in Child Health
                   (DCH). Additionally, she has completed her Doctor of Medicine
@@ -407,7 +427,8 @@
                   <img
                     src="images/about_images/team4.png"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    loading="lazy"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
@@ -417,7 +438,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   Certified Healthy Wellness Trainer
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Maithili Patibandla is a dedicated and skilled physiotherapist
                   with expertise in fitness. She brings her passion for
                   promoting overall health and wellness through exercise and
@@ -435,7 +456,8 @@
                   <img
                     src="images/about_images/team3.png"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    loading="lazy"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
@@ -445,7 +467,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   MBBS, MD, Nutritionist and Certified Fitness Coach
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px]  leading-7">
                   Rohini specializes in addressing digestive issues. Her medical
                   expertise in this area allows her to provide guidance and
                   support to individuals who may be dealing with digestive
@@ -475,7 +497,8 @@
                   <img
                     src="images/about_images/team5.png"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    loading="lazy"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
@@ -485,7 +508,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   CEO and Public Relations
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Vijay is responsible for handling human resources and public
                   relations. With his knowledge and experience, he ensures that
                   the team operates cohesively and maintains a positive
@@ -504,7 +527,8 @@
                   <img
                     src="images/about_images/team6.png"
                     alt="Dr. Saritha Kommareddy"
-                    class="md:w-[22vw] h-[40vh] object-cover border-x-[25px] border-white"
+                    loading="lazy"
+                    class="h-80 w-80 object-cover border-x-[20px] border-white"
                   />
                 </div>
                 <div class="h-32 bg-[#9AC339] w-2 md:hidden"></div>
@@ -514,7 +538,7 @@
                 <h4 class="text-[#9AC339] my-1 sub-title">
                   Certified Fitness Trainer
                 </h4>
-                <p class="text-gray-600 mt-2 px-4 body-text leading-7">
+                <p class="text-gray-600 mt-2 px-4 lg:body-text text-[14px] leading-7">
                   Jayanthi is a certified fitness trainer and yoga instructor
                   with a passion for helping others lead healthy, balanced
                   lives. With years of experience, she brings a deep
@@ -534,170 +558,46 @@
     <!-- team end -->
 
     <!-- gallery start -->
-    <div class="bg-[#304E0C] p-6 md:p-10">
-      <!-- Gallery Heading Section -->
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-center md:mr-36 gap-4 mb-6">
+       
+    <section class="gallery-section flex justify-center">
+      <div class="container max-w-7xl">
+        <div class="flex items-center px-12 gap-4 mb-6">
           <h2 class="content-Heading text-white">Our Clinic</h2>
           <div class="h-1 w-12 bg-[#9AC339]"></div>
         </div>
-        <!-- <p class="text-white body-text mb-8">
-          They can turn into your instructor, your helper, your mentor.
-        </p> -->
-
-        <!-- Carousel Container -->
-        <div class="relative">
-          <!-- Left Arrow -->
-          <button
-            id="prev-btn"
-            class="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <!-- Carousel -->
-          <div class="overflow-hidden relative">
-            <div
-              id="carousel"
-              class="carousel-container flex transition-transform duration-300 ease-in-out"
-            >
-              <!-- Image 1 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img1.png"
-                  alt="Person doing push-up with weights"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 2 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img2.png"
-                  alt="Person lifting weights"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 3 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img3.png"
-                  alt="Person with arms raised"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 4 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img4.png"
-                  alt="Person performing squat"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 5 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img5.png"
-                  alt="Person doing cardio"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 6 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img6.png"
-                  alt="Person stretching"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 7 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img7.png"
-                  alt="Group fitness class"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 8 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img8.png"
-                  alt="Person on exercise machine"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Image 9 -->
-              <div class="carousel-item p-2">
-                <img
-                  src="images/gallery/img9.png"
-                  alt="Person with exercise ball"
-                  class="w-full h-64 md:h-80 object-cover rounded-lg"
-                />
-              </div>
-            </div>
+        <div class="gallery-carousel">
+          <div class="gallery-item">
+            <img
+              src="images/about_images/clinic1.jpg"
+              alt="Person doing push-up with equipment"
+              loading="lazy"
+            />
           </div>
-
-          <!-- Right Arrow -->
-          <button
-            id="next-btn"
-            class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-[#9AC339] hover:bg-opacity-100 rounded-full p-2 z-10 focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          <!-- Indicator Dots -->
-          <div class="flex justify-center mt-4">
-            <div class="flex space-x-2">
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot active"
-                data-index="0"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
-                data-index="1"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-white bg-opacity-50 focus:outline-none indicator-dot"
-                data-index="2"
-              ></button>
-            </div>
+          <div class="gallery-item">
+            <img
+            src="images/about_images/clinic2.jpg"
+              alt="Person lifting weights"
+              loading="lazy"
+            />
           </div>
+          <div class="gallery-item">
+            <img
+            src="images/about_images/clinic3.jpg"
+              alt="Person using pull-up machine"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+            src="images/about_images/clinic4.jpg"
+              alt="Person doing squats"
+              loading="lazy"
+            />
+          </div>
+       
         </div>
       </div>
-    </div>
+    </section>
     <!-- gallery end -->
 
     <!-- footer start -->
@@ -707,7 +607,7 @@
           <!-- Left Section (Logo and Description) -->
           <div class="footer-left lg:w-1/3 mb-8 lg:mb-0">
             <a href="/index.html"
-              ><img src="images/logo.png" alt="Logo" class="mb-4"
+              ><img src="images/logo.png" alt="Logo" class="mb-4" loading="lazy"
             /></a>
             <p class="body-text mb-4">
               We aim to empower our clients, helping them make sustainable
@@ -724,6 +624,7 @@
               <p class="flex items-center mb-2">
                 <img
                   src="images/logos/email.png"
+                  loading="lazy"
                   alt="Email"
                   class="w-6 mr-2"
                 />
@@ -739,6 +640,7 @@
                 <img
                   src="images/logos/icons.png"
                   alt="Phone"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -755,6 +657,7 @@
                 <img
                   src="images/logos/whatsapp.png"
                   alt="WhatsApp"
+                  loading="lazy"
                   class="w-6 mr-2"
                 />
                 <div class="flex flex-col gap-2">
@@ -775,7 +678,7 @@
             </div>
             <h4 class="t mb-4 body-text">For Pediatric-Related Enquiries</h4>
             <p class="flex items-center mb-2">
-              <img src="images/logos/icons.png" alt="Phone" class="w-6 mr-2" />
+              <img src="images/logos/icons.png" alt="Phone" loading="lazy" class="w-6 mr-2" />
               <a href="tel:+918125507159" class="hover:underline"
                 >+91 8125507159</a
               >
@@ -797,6 +700,7 @@
               <img
                 src="images/logos/location.png"
                 alt="Location"
+                loading="lazy"
                 class="w-6 mr-2"
               />
               <h4 class="mb-4 body-text">Hyderabad</h4>
@@ -823,6 +727,7 @@
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
                   alt="YouTube"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>
@@ -834,6 +739,7 @@
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
                   alt="Instagram"
+                  loading="lazy"
                   class="w-6"
                 />
               </a>
@@ -846,6 +752,7 @@
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                   alt="Facebook"
                   class="w-6"
+                  loading="lazy"
                 />
               </a>
             </div>
